@@ -1,0 +1,45 @@
+// ---------- 「台九線」顏色變數 ---------- //
+$primaryColor: #629B28;
+$secondaryColor: #080808;
+
+$assistant: #C54938;
+$assistant1: $primaryColor;
+$assistant2: #209680;
+$assistant3: #207297;
+$notice: $assistant;
+$hilight: #f5ab0c;
+
+$sidebarBg : $primaryColor;
+$bodyBg: #dedede;
+$footerBg: $primaryColor;
+$footerBg2: #fff;
+$mainBg:#fff;
+
+$fontColor: #000;
+$fontInvert: #fff;
+$fontColorLight: #67625c;
+$linkColor: #035a6a;
+
+
+$borderColor: #a29984;
+$borderColorLight: #d0c8af;
+$borderColorDark:#777164;
+$shadow:#50504c33;
+$shadow2:#35343066;
+
+$btnBg1: $primaryColor;
+$btnBg2: $assistant;
+
+$gray: #ddd;
+
+$transDarken: #000a;
+$transLighten: #fffb;
+
+%shadow1{ box-shadow: #0004 0 1px 4px;}
+%shadow2{ box-shadow: #0008 0 4px 18px -2px;}
+
+// -------------------------
+%linkText{ color: $assistant; text-decoration: none;box-shadow:$assistant 0 2px 0 -1px;
+  &:hover{text-decoration: none; box-shadow:$assistant 0 3px 0 -1px;}
+  &:focus{text-decoration: none; box-shadow:$assistant 0 0 0 1px;}
+}

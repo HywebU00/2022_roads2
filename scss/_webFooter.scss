@@ -1,0 +1,133 @@
+// ---------- 頁腳 webFooter
+.webFooter{
+  position: relative; padding: 0; margin: 0 auto;
+  color: $fontInvert; background-color: $footerBg;
+ 
+  a{text-decoration: none; color: $fontInvert;}
+
+  .base{ position: relative; padding:30px 5vw;
+    font-size: .9em; line-height: 1.5; z-index: 3;
+    background-color: $footerBg2; color: $fontColor;
+    a{ color: $linkColor;}
+    &>*+*{margin-top: 1.5em;}
+    p{ margin: 0; }
+  }
+
+  .logo{ 
+    img{ display:block;height: 45px; width: auto; margin: 0 auto;}
+  }
+
+  .contact{line-height: 1.3;  text-align: center;
+    p{ margin: 0;
+      &:first-child{font-size: 1.15em;}
+      &+p{ margin-top: .6em;}
+    }
+    em{ font-style: normal; display: inline-block;}
+  }
+  
+
+  .aaAndOthers{ text-align: right;
+    padding: 4px; margin: 2em 0 0; overflow: hidden;
+    .aMark{ float: left; margin-right:16px;
+      a{ display: block; border-radius: 5px;
+        img{display: block; width: 150px; border-radius: 5px;}
+        &:hover img, &:focus img{ box-shadow:$footerBg2 0 0 0 1px, $linkColor 0 0 0 3px;}
+      }
+    }
+    p{margin:3px 0 0;}
+    p+p{margin-top: .4em;}
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .base{display: flex; flex-flow: row nowrap; justify-content: space-between;}
+    .logo{ position: absolute; left: 5vw; top: 30px; }
+    .contact{ text-align: left; margin: 0 0 0 140px;}
+    .aaAndOthers{flex: 0 0 150px; overflow: visible; padding: 0; text-align: left; margin: 0 0 0 40px;
+      .aMark{float: none;display: block; margin:0 0 10px; width: 150px;}
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    .logo{position: static; flex: 0 0 140px; width: auto;
+      img{margin: 0;}
+    }
+    .contact{ flex: 1 1 50%; margin: 0 2% 0 0;}
+    .aaAndOthers{ flex:1 1 20%; min-width: calc(172px + 9.5em);margin-left: 25px;
+      .aMark{float: left; margin-right: 12px;}
+      .count, .date{white-space: nowrap;text-align: left;}
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    .base{
+      padding-left: $wwMaximum*.05; padding-right: $wwMaximum*.08;
+    }
+  }
+}
+
+
+// 頁腳的選單
+.siteTree{ position: relative; z-index: 2; margin: 0 auto;  padding: 40px 5vw 25px;
+  transition: .6s;
+  ul{list-style: none; margin: 0; padding: 0; line-height: 1.2;}
+  &>ul{ display: flex; flex-flow: row wrap; font-size: 1.2rem;
+    &>li{ flex: 1 1 auto; min-width: 6em; margin: 1.2em 15px 0; padding: 0; transition: .6s;
+      a{ display: block; position: relative;
+        border-bottom: 2px solid transparent; transition: .2s;
+        &:hover, &:focus{border-color: $fontInvert;}
+      }
+      &>ul{font-size: .96rem;padding-bottom: 1.5em;
+        &>li{margin: .5em 0; 
+          &>a{margin-right: 12px; padding: .6em 0 0; border-bottom-width: 1px;
+            &::before{content: ''; width: 5px; height: 5px; background: transparent;
+              position: absolute; left: 2px; top: 1em; 
+            }
+            &:hover, &:focus{ padding-left: 12px; margin-right: 0;
+              &::before{background: $fontInvert;}
+            }
+          }
+        }
+        ul{display: none;} // 第三層開始不顯示
+      }
+    }
+  }
+
+  &.short{
+    padding-top:0;  padding-right: calc(5vw + 64px);
+    &>ul>li{min-width: 0;}
+  }
+
+  @media screen and (min-width: $wwNormal){
+    padding-left: 5vw; padding-right: 5vw;
+    &>ul{
+      &>li{flex:0 1 auto; margin-left: 25px; margin-right: 25px;}
+    }
+
+    &.short{ padding-top: 0;}
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    padding-left: $wwMaximum*.05; padding-right: $wwMaximum*.05;
+  }
+}
+
+.fatFootCtrl{
+  position: absolute; right:30px; top: 0; z-index: 9; cursor: pointer;
+  width: 54px; height: 54px; background: $fontInvert; margin: 0;
+  text-indent: -10em; overflow: hidden; border: none;
+  transition: .2s;
+  
+  &::before{
+    content: '';position: absolute; left: 50%; top: 50%;
+    width: 10px; height: 10px; margin: -4px auto auto -5px;
+    border: 2px solid $primaryColor; border-right: none; border-bottom: none;
+    transform: rotate(45deg); transition: .4s;
+  }
+  &:hover, &:focus{ box-shadow: none; outline: none; background-color: $fontColor;
+    &::before{ border-color: $fontInvert;}
+  }
+
+  &.closed{
+    &::before{transform: rotate(225deg); margin-top: -8px;}
+  }
+}

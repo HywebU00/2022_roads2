@@ -1,0 +1,92 @@
+.pagination { width: $mmw; margin: 1em auto;padding: 0;
+  text-align: center;font-size: 1rem; line-height: 1.5;
+  form{display: inline-block;}
+  input, select{font-size: inherit; height: 2.4em; line-height: 2.4;}
+  select{ background-position:right 8px top .95em;}
+  a{text-decoration: none;}
+  em{ display: inline-block; font-style: normal; font-weight: bold; margin: 0 .3em;}
+
+  .items{ display: inline;
+    a{ display: inline-block; font-weight: bold;  color: $fontColor;
+      height: 1.6em; line-height: 1.7; margin: 0 3px;padding: 0 4px;
+      box-shadow: $borderColorDark 0 0 0 1px; border-radius: 2;
+      transition: .2s;
+      &:hover, &:focus{box-shadow: $primaryColor 0 0 0 2px;}
+      &.active{ background-color: $primaryColor; color: $fontInvert;
+        box-shadow: $primaryColor 0 0 0 1px;
+      }
+    }
+  }
+
+  .page{ list-style: none; line-height: 1;
+    display: flex; flex-flow: row wrap; justify-content: center;
+    margin:8px auto; padding: 3px; 
+    &>li{ margin: 3px; flex: 0 0 auto;
+      a{ display: block; min-width: 2.5em; height: 2.5em; line-height: 2.5em;
+        box-shadow: $borderColor 0 0 0 1px; color: $fontColor; background-color: $mainBg;
+        transition: .2s;
+        &:hover, &:focus{ box-shadow: $primaryColor 0 0 0 2px;}
+      }
+      &.active{
+        a{ background-color: $primaryColor; color: $fontInvert;box-shadow: $primaryColor 0 0 0 1px;
+          &:hover, &:focus{ box-shadow: $mainBg 0 0 0 1px, $primaryColor 0 0 0 3px;}
+        }
+      }
+
+      &.first, &.prev, &.next, &.last{ 
+        a{ position: relative; width: 2.5em; overflow: hidden; text-indent: 3em;
+          &::before, &::after{content: ''; position: absolute; top: 50%;}
+          &::after{width:8px; height:8px; 
+            border: 2px solid $borderColorDark; border-top: none; border-right: none;
+            margin-top: -5px;
+          }
+        }
+      }
+      &.first , &.last{
+        a::before{width: 2px; height: 14px; background:$borderColorDark;
+           transform: translateY(-50%);
+        }
+      }
+      &.first, &.prev{
+        a{padding-left: 25px; padding-right: .6em; 
+          &::after{ transform: rotate(45deg);left: 13px;} 
+          &::before, &::after{margin-left: 4px;}
+        }
+      }
+      &.first a{
+        &::after{ left: 14px;}
+        &::before{ left: 10px;}
+      }
+      &.next, &.last{
+        a{padding-right: 25px; padding-left: .6em;
+          &::after{ transform: rotate(225deg); left: auto; right: 13px;}
+          &::before, &::after{margin-right: 4px;}
+        }
+      }
+      &.last a{
+        &::after{ right: 14px;}
+        &::before{right: 10px;}
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .page{
+      &>li{
+        &.first, &.prev, &.next, &.last{
+          a{ text-indent: 0; width: auto;}
+        }
+        &.first a, &.prev a{
+          &::before, &::after{ margin-left: 0;}
+        }
+        &.next a, &.last a{
+          &::before, &::after{ margin-right: 0;}
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: auto;
+  }
+}

@@ -1,0 +1,85 @@
+.stacks{ margin: 0 auto 150px;
+  .blockHeader{ padding-bottom:20px; margin: 0 auto; width: $mmw;}
+  .bulletin{ margin: 0 auto; }
+  .board{ position: relative; width: 100%;  overflow: hidden;
+    &>a{position: relative; display: flex; flex-flow: row nowrap; align-items: flex-end;
+      text-decoration: none; min-height: 28vw; padding: 3em 0 0;
+      &::before{content: ''; position: absolute; left: 0;top: 0;right: 0;bottom: 0;}
+      &:hover, &:focus{
+        img{ transform: scale(1.2);}
+        ul{ transform: translateY(0);}
+      }
+      &:focus{ outline: none;
+        &::before{z-index: 9;
+          box-shadow: $assistant 0 0 0 2px inset;}
+      }
+    }
+    h3{ flex: 0 0 35%;position: relative; z-index: 3; 
+      margin: 0 -22px 0 0;padding: 1em 15px 0; line-height: 1.2;
+      color: $fontInvert; font-size: 1.6em; text-shadow: #0007 0 2px 5px;
+      span{ display: block; padding: .5em 15px .6em; margin: .3em -15px 0;
+        background: $assistant1; color: $fontInvert;
+        font-family: 'Times New Roman', Times, serif; font-size: .9em;
+        text-shadow:none;
+      }
+    }
+    ul{ position: relative; flex: 1 0 65%;
+       margin: 0; padding: 1.8em 6vw 60px 3.5em; 
+        list-style: disc;line-height: 1.5; 
+        color: $fontInvert; background-color: $transDarken;
+        transform: translateY(35px);transition: .3s;
+      li{ margin: 0; padding: 0;
+        &+li{margin-top: .7em;}
+      }
+      &::after{ content: ''; position: absolute; right: 4.5vw; top: -8px;
+        width: 2px; height: 70px; background-color: $primaryColor;}
+    }
+
+    img{
+      position: absolute; width: 100%; height: 100%; object-fit: cover;
+      z-index: 0; transition: .3s;
+    }
+
+    &:nth-child(2){
+      h3 span{ background-color: $assistant2;}
+    }
+    &:nth-child(3){
+      h3 span{ background-color: $assistant3;}
+    }
+  }
+  
+  
+  @media screen and (min-width: $wwMedium){
+    .blockHeader{ padding-bottom:20px;}
+    .board{
+      &>a{ min-height: 24vw;}
+    }
+  }
+    
+  @media screen and (min-width: $wwNormal){
+    width: $mmw2;
+    .blockHeader{ width:100%;}
+    .board{ 
+      &>a{min-height: 20vw; padding-top: 90px;}
+      h3{ flex-basis: 37%;
+        font-size: 2em; letter-spacing: .1em; font-weight: normal;
+        padding: 0 0 0 5vw; margin-right: -30px;
+        span{letter-spacing: 0; font-size: 1.08em;
+          margin: .3em 0 0 -5vw; padding: .5em 16px .4em 5vw;
+        }
+      }
+      ul{ flex-basis: 60%;
+        padding: 2em 70px 60px 80px; letter-spacing: .1em;
+        &::after{ right: 58px;}
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum*.86; 
+    .board{ 
+      &>a{ min-height: 234px;}
+    }
+  }
+
+}

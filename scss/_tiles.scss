@@ -1,0 +1,141 @@
+// 首頁「公民參與」
+.tiles{ position: relative;  margin: 0 auto 150px;
+  .blockHeader{width: $mmw; margin: 0 auto 1.5em; 
+    display: flex; flex-flow: row wrap; align-items: flex-end;
+    h2{ width: $mmw/2; height: $mmw/2; max-width: 260px; max-height: 260px;
+      margin: 0; padding: 15px;
+      display: flex; flex-flow: column nowrap; justify-content: center;
+      text-align: center; font-size: 1.8rem;
+      background: #4e8c18; color: #fff; 
+      span[lang]{ display: block; margin: .5em auto 0;}
+    }
+    .brief{ text-align: left; flex: 0 0 100%; order: 1; line-height: 1.9; padding: 1em 0 0;
+      height:8.8em; overflow: hidden; color: $fontColor;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      p{margin: 0;}
+    }
+    .category{ flex: 1 0 auto; width: calc(#{$mmw}/2 - 4px) ; margin-left: 4px; 
+      ul{list-style: none; margin: 0; padding: 0; line-height: 1.4;
+        display: flex; flex-flow: row wrap;
+      }
+      li{ flex: 1 1 40%; margin: 3px 0 0 3px;position: relative;
+        a{ display: block; padding: .5em .5em .4em; height: 100%;
+          border-radius: 3px; color: #fff; background: $assistant2; text-decoration: none;
+          transition: .2s;
+          &:hover, &:focus{background: darken($assistant2, 10%); box-shadow:darken($assistant2, 10%) 0 0 0 1px;}
+        }
+      }
+    }
+  }
+  .photos{ margin: 0 auto;
+    ul{list-style: none; margin: 0; padding: 0;}
+    li{margin: 0; padding: 0;}
+
+    &>ul{ display: flex; flex-flow: row wrap;
+      &>li{position: relative; flex: 0 0 32.5vw; margin: 0 1.25vw 1.25vw 0; height: 32.5vw;overflow: hidden;
+        &>a{ display: block; height: 100%;
+          &::before{content: ''; position: absolute; left: 0; top: 0; right: 0;bottom: 0;
+            box-shadow: $assistant 0 0 0 2px inset; display: none;
+          }
+          &:hover, &:focus{
+            .info{ transform: translateY(0);}
+          }
+          &:focus::before{ display: block; z-index: 9;}
+        }
+        &:nth-child(3n){margin-right: 0;}
+        img{ display: block; width: 100%; height: 100%; object-fit: cover;}
+        .info{ font-size: .8rem;padding:10px 5px;
+          position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+          transform: translateY(-100%); transition: .4s;
+          background: #000a; color: #fff; text-align: center;
+          h3{ margin: .5em 0; font-size: 1.15em;}
+          time{position: relative;
+            &::before{content: attr(title); display: inline-block; margin-right:1em;}
+            &::after{content: ''; display: inline-block; width: 1px; height: 1.1em;
+              position: absolute; top: 0; left: 2.45em;
+               background: #fff;}
+          }
+          // &::before{ content: ''; display: inline-block; width: 2px; height: 33%;
+          //   background-color: $primaryColor;
+          // }
+        }
+      }
+    }
+  }
+
+  .more{margin-top: .6em; margin-right: 5vw;}
+
+  @media screen and (min-width: $wwMedium){
+    .blockHeader{
+      h2{ font-size: 2rem;}
+    }
+    .photos{
+      &>ul>li{
+        .info{ padding:24px 1em; font-size: 1rem;
+            &::before { content: ''; display: inline-block; width: 2px; height: 33%; background-color: $primaryColor;}
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: $mmw2;
+    .flexbox{display: flex; flex-flow: row nowrap;}
+
+    .photos{ 
+      &>ul>li{
+        flex:0 0 calc(21.5vw - 6px); height: calc(21.5vw - 6px); margin: 0 8px 8px 0; 
+        &:nth-child(3n){margin-right: 0;}
+        &:nth-child(n+7){ margin-bottom: 0;}
+      }
+    }
+
+    .blockHeader { width: auto; margin: 0 8px 0 0; 
+      flex:0 0 calc(21.5vw - 6px); height: calc(64.5vw - 2px);
+      display: block;
+      position: relative;
+      h2 {position: absolute; left: 0; top: 0; width: 100%; height: calc(21.5vw - 6px); }
+      .brief{order: 0; margin:21.5vw 0 0; padding: 0; width: 100%;
+        height: 13.5em;-webkit-line-clamp: 7;overflow: hidden;
+      }
+
+      .category{ margin: 0; 
+        position: absolute; left: 0; bottom: 0;width: 100%;
+        li{
+          a{padding: .4em .5em .3em;}
+          &:nth-child(odd){ margin-left: 0;}
+        }
+      }
+    }
+
+    .more{margin-right: 0;}
+
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum*.86; 
+    .blockHeader{flex-basis: 252px; height: 772px;
+      h2 { height: 252px; }
+      .brief{ margin-top: 260px; height:15.4em;-webkit-line-clamp: 8;
+      }
+
+      // .category{
+      //   li{
+      //     a{ padding: .5em .5em .4em; }
+      //   }
+      // }
+    }
+    .photos{ 
+      &>ul>li{
+        flex-basis: 252px; height: 252px;
+        margin: 0 8px 8px 0; 
+        &:nth-child(3n){margin-right: 0;}
+        &:nth-child(n+7){ margin-bottom: 0;}
+      }
+    }
+  }
+}
+
+

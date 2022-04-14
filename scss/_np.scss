@@ -1,0 +1,87 @@
+.np, .npTree{
+  ul{list-style: none; margin: 0; padding: 0; line-height: 1.6;}
+  li{padding: 2px 0;
+    a{
+      position: relative; display: block; padding: .7em .5em .65em 26px;
+      text-decoration: none; color: $fontColor;
+      &:hover, &:focus{background-color: #fff7;}
+    }
+  }
+  &>ul>li>a{ padding-left: 30px;}
+}
+
+
+// 單層
+.np{width: $mmw; margin: 10px auto;
+  &>ul{
+    // display: flex; flex-flow: row wrap; justify-content: space-between; 
+    margin: 15px 0;
+    &>li{
+      // flex:0 0 calc(50% - 6px);
+      margin: 5px 0 10px; padding:0;
+
+      &>a{
+        box-shadow: $borderColor 0 0 0 1px;  padding: .9em .5em .8em 32px;
+        height: 100%; transition: .2s;
+        &::before{
+          content: '';position: absolute;
+          left:12px; top:1.15em; width: 0;height: 0; box-sizing: content-box; 
+          border-style: solid; border-width: 8px 0 8px 10px;
+          border-color: transparent transparent transparent $borderColorDark;
+        }
+        &:hover, &:focus{
+          box-shadow: $fontInvert 0 0 0 1px, $borderColor 0 6px 20px -3px;
+          &::before{ border-left-color: $assistant;}
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $wwMedium){
+    &>ul{
+      display: flex; flex-flow: row wrap; justify-content: space-between;
+      &>li{ flex:0 0 calc(50% - 5px); margin: 5px;
+        &:nth-child(odd){ margin-left: 0;}
+        &:nth-child(even){ margin-right: 0;}
+      }
+    }  
+  }
+  @media screen and (min-width: $wwNormal){
+    width: auto;
+  }
+}
+
+// 多層（本案只做兩層），樹狀結構
+.npTree{ width: $mmw; margin: 10px auto;
+  &>ul{
+    &>li{ 
+      margin: .6em 0; padding:3px;
+      box-shadow: $borderColor 0 0 0 1px;
+      ul{margin-left: 1.2em;}
+      a{ transition: .2s;
+        &::before{content: ''; position: absolute;transition: .2s;}
+      }
+      &>a{
+        &::before{
+          left:10px; top:.9em; width: 0;height: 0; box-sizing: content-box; 
+          border-style: solid; border-width: 8px 0 8px 10px;
+          border-color: transparent transparent transparent $borderColorDark;
+        }
+        &:hover, &:focus{ 
+          &::before{ border-left-color: $assistant; border-left-width:13px;}
+        }
+      }
+      &>ul>li>a{
+        &::before{ 
+          width: 9px; height: 9px;left: 10px; top: 1.15em;
+          background-color: $borderColorDark;
+        }
+        &:hover, &:focus{ 
+          &::before{background-color: $assistant; box-shadow: $assistant 0 0 0 2px;}
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $wwNormal){
+    width: auto;
+  }
+}

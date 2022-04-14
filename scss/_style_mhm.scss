@@ -1,0 +1,67 @@
+.main{  
+  background-color: $mainBg;
+  @media screen and (min-width: $wwNormal){
+    background-image: url(../images/mhm_bg.jpg);
+    &.inner{margin-top: -38vw;}
+  }
+  @media screen and (min-width: $wwMaximum){
+    &.inner{ margin-top: -1*$wwMaximum*.38;}
+  }
+}
+
+
+// 頁腳
+.webFooter{
+  background-color: $footerBg;
+  @media screen and (min-width: $wwNormal){
+    background-color:transparent;
+  }
+}
+// 頁腳的選單
+.siteTree{
+  @media screen and (min-width: $wwNormal){
+    background: url(../images/footerBg_mhm.jpg) 0 0 no-repeat;
+  }
+}
+
+.topRow{
+  .topNav{
+    @media screen and (min-width: $wwNormal){
+      &>ul{
+        &>li{
+          &::before{ background: $fontInvert;}
+          a{ color: $fontInvert; color: #fff; }
+        }
+      }
+    }
+  }
+
+  .menu{
+    background: transparentize(#F6F3EA, .1);
+    a{ color: $fontColor;}
+    &>ul{
+      a{ 
+        &:hover, &:focus {border-bottom-color: $fontInvert;}
+      }
+      &>li{
+        &>a{ color: $fontInvert; background: $primaryColor; border-bottom: none; transition:.2s;
+          &:hover, &:focus{background-color: $assistant;}
+          &:focus{box-shadow: $assistant 0 0 0 2px;}
+        }
+        li a{
+          &:hover, &:focus{ border-bottom-color: $primaryColor;}
+        }
+      }
+    }
+  }
+}
+
+
+.headBanner{
+  @media screen and (min-width: $wwNormal){
+    img{height: 20vw;}
+  }
+  @media screen and (min-width: $wwMaximum){
+    img{ height: $wwMaximum*.2;}
+  }
+}

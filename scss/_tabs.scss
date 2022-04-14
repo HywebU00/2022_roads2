@@ -1,0 +1,22 @@
+.tabs{
+  .tabItems{ display: flex; flex-flow: row nowrap;font-size: 1.15rem;
+    &>button{ border: none; box-shadow: none; background: transparent; cursor: pointer;
+      &.active{}
+    }    
+  }
+
+  .tabContent{ display: none; position: relative;
+
+    .skip{ position: absolute; right: 0; bottom: 0; border: none; background-color: transparent; width: 1px; height: 1px; padding: 0; }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    &::after{content: ''; display: block; clear: both;}
+    .tabItems{ 
+      &>button{}
+    }
+
+    .tabContent{ }
+  }
+
+}

@@ -1,0 +1,137 @@
+.thumbnail{
+  width: $mmw; margin: 2em auto;
+  ul{list-style: none; margin: 0; padding: 0;}
+  &>ul{ line-height: 1.1;
+    &>li{ margin: 0 0 16px;
+      &>a{position: relative; display: block; color: $fontColor; padding: 8px;
+        height: 100%;
+        background: #fff; text-decoration: none;
+        @extend %shadow1; transition: .3s;
+        &:hover{@extend %shadow2;
+          p, h3{text-decoration: underline;}
+        }
+        &:focus{box-shadow: $assistant 0 0 0 2px inset, #0006 0 4px 16px;}
+      }
+      .label{position: absolute; right: 4px; top: -3px; border-radius: 2px 2px 6px 6px; box-shadow: #0004 0 2px 3px; z-index: 9;}
+      img{ display: block; width: 100%; margin: 0 0 1em; }
+
+      .videoThumb{ width: 100%; height: calc((#{$mmw} - 16px)*.56); background: #000;
+        img{ width: 100%; height: 100%; max-height: none; object-fit: cover;}
+        & ~ p {font-size: 1rem;}
+      }
+      h3{ font-size: 1.3em;
+        display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      p{ margin: .5em 0; font-size: 1.15em; line-height: 1.5;
+        display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+      time{ display: block;}
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    &>ul{ display: flex; flex-flow: row wrap; justify-content: flex-start;
+      &>li{ flex: 0 0 calc(50% - 8px); margin-right: 16px;
+        &:nth-child(2n){ margin-right: 0;}
+        img{height: calc(#{$mmw}/2 - 24px); object-fit: cover;}
+        .videoThumb{ height:calc((#{$mmw}/2 - 24px)*.56);}
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: auto;
+    &>ul{ 
+      &>li{ margin-bottom: 15px;
+        flex-basis: calc(33.33% - 10px);
+        &:nth-child(n){margin-right: 15px;} 
+        &:nth-child(3n){margin-right: 0;}
+
+        &>a:hover{ transform: translateY(-4px);}
+        img{height: calc(33.33vw - 96px); }
+        .videoThumb{ height: calc((33.33vw - 96px)*.56);}
+
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    &>ul{ 
+      &>li{
+        img{height: calc(#{$wwMaximum}/3 - 96px);}
+        .videoThumb{height: calc((#{$wwMaximum}/3 - 96px)*.56);}
+      }
+    }
+  }
+
+}
+
+
+// 一列兩筆
+.thumbnail2{
+  width: $mmw; margin: 2em auto;
+
+  .decoImage{ 
+    img{ display: block; width: 100%;}
+  }
+  ul{list-style: none; margin: 0; padding: 0;}
+  &>ul{ line-height: 1.6;
+    &>li{ margin: 0 0 24px;
+      &>a{ display: block; position: relative;
+        color: $fontColor; padding: 8px 8px 3em; height: 100%;
+        background: #fff; text-decoration: none;
+        @extend %shadow1; transition: .3s;
+        &:hover{@extend %shadow2;}
+        &:focus{box-shadow: $assistant 0 0 0 2px inset;}
+        &:hover, &:focus{
+          h3, p{text-decoration: underline;}
+        }
+
+        img{ display: block; width: 100%; margin: 0 0 1em;
+          max-height: 80vw; object-fit: contain;
+        }
+      }
+
+      .label{position: absolute; right: 4px; top: -3px; border-radius: 2px 2px 6px 6px; box-shadow: #0004 0 2px 3px; z-index: 9;}
+
+      h3{ font-size: 1.3em; margin: .5em 0;
+        display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+      p{ margin: .5em 0 2em;
+        display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+      time{ position: absolute; left: 8px; bottom: 8px; font-size: .95em;
+        &::before{content: attr(title)'：'; color: $fontColorLight;}
+      }
+      .moreFake{position: absolute; right: 8px; bottom: 8px;}
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    &>ul{ display: flex; flex-flow: row wrap; justify-content: space-between;
+      &>li{ flex: 0 0 calc(50% - 12px);
+        &.decoImage{ padding:10px;
+          display: flex; flex-flow: column nowrap; justify-content: center;
+        }
+        &>a{
+          img{max-height: 45vw;}
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: auto;
+    &>ul{
+      &>li{
+        &>a{
+          img{max-height: 480px;}
+        }
+      }
+    }
+  }
+}

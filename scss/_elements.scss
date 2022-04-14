@@ -1,0 +1,422 @@
+a:focus{outline: none;}
+
+// ---------- 快捷鍵
+.accesskey{ display: none; }
+@media screen and (min-width: $wwNormal){
+  .accesskey{ display: block; z-index: 9; 
+    position: absolute; left: 0; top: 0; margin: 2px;
+    text-decoration: none;color: $primaryColor;
+    &:focus{ outline: 2px solid $assistant;}
+  }
+  .main .accesskey{ top: 100px;}
+  .webFooter .accesskey{ top: 4px;color: $fontInvert;}
+}
+
+
+// ---------- 跳至內容區
+.goCenter{ display: none;
+  @media screen and (min-width: $wwNormal){
+    position: absolute; display: block; z-index: 995; overflow: hidden;
+    opacity: 0; top: -2em;
+    font-size: .9rem; border-radius: 0 0 4px 4px;
+    height: 1.6em; line-height: 1.6; padding: 0 .5em; margin-left: 120px;
+    background: $assistant; color: $fontInvert;
+    text-decoration: none; outline: none;  cursor: pointer;
+    transition:.3s; 
+    &:focus{ top: 0; color: $fontInvert;opacity: 1;}
+  }
+  @media screen and (min-width: $wwMaximum){
+    // left: calc(50vw - #{$wwMaximum}/2 + #{$sideStripe});
+  }
+  
+}
+
+// ---------- 主選單、漢堡選單、查詢圖示
+.menuCtrl, .searchCtrl, .sidebarCtrl{
+  width: 56px; height: 56px; z-index: 9;
+  text-indent: -20em; overflow: hidden;
+
+  
+  cursor: pointer; transition:background .2s, box-shadow .3s; 
+  margin: 0; border: none; background: none; border-radius: 0;
+  &:hover, &:focus {
+    border: none; box-shadow: none;
+    background-color: $primaryColor;
+  }
+}
+
+// 主選單、漢堡選單
+.menuCtrl, .sidebarCtrl{
+  &::before, &::after{
+    content: ''; position: absolute; right: 12px;height: 3px;
+    background: $fontColor; border-radius: 1px;
+    transition: .2s;
+  }
+  &::before{
+    top: 16px; width: 32px; box-shadow: $fontColor 0 20px 0;
+  }
+  &::after{
+    top: 26px; width: 24px;
+  }
+
+  &:hover, &:focus{
+    &::before, &::after{background-color: $fontInvert;}
+    &::before{box-shadow: $fontInvert 0 20px 0;}
+  }
+
+  &.closeIt{
+    // background-color: $notice;
+    // &:focus{background-color: $notice; box-shadow: $notice 0 0 0 3px;}
+    &::before, &::after{ width: 28px; right: 13px;}
+    &::before{box-shadow: none;top: 26px; transform: rotate(45deg);}
+    &::after{transform: rotate(-45deg);}
+  }
+}
+
+// 查詢圖示
+.searchCtrl{
+  &::before, &::after{
+    content: ''; position: absolute;
+  }
+  &::before{
+    left: calc(50% - 14px); top: calc(50% - 14px);
+    width: 18px; height: 18px; border: 2px solid $fontColor; border-radius: 50%;
+  }
+  &::after{
+    width: 12px; height: 2px; background-color: $fontColor; border-radius:1px;
+    left: calc(50% + 2px); top: calc(50% + 6px);
+    transform: rotate(45deg);
+  }
+
+  &:hover, &:focus{
+    &::before{ border-color: $fontInvert;}
+    &::after{background-color: $fontInvert;}
+  }
+}
+
+
+
+// X 關閉 button
+.closeThis{
+  position: absolute; right: 0; top: 0;
+  border: none; background: none; margin: 0; overflow: hidden;
+  width: 44px; height: 44px; text-indent: -10em;
+  transition: background-color .2s;
+  &::before, &::after{
+    content: ''; position: absolute; width: 20px; height: 2px; background: #fff;
+    top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &::after{ width: 2px; height: 20px;}
+  &:hover, &:focus{ background-color: $assistant;}
+  &:focus{ box-shadow: $assistant 0 0 0 2px;}
+}
+
+// 燈箱遮罩
+.coverAll{ 
+  display: none ;
+  z-index: 995;
+  background: rgba(0,0,0,.6);position: fixed;left: 0;right: 0;top: 0;bottom: 0;
+}
+
+// slick套件 圖左右滑動箭頭
+.slick-arrow{position: absolute; z-index: 9;
+  top: 50%; transform: translateY(-50%);
+  width: 56px; height: 56px; border-radius: 50%; 
+  text-indent: -20em; overflow: hidden;
+  margin: 0; border: none;
+  &::before{content: ''; position: absolute; width: 20px; height: 20px;
+    left: 50%; top: 50%; margin-top: -12px;
+    border: 4px solid #fff;border-top: none; border-right: none; transform: rotate(45deg);
+  }
+  &.slick-prev{ left: 0; 
+    &::before{ margin-left: -7px; }
+  }
+  &.slick-next{ right: 0;
+      &::before{transform: rotate(225deg); margin-left: -15px;}
+  }
+}
+
+
+
+
+// 回頁面最上方
+.goTop{ position: fixed; bottom: -64px; right: 12px;  z-index: 90; 
+  padding: 0;margin: 0; width: 52px; height: 52px; line-height: 52px;
+  border: none; border-radius: 50%; box-shadow: none;
+  background: transparentize($mainBg, .3); color: $fontColorLight; font-size: 14px; line-height: 66px;
+  box-shadow: #0004 0 0 12px;
+  transition: bottom .5s;
+  &::before{  content: ''; position: absolute;
+    width: 12px; height: 12px; top: 15px; left: 19px;
+    border: 2px solid $fontColor;  border-bottom: none; border-right: none;
+    transform: rotate(45deg) ;
+  }
+  // &::after{ content: 'top'; position: absolute;top: 26px; left: 50%; color: $fontColor;}
+
+  &:hover, &:focus{ background: $fontColor; border: none;
+    &::before{border-color: $fontInvert;}
+  }
+  &:focus{ box-shadow: $fontInvert 0 0 0 2px, #0004 0 0 12px 2px; color: $fontInvert; }
+  &.show{bottom: 24px; }
+
+  @media screen and (min-width: $wwMaximum + 74px){
+    right:  50%; margin-right: -26px - $wwMaximum*.5;
+  }
+
+}
+
+
+// 本頁快速連結點點
+// .mpNav{
+//   display: none;
+//   @media screen and (min-width: $wwNormal){
+//     display: block;
+//     position: fixed; top: 45vh; right: 16px; z-index: 995;
+//     transform: translateY(-55%);
+//     ul{list-style: none; margin: 0; padding: 0;}
+//     li{margin:8px auto; padding: 0;
+//       a{
+//         position: relative;
+//         display: block; width: 20px; height: 20px; 
+//         &::before{
+//           content: ''; position: absolute; left: 4px;top: 4px;
+//           width: 12px; height: 12px; border-radius: 50%; z-index: 9;
+//           background: $primaryColor; box-shadow: $fontInvert 0 0 3px;
+//           background-size: contain;
+//         }
+//         &::after{ content: attr(title);
+//           position: absolute; right: -2px; top: -2px; white-space: nowrap; 
+//           height: 1.5em; line-height: 1.5; border-radius: 1em;
+//           background-color: transparent; color: transparent;
+//           width: 0; padding: 0; overflow: hidden;
+//           transition:background-color .5s, color .5s;
+//         }
+//         &:hover{
+//           &::before{background: $assistant;}
+//           &::after{
+//             background-color: transparentize($fontColor, .4); color: $fontInvert;
+//             width: auto;padding: 0 25px 0 .6em; 
+//           }
+//         }
+//         &:focus{outline: none;}
+//       }
+
+//       &.focused a{
+//         &::before{background: $assistant; box-shadow:  $fontInvert 0 0 0 3px; }
+//         &::after{
+//           background-color: $fontColor; color: $fontInvert;
+//           width: auto;padding: 0 25px 0 .6em;
+//           transition:background-color .5s, color .5s;
+//         }
+//       }
+//     }
+//   }
+
+//   @media screen and (min-width: $wwMaximum + 96px){
+//     right: auto;
+//     left: calc(50% + #{$wwMaximum}/2 + 12px );
+//   }
+
+// }
+
+
+// 「實境展覽」連結圖示
+.vrLink{ display: none;
+  @media screen and (min-width: $wwNormal){
+    display: block;
+    position: fixed; bottom: 110px; right: 6px; z-index: 599;
+  }
+  a{ 
+    display: block; width: 5.6em;
+    padding:2em 1.8em; line-height: 1.5;
+    background: url(../images/polyColor1.svg) 0 center no-repeat;
+    background-size: contain;
+    text-decoration: none; color: $fontInvert;
+  }
+
+  @media screen and (min-width: $wwMaximum ){
+    right: calc( 50vw - #{$wwMaximum}/2 + 6px );
+
+  }
+}
+
+// 左右箭頭 button
+button.diskBtn{
+  position: relative; cursor: pointer; transition: .2s;
+  border: none; width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
+  background: $fontColor; color: $fontInvert; text-indent: -10em;
+
+  &:hover, &:focus{
+    background: $primaryColor; box-shadow: $primaryColor 0 0 0 2px;
+  }
+
+  &.prev, &.next{
+    &::before, &::after{
+      content: ''; position: absolute;
+    }
+    &::before{
+      left: 20px; top: 29px;
+      width: 6px; height: 6px; border: 2px solid $fontInvert; border-top: none; border-right: none;
+      transform: rotate(45deg) translateY(-2px);
+    }
+    &::after{
+      left: 21px; top: 50%;
+      transform: translateY(-1px);
+      width: 24px; height: 1px; background: $fontInvert;
+    }
+  }
+  &.next{
+    &::before{
+      left: auto; right: 20px;
+      border: 2px solid $fontInvert; border-bottom: none; border-left: none;
+    }
+  }
+}
+
+
+.more{ margin: 0 auto; padding: 5px; font-size: 1rem;
+  a{ position: relative; float: right; 
+    height: 2.5em; line-height: 2.5; padding: 0 1.6em;
+    background: $mainBg; color: $primaryColor;
+    text-decoration: none; transition: .2s;
+    box-shadow: #0003 0 0 16px;
+    &:hover, &:focus{ background-color: $primaryColor; color: #fff;}
+    &:focus{ box-shadow: $primaryColor 0 0 0 2px; }
+  }
+  &::after{content: ''; display: block; clear: both;}
+}
+
+// 假的「更多」
+.moreFake{
+  display: inline-block;
+  padding: 0 2em; height: 2.1em; line-height: 2.2;
+  box-shadow: $linkColor 0 0 0 2px inset; color: $linkColor;
+  transition: .2s;
+}
+a:hover .moreFake,
+a:focus .moreFake{ background-color: $linkColor; color: $fontInvert;}
+
+// 類別標籤
+// li .label{ display: inline-block; height: 2.1em; line-height: 2.3em; padding: 0 1em;
+// background-color: $assistant1; color: $fontInvert;}
+
+// 側欄遮罩
+.sidebarMask{ display: none; z-index: 980;
+ position: fixed; left: 0; right: 0; top: 0; bottom: 0;
+ background-color: $transDarken;
+}
+
+// 影片播放符號
+.videoThumb{ position: relative;
+  &::before, &::after{ content: ''; position: absolute; left: 50%; top: 50%; opacity: .7; transition: .2s;}
+  &::before{ width: 44px; height: 44px; border-radius: 50%; 
+    margin: -22px 0 0 -22px; background-color: #0008; box-shadow: #fff 0 0 0 4px; }
+  &::after{ width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #fff;
+    margin: -10px 0 0 -4px;
+  }
+}
+a:hover .videoThumb{
+  &::before, &::after{opacity: 1;}
+  &::before {background-color: #c00c;/* box-shadow: #c00b 0 0 0 4px; */}
+}
+
+// 點選看大圖
+.enlarge{display: inline-block;
+  a{ display: block; transition: .2s;
+    padding: 0 1em 0 42px; height: 3em; line-height: 3em;
+    color: $fontColor; border-radius: 1.5em;text-decoration: none;
+    background:transparent url(../images/icon_enlarge.svg) no-repeat 12px center;
+    background-size: 24px auto;
+    &:hover{box-shadow: $primaryColor 0 0 0 1px; color: $primaryColor;background-color: $mainBg;}
+  }
+
+}
+
+
+// 相簿瀏覽人次 .viewCount
+.viewCount{ display: block; height: 2em; line-height: 2; color: $assistant;
+  &::before{
+    content: attr(title)"："; display: inline; vertical-align: middle;
+    color: $fontColorLight; font-size: .9em;
+  }
+}
+
+// 照片張數 .photoCount
+.photoCount{ line-height: 1.4; height: 1.5em; padding: 0 .5em; border-radius: 1em;
+  span{ display: inline-block; vertical-align: baseline;}
+  .total{ font-size: .95em;
+    &::before{content: '/'; margin-right: 2px;}
+  }
+  .current{ font-size: 1.1em; margin-right: 4px;}
+}
+
+// 瀏覽人次、發布日期、發布單位
+time[attr="title"], .visitCount[attr="title"], .from[attr="title"]{ display: inline-block;margin-top: .6em; font-size: .95em; text-decoration: none;
+  &::before{ content: attr(title)'：'; display: inline-block; color: $fontColorLight;}
+  &+time, &+.visitCount,  &+.from{ margin-left: 1em;}
+}
+// cp 頁的瀏覽人次與發布日期容器
+.pubInfo{
+  width: $mmw;
+  padding: 8px; margin: 1em auto; text-align: right;
+  border-bottom: 3px solid $borderColorDark;
+
+  @media screen and (min-width: $wwNormal){
+    width: auto;
+  }
+}
+
+// 上一則、下一則
+.cpNav{
+  width: $mmw; margin: 1em auto 5em;
+  ul{ list-style: none; margin: 0; padding: 0;
+    display: flex; justify-content: space-between;
+    &>li{margin: 0; padding: 0;
+      a{ display: block; position: relative;
+        background: $mainBg; color: $primaryColor; text-decoration: none;
+        height: 2.8em; line-height: 2.9; padding: 0 1em; border-radius: 2em;
+        box-shadow:$borderColor 0 0 0 1px, #0005 0 1px 3px; transition:.2s ;
+        &::before{
+          content: ''; position: absolute; top: 1em;
+          width: 11px;height: 11px;
+          border: 2px solid $primaryColor;border-bottom: none;border-left: none;
+          transform: rotate(45deg); transition: .2s;
+        }
+
+        &:hover{box-shadow:$borderColor 0 0 0 2px, #0007 0 6px 18px -4px;
+          color: $assistant;
+          &::before{ border-color: $assistant;}
+        }
+      }
+
+      &.prev{
+        a{ padding-left: 40px; 
+          &::before{ left: 20px; transform: rotate(225deg);}
+        }
+      }
+      &.next{
+        a{ padding-right: 40px;
+          &::before{ left: auto; right: 20px;}
+        }
+      }
+
+
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: auto;
+  }
+
+}
+
+
+// 鍵盤樣式
+kbd {
+  display: inline-block; vertical-align: middle; 
+  margin: 0 .1em; padding: 0 .4em; height: 1.7em; line-height: 1.6;
+  font-size: .938em; font-family: sans-serif; font-weight: bold; 
+  border: 1px solid $borderColor; border-radius: 0.2em; 
+  color: $fontColor; background: $fontInvert; 
+}

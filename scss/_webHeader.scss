@@ -1,0 +1,163 @@
+// 放 版頭（.webHeader）和 大圖輪播（.bigBanner）-------------------------------------------- //
+.topRow{
+  position: relative; padding-top: 72px;
+  width: 100vw; margin: 0 auto; 
+  @media screen and (min-width: $wwNormal){
+    padding-top: 0;
+  }
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum; 
+  }
+}
+
+
+// ---------- webHeader
+.webHeader{
+  position: fixed; top: 0; z-index: 991; 
+  width: 100vw; margin: 0 ; height: 72px;
+  background-color: #fffe;
+  box-shadow: #0003 0 2px 12px -3px;
+
+
+  h1{margin: 0 ; padding:10px 0 8px 10px; overflow: hidden;
+    width: calc( 100vw - 150px); 
+    &>a{ display: block;}
+    img{
+      &.normal { display: none;}
+      &.mobile { display: block; margin: 0 5px;
+        height: 54px; max-width: 100%; object-fit: contain;}
+    }
+  }
+
+  .searchCtrl{position: absolute; top: 5px; right: 10px; margin: 0; border-radius: 0;  }
+  // .menuCtrl{ display: none;}
+  .sidebarCtrl{ display: block;position: absolute; top: 5px; right: 70px;}
+
+  @media screen and (min-width: $wwNormal) {
+    position: relative; height: auto; padding:16px 0 0;
+    box-shadow: #0003 0 3px 15px -3px;
+
+    // transition:transform 1s linear;
+
+
+    .sidebarCtrl {display: none;}
+    .searchCtrl{display: block; position: absolute; left: auto; top: auto; right: 5vw; z-index: 99; }
+    .searchCtrl{ top: 15px;}
+  
+    h1{ position: static; margin: 0 0 6px 5vw; padding: 0; height: 52px; max-width: 500px;
+      width: calc(100% - 5vw - 18em);
+      text-indent: -20em; overflow: hidden;
+      img{
+        &.mobile{ display: none;}
+        &.normal{ display: block; height: 100%; width: 100%; object-fit: contain; margin: 0;}}
+    }
+
+    h1, .searchCtrl{ z-index: 9;}
+
+    &.fixed{
+      position: fixed; left: 0; width: 100vw;
+      transform: translateY(100%);
+      transition:transform .8s ease-out;
+    }
+  }
+
+
+  @media screen and (min-width: $wwMaximum) {
+    width:$wwMaximum;
+    .searchCtrl{ right: 60px; }
+    h1{margin-left: 60px; }
+
+
+    &.fixed{ width: $wwMaximum; left: calc(50vw - #{$wwMaximum}*.5);}
+  }
+
+}
+
+// ---------- 右上導覽列 topNav
+.topRow .topNav{display: none;
+  @media screen and (min-width: $wwNormal){
+    display: block; overflow: hidden;
+    position: absolute; right:0; top: 20px; 
+    // float: right; margin: 10px calc(5vw + 72px) 0 0;
+    font-size: 1em; margin: 0; padding:8px calc(5vw + 72px) 14px 80px;
+    // outline: 1px dashed red;
+    ul{list-style: none; margin:0; padding: 0;}
+    &>ul{ overflow: hidden; line-height: 1;
+      &>li{ float: left; position: relative; margin: 0; padding: 0 .85em 0 .8em;
+        &::before{ content: ''; 
+          position: absolute; right: 0; top: .5em;
+          width: 1px; height: .85em; background: $fontColor;
+        }
+        &:last-child::before{display: none;}
+        a{ display: block; position: relative;
+          padding: 0; text-decoration: none; color: $fontColor;
+          height: 2em; line-height: 2;
+          &::after{content: ''; 
+            position: absolute; left: 50%; bottom: .2em; height: 3px; width: 0;
+            background-color: $primaryColor; transition: .2s;
+          }
+          &:hover::after, &:focus::after{ width: 100%; left: 0; }
+        }
+      }
+    }
+
+    &::after{ content: ''; position: absolute; left: 0; width: 150%; height: 15px; background: #1234; border-radius: 50%; bottom: -15px;
+      filter: blur(14px);
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    padding-right:132px;
+  }
+}
+
+
+// ---------- 快速查詢區
+.search { display: none;
+  position: absolute; left: auto; top: 0; right: 0; z-index: 19;
+  width: 100vw; padding: 20px 5vw 10px; 
+  background: $primaryColor; box-shadow: #0005 0 3px 8px;
+  transform: translateY(-110%);
+  transition: .6s;
+
+  a{ color: $fontInvert;}
+  form{margin: 0;padding: 0;}
+  input[type="text"], input[type="button"]{ font-size: inherit; height: 2.8em; border-radius: 4px;border: none;padding: 0 .5em; margin: 0; vertical-align: top; display: inline;}
+  input[type="text"]{ width: calc(90vw - 6em); max-width: 24em; margin-right: 3px;
+    background-color: #fff;
+    &:focus{box-shadow: $primaryColor 0 0 0 1px, #fffc 0 0 0 3px;}
+  }
+  input[type="button"]{  background-color: darken($primaryColor, 10%); box-shadow: #fff5 0 0 0 2px;
+    &:hover{box-shadow: #fffb 0 0 0 2px; background-color: darken($primaryColor, 10%);}
+    &:focus{ background-color: $assistant; box-shadow: #fff 0 0 0 2px;}
+
+  }
+
+  // 熱門關鍵字
+  .hotKeywords{ margin-top: 1.2em; color: $fontInvert;
+    .label{ display: inline-block; margin-bottom: .4em;line-height: 1.1; vertical-align: top;}
+    ul{ list-style: none; margin: 0; padding: 0; display: inline-block; line-height: 1.1;
+      vertical-align: top;
+    }
+    li{ margin:0 1em .4em 0;  float: left;
+      a{ display: block; text-decoration: none; cursor: pointer;
+        &:hover, &:focus{ text-decoration: underline;}
+      }
+    }
+  }
+
+  &.reveal{ display: block; transform: translateY(0);}
+  .closeThis{ right: 2px; top: 2px; }
+
+  // 隱藏元件，focus 時，轉跳到 .closeThis
+  .skip{ position: absolute; right: 0; bottom: 0; width: 0; height: 0;
+    text-indent: -10em; overflow: hidden; box-shadow: none; border: none;
+    background-color: transparent;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: 27em; padding: 30px 20px 12px;
+    input[type="text"]{ width: 19em; }
+  }
+
+}

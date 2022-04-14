@@ -1,0 +1,289 @@
+.list{ 
+  width: $mmw; margin: 2em auto;
+  time{ font-size: 1rem; color: $fontColorLight; display: inline-block; white-space: nowrap; }
+  a{display: block; text-decoration: none; color: $fontColor; }
+  &>ul{ list-style: none; margin: 0;padding: 0 5px;
+    line-height: 1.6; font-size: 1.2em;
+    border-top: 2px solid $borderColor;border-bottom: 2px solid $borderColor;
+    &>li{ margin: 5px 0 0; border-bottom: 1px solid $borderColor;
+      &:last-child{border-bottom: none;}
+      &>a{ 
+        padding: .9em 8px .9em 3.5rem; margin: 0 0 5px; transition: .3s;
+        &:hover, &:focus{background: $hilight2; text-decoration: underline;
+          // time{text-decoration: none;}
+        }
+      }
+      .numb{ display: inline-block; font-size: 1rem; 
+        width: 2.5em; text-align: right; margin:0 .8rem 0 -3.3rem;
+        &::after{content: '.';}
+      }
+      .from{ display: inline-block; font-size: 1rem; color: $primaryColor;
+        &::before{content: '（';}
+        &::after{content: '）';}
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: auto; background-color: transparentize($fontInvert, .6);
+    &>ul>li{
+      time{ display: block; margin-top: .5em;}
+    }
+  }
+}
+
+.list{ background: #fff;
+  &>table{ border-collapse: collapse; line-height: 1.5; width: calc(100% - 16px); margin:0 8px;
+    border-top: 2px solid $borderColor;border-bottom: 2px solid $borderColor;
+    tr{ border-bottom: 1px solid $borderColor;}
+    th, td{ padding: 14px 16px 12px; position: relative;
+      &::before{content: ''; position: absolute;
+         width: 1px; background: $borderColor; top: 4px; bottom: 4px; left: 0;
+      }
+      &:first-child{
+        &::before{display: none;}
+      }
+    }
+    th{ white-space: nowrap;}
+
+    td{ text-align: center;
+      &.numb{text-align: right;
+        &::after{content: '.';}
+      }
+      &>a{font-size: 1.2em; text-align: left; transition: .3s;
+        padding: 12px 15px 9px; margin: -10px -12px -8px -11px;
+        &:hover, &:focus{background: $hilight2;text-decoration: underline;}
+      }
+    }
+  }
+
+  @media screen and (max-width: $wwNormal - 1){
+    &>table{ margin: 0; width: 100%;}
+  }
+
+  @media screen and (max-width: $wwMedium - 1px){
+    &>table{
+      tr:first-child{display: none;}
+      tr, th, td{ display: block;}
+      tr{
+        position: relative; overflow: hidden; padding: .8em 0 .7em 3.2em;
+        // outline: 1px solid red;
+      }
+      th, td{position: static; padding: 0;margin: 0; text-align: left;
+        &::before{display: none;}
+      }
+      td{ display: inline-block;  vertical-align: top;
+        &.numb{ position: absolute;top: .2em; left: 0; top: .9em;width: 2.7em; }
+        &>a{display: block; margin:-.5rem 0 0 -.5rem; padding:.5rem 0 .5rem .5rem; 
+          width:calc(#{$mmw} - 3rem);
+        }
+        time{margin-left: .8em;}
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+// 
+.bannerList{
+  width: $mmw; margin: 2em auto;
+  ul{ list-style: none; margin: 0; padding: 0; line-height: 1.6; text-align: center;}
+  li{ margin: 5px 0; padding: 20px 0; border-bottom: 1px solid $borderColor;
+    a{display: block; text-decoration: none; color: $fontColor;
+      &:hover{
+        img{ @extend %shadow2;}
+        .name{ color: $assistant;}
+      }
+      &:focus{
+        img{ box-shadow: $assistant 0 0 0 2px;}
+        .name{ text-decoration: underline; color: $assistant;}
+      }
+    }
+    .name{display: block; margin: 0 auto 5px; 
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    img{ display: block; margin: 0 auto; transition: .2s;
+     width: 100%; height: $mmw/3; object-fit: cover;
+     max-width: 349px; max-height: 117px;
+     @extend %shadow1;
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    ul{ display: flex; flex-flow: row wrap; margin-left: -10px; margin-right: -10px;}
+    li{ margin:5px 10px 30px; padding: 0; border-bottom:none;
+      flex: 0 0 calc(50% - 20px);
+      img{height: calc((#{$mmw}*.5 - 20px)/3)}
+      .name{ width: calc(#{$mmw}*.5 - 20px);}
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: auto; 
+    li{ margin:5px 7px 30px; flex-basis: calc(25vw - 66px);
+      img{ width: 100%; height:calc(8.3333vw - 22px);}
+      .name{ width: calc(25vw - 66px);}
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    li{ flex-basis: calc( #{$wwMaximum}/4 - 66px);
+      img{ height: calc( #{$wwMaximum}/12 - 22px );}
+      .name{ width: calc( #{$wwMaximum}/4 - 66px);}
+    }
+  }
+
+}
+
+
+
+// 左邊可能有圖的條列，影片、照片
+.listRow{ width: $mmw; margin: 1em auto;
+  ul{list-style: none; padding: 0; margin: 0;}
+  &>ul{ line-height: 1.9;
+    &>li{ position: relative;margin: 15px 0; padding:1.5em 1em;
+       background: $fontInvert;@extend %shadow1;
+       &::after{content: ''; display: block; clear: both;}
+
+        &>a{position: relative; display: block; 
+          padding:1.5em 1em; margin: -1.5em -1em;
+          color: $fontColor; text-decoration: none; overflow: hidden;
+          transition: .2s;
+          &:hover{ @extend %shadow2; }
+          &:focus{ box-shadow: $assistant 0 0 0 2px inset;}
+          &:hover, &:focus{
+            article, h3 {text-decoration: underline;}
+          }
+        }
+
+      article{ display: block; margin: 0 auto 1em;}
+      img{ float: left;
+        width: 45vw; max-height: 45vw; object-fit: contain; 
+        margin: .2em 1em .5em 0; border: 1px solid $borderColorLight;
+      }
+      .videoThumb{ float: left; 
+        width: 45vw; height: 25.25vw; margin: .2em 1em .5em 0;
+        max-width: 360px; max-height: 202px;
+        background: #000;
+        img{ display: block; font: none; width: 100%; height: 100%; object-fit: cover; border: none; max-height: none; margin: 0;}
+      }
+      h3{margin: 0 0 .6em; font-size: 1.3em; line-height: 1.6;
+        a{color: $fontColor;
+          &:hover, &:focus{ text-decoration: none; color: $assistant;}
+        }
+      }
+      p{ margin: 0 0 1em;}
+      // time, .visitCount, .from{ display: inline-block;margin-top: .6em; font-size: .95em; text-decoration: none;
+      //   &::before{ content: attr(title)'：'; display: inline-block; color: $fontColorLight;}
+      //   &+time, &+.visitCount,  &+.from{ margin-left: 1em;}
+      // }
+      .label{ position: absolute; right: 1em; top: 0;
+        border-radius: 0 0 5px 5px; box-shadow: #0004 0 2px 3px;
+        &+h3{ margin-top: .5em;}
+      }
+      .moreFake{float: right; margin-top: .5em;}
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    &>ul>li{
+      img{ width: 225px; max-height: 300px;}
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: auto;
+    &>ul>li{
+      &>a{padding:2em 1.5em;}
+    }
+  }
+}
+
+// 大事記要
+.events{ width: $mmw; margin: 0 auto 2em;
+  &>ul{ list-style: none; margin: 0; padding: 0; line-height: 1;
+    position: relative;
+    &::before{ content: ''; position: absolute; left: 2.45em; top: 0; bottom: 0;
+      width: 2px; background-color: $primaryColor;
+    }
+    &>li{ position: relative; padding: 1.2em 0 1.5em 7.5em;
+      &.monthBegin{
+        &::before{content: ''; position: absolute; left: 0; top: 0;
+          width: 5em; height: 5em; border-radius: 50%;
+          background-color: $primaryColor;
+        }
+        &::after{ content:attr(data-yearMonth); 
+          position: absolute; left: 0; top: 0; text-align: center;
+          font-family: 'Courier New', Courier, monospace; font-weight: bold;
+          z-index: 2;width: 5em; height: 5em; line-height: 5.2em;color: $fontInvert;
+        }
+      }
+
+      time{ display: block; line-height: 1; margin: 0 0 0 calc(-8px - .4em) ;
+        font-family: 'Courier New', Courier, monospace; font-weight: bold;
+        &::before{content: ''; display: inline-block; vertical-align: top;
+          width: 8px; height: 8px; border-radius: 50%;
+          margin: .2em .4em 0 0;
+          background-color: $primaryColor;
+        }
+      }
+      img{ display: block; margin: .5em 0; width: 100%;}
+      h3{line-height: 1.6; font-size: 1.15em; margin: .6em 0 .8em;}
+      p{line-height: 1.9;}
+
+      ul, ol{ line-height: 1.6; margin: 1em 0 1em 0; padding-left: 2em;
+        li + li{ margin-top: .4em; }
+      }
+
+      .more{ 
+        a{ background: none; color: $primaryColor; font-weight: bold;
+          padding: 0 0 3px 0; line-height: 1.3; height: auto;
+          &::before{display: none;}
+          &::after{ content: ''; position: absolute; left: 0; bottom: 0; right: 0;
+            background-color: $primaryColor; height: 1px;
+          }
+          &:hover{ color:$assistant;
+            &::after{ height: 2px; background-color: $assistant;}
+          }
+        }
+      }
+
+
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    &>ul{
+      &>li{ overflow: hidden;
+        img{ width: 85%; margin: .4em 15px .5em 0;
+          &.float{ float: left; width: 50%;
+            & ~ ol, & ~ ul{ margin-left: calc(50% + 15px);}
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    width: auto;
+    &>ul{
+      &>li{
+        img{ 
+          &.float{ width: 280px;
+            & ~ ol, & ~ ul{ margin-left: 295px;}
+          }
+        }
+      }
+    }
+  }
+}
