@@ -7,7 +7,8 @@ $assistant1: $primaryColor;
 $assistant2: #209680;
 $assistant3: #207297;
 $notice: $assistant;
-$hilight: #f5ab0c;
+$hilight: $assistant;
+$hilight2: #f5ab0c;
 
 $sidebarBg : $primaryColor;
 $bodyBg: #dedede;
@@ -21,9 +22,9 @@ $fontColorLight: #67625c;
 $linkColor: #035a6a;
 
 
-$borderColor: #a29984;
-$borderColorLight: #d0c8af;
-$borderColorDark:#777164;
+$borderColor: #acb29d;
+$borderColorLight: #d5d7cb;
+$borderColorDark:#737764;
 $shadow:#50504c33;
 $shadow2:#35343066;
 

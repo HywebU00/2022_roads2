@@ -1,7 +1,6 @@
 // 放 版頭（.webHeader）和 大圖輪播（.bigBanner）-------------------------------------------- //
 .topRow{
-  position: relative; padding-top: 72px;
-  width: 100vw; margin: 0 auto; 
+  position: relative;margin: 0 auto;  padding-top: 72px; width: 100vw; 
   @media screen and (min-width: $wwNormal){
     padding-top: 0;
   }

@@ -21,31 +21,31 @@ $(function(){
   _html.removeClass('no-js');
 
   // --------------------- 外掛套件 slick 參數設定
-  // $('.slider-for').slick({
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   arrows: true,
-  //   fade: true,
-  //   asNavFor: '.slider-nav'
-  // });
-  // $('.slider-nav').slick({
-  //   variableWidth: true,
-  //   slidesToShow: 3,  
-  //   slidesToScroll: 1,
-  //   asNavFor: '.slider-for',
-  //   centerPadding: 0,
-  //   dots: false,
-  //   centerMode: true,
-  //   focusOnSelect: false
-  // });
+  $('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    asNavFor: '.slider-nav'
+  });
+  $('.slider-nav').slick({
+    variableWidth: true,
+    slidesToShow: 3,  
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    centerPadding: 0,
+    dots: false,
+    centerMode: true,
+    focusOnSelect: false
+  });
 
-  // $('.bigImgShow').slick({
-  //   dots: false,
-  //   infinite: true,
-  //   speed: 500,
-  //   fade: true,
-  //   cssEase: 'linear'
-  // });
+  $('.bigImgShow').slick({
+    dots: false,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+  });
   // --------------------- slick 參數設定：結束
 
 
@@ -58,7 +58,6 @@ $(function(){
     let _current = _photoCount.find('.current');
     let _total = _photoCount.find('.total');
     let _countThis = _this.find('.slider-for');
-    // console.log(_current, _total);
 
     _total.text(_countThis.find('.slick-slide').length);
     _current.text( _countThis.find('.slick-current').index()+1);
@@ -236,6 +235,24 @@ $(function(){
     _closeSearch.focus();
   })
  
+
+
+  // --------------------- 外掛套件 slick 參數設定
+  // 首頁大圖輪播
+  $('.bigBanner').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplaySpeed: 5000,
+    speed: 800,
+    autoplay: true,
+    arrows: true,
+    fade: false,
+    infinite: true,
+  });
+
+  // --------------------- slick 參數設定：結束
+
+
 
 
   // fatfooter 開合 -----------------------------------------------------

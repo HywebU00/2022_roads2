@@ -1,30 +1,27 @@
-.bigBanner{ margin: 0 auto;   
-  ul, li{list-style: none; margin: 0; padding: 0;}
-  .flowBox{ position: relative; width: 100vw; height: 50vw; overflow: hidden; }
-  .flowList{
-    &>li{ position: absolute; left: 100%; top: 0;
-      &:first-child{ left: 0;}
-      &>a{ display: block;
-        &::before{ content: ''; opacity: 0;
-          position: absolute; left: 0; right: 0; top: 0; bottom: 0;
-          box-shadow: $assistant 0 0 0 3px inset; z-index: 2;
-          transition: opacity .2s;
-        }
-        &:focus{
-          &::before{opacity: 1;}
-        }
-        &:hover{
-          img{ transform: scale(1.05);}
-        }
+.bigBanner{ margin: 0 auto; position: relative;
+  .slick-slide { margin: 0; width: 100vw; height: 100vw;
+   
+    &>a{ display: block; position: relative;
+      &::before{ content: ''; opacity: 0;
+        position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+        box-shadow: $hilight 0 0 0 3px inset; z-index: 2;
+        transition: opacity .2s;
       }
-      img{ display: block; width: 100vw; height: 58vw; object-fit: cover;
-        transition:transform .4s;
+      &:focus{
+        &::before{opacity: 1;}
       }
+      &:hover{
+        img{ transform: scale(1.05);}
+      }
+    }
+    img{ display: block; width: 100%; height: 100vw; object-fit: cover;
+      transition:transform .4s;
     }
   }
 
-  .diskBtn{position: absolute; bottom: 6px; right: 30px; z-index: 99;
-    &.prev{ margin-right: 80px;}
+  .slick-arrow{position: absolute; z-index: 99;
+    &.slick-prev{ left: 10px;}
+    &.slick-next{right: 10px; }
   }
 
   .flowNav{ position: absolute; bottom: 24px; z-index: 9;
@@ -42,20 +39,16 @@
       }
     }
   }
-  
-  @media screen and (min-width: $wwNormal){
-    // position: absolute; top: 0; left: 0;
-    height: 50vw;
-    .flowBox{ height: 50vw; }
+ 
+  @media screen and (min-width: $wwSlim){
+    .slick-slide{ height: 50vw; 
+      img{ height: 50vw;}
+    }
   }
 
   @media screen and (min-width: $wwMaximum){
-    height: $wwMaximum*.5;
-    .flowBox{ width: $wwMaximum; height: $wwMaximum*.5;}
-    .flowList{
-      &>li{
-        img{width: $wwMaximum; height: $wwMaximum*.5;}
-      }
+    .slick-slide{ width: $wwMaximum; height: $wwMaximum*.5;
+      img{height: $wwMaximum*.5;}
     }
   }
 }
