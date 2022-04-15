@@ -59,8 +59,8 @@
       font-size: 1em;margin: 0; padding:.2em 0 .2em 2em; line-height: 1.4; height: auto;
       color: $fontColorLight; text-align: center;
       &::after{content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background-color: $fontColorLight;}
-      &::before{content: ''; position: absolute; left: 1.6em; top: 0; bottom: 0; width: 2px; 
-         transform: translateY(100%); transition: .2s; }
+      // &::before{content: ''; position: absolute; left: 1.6em; top: 0; bottom: 0; width: 2px; 
+        //  transform: translateY(100%); transition: .2s; }
 
 
       .index{ display: inline-block; font-size: 1.3em; min-width: 1.5em; margin-left: -1.5em;
@@ -68,7 +68,7 @@
       }
       .text{ display: none;}
       &:focus{
-        &::before{ transform: translateY(0);background-color: $primaryColor; }
+        // &::before{ transform: translateY(0);background-color: $primaryColor; }
         .index{ transform: scale(1.5);}
       }
       &.active{ flex-basis: 42%; color: $primaryColor; text-align: left;

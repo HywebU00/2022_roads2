@@ -5,7 +5,7 @@
  
   a{text-decoration: none; color: $fontInvert;}
 
-  .base{ position: relative; padding:30px 5vw;
+  .base{ position: relative; padding:30px 4vw;
     font-size: .9em; line-height: 1.5; z-index: 3;
     background-color: $footerBg2; color: $fontColor;
     a{ color: $linkColor;}
@@ -14,54 +14,61 @@
   }
 
   .logo{ 
-    img{ display:block;height: 45px; width: auto; margin: 0 auto;}
+    img{ display:block;height: 45px; width: auto; margin: 0 auto 30px;}
   }
 
-  .contact{line-height: 1.3;  text-align: center;
+  .contact{line-height: 1.3;  text-align: center; margin: 0 0 30px;
     p{ margin: 0;
       &:first-child{font-size: 1.15em;}
-      &+p{ margin-top: .6em;}
+      &+p{ margin-top: .5em;}
     }
     em{ font-style: normal; display: inline-block;}
   }
-  
 
-  .aaAndOthers{ text-align: right;
-    padding: 4px; margin: 2em 0 0; overflow: hidden;
-    .aMark{ float: left; margin-right:16px;
+  .aaAndOthers{ text-align: right; border-top: 1px solid $borderColor;
+    padding:20px 0 10px; overflow: hidden;
+    .aMark{ float: left; margin: 4px;
       a{ display: block; border-radius: 5px;
-        img{display: block; width: 150px; border-radius: 5px;}
+        img { display: block; width: 150px; border-radius: 5px;}
         &:hover img, &:focus img{ box-shadow:$footerBg2 0 0 0 1px, $linkColor 0 0 0 3px;}
       }
     }
-    p{margin:3px 0 0;}
+    p{margin:3px 0 0; white-space: nowrap;}
     p+p{margin-top: .4em;}
   }
 
+  @media screen and (min-width: $wwSlim){
+    .logo{ float: left;margin: -6px 0 0 -10px;
+      img{ width: 123px;}
+    }
+    .contact{ text-align: left; margin-left: 125px; padding-left: 8px; border-left: 3px solid $borderColorLight;}
+  }
+
   @media screen and (min-width: $wwMedium){
-    .base{display: flex; flex-flow: row nowrap; justify-content: space-between;}
-    .logo{ position: absolute; left: 5vw; top: 30px; }
-    .contact{ text-align: left; margin: 0 0 0 140px;}
-    .aaAndOthers{flex: 0 0 150px; overflow: visible; padding: 0; text-align: left; margin: 0 0 0 40px;
-      .aMark{float: none;display: block; margin:0 0 10px; width: 150px;}
+    .base{display: flex; flex-flow: row wrap; justify-content: space-between; padding-left: calc(115px + 4vw);}
+    .logo{ position: absolute; left: 4vw;}
+    .contact {flex: 0 0 calc( 50% - 20px );margin: 0 10px 40px;}
+    .aaAndOthers{flex: 0 0 calc( 50% - 10px ); text-align: left; padding: 12px 0 0 0; margin: 0;
+      .aMark{float: none;display:inline-block; }
+      p{margin-left: 5px;}
     }
   }
 
   @media screen and (min-width: $wwNormal){
-    .logo{position: static; flex: 0 0 140px; width: auto;
+    .base{padding-left: 4vw;}
+    .logo{position: static; left: 0;
+      flex: 0 0 100%; width: auto; margin: 0 0 20px;
       img{margin: 0;}
     }
-    .contact{ flex: 1 1 50%; margin: 0 2% 0 0;}
-    .aaAndOthers{ flex:1 1 20%; min-width: calc(172px + 9.5em);margin-left: 25px;
-      .aMark{float: left; margin-right: 12px;}
-      .count, .date{white-space: nowrap;text-align: left;}
+    .contact{ flex: 1 1 calc(33% - 20px); }
+    .aaAndOthers{ flex:0 0 100%; margin-left: 0; padding-top: 20px;  border-top: 1px solid $borderColor;
+      .aMark{ float: left; }
+      .count, .date{white-space: nowrap;text-align: right;}
     }
   }
 
   @media screen and (min-width: $wwMaximum){
-    .base{
-      padding-left: $wwMaximum*.05; padding-right: $wwMaximum*.08;
-    }
+    .base{padding-left: $wwMaximum*.04; padding-right: $wwMaximum*.04;}
   }
 }
 
@@ -102,7 +109,6 @@
     &>ul{
       &>li{flex:0 1 auto; margin-left: 25px; margin-right: 25px;}
     }
-
     &.short{ padding-top: 0;}
   }
 
