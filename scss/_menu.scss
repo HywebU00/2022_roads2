@@ -46,9 +46,9 @@
           border: 1px solid #fff3; margin: 0 8px 8px 1.2em;
         }
       }
-      &>li{
-        img.deco{display: none;}
-      }
+      // &>li{
+      //   img.deco{display: none;}
+      // }
     }
   }
 
@@ -88,14 +88,19 @@
         &>a{padding:20px .5em 18px; color: $fontColor; white-space: nowrap; 
           &:focus { background: $primaryColor; color: $fontInvert;}
         }
+        &.here>a{background: $primaryColor; color: $fontInvert;}
 
-        &>ul{ top: auto; left: 0; }
+        &>ul{ top: auto; left: 0;} // 第二層選單
 
-        // 第二層選單
-        ul{ display: none; position: absolute; min-width: 180px;font-size: 1rem;
+        
+        ul{ display: none; position: absolute; min-width: 180px; font-size: 1rem;
           text-align: left; width: auto;
           background-color: $secondaryColor; color: $fontInvert;
           box-shadow: #0006 0 5px 20px;
+
+          // transform: translateY(-200px);
+
+          
           a{ position: relative;color: $fontInvert; padding: .9em 1em .8em; 
             border-bottom:1px solid rgba(255,255,255,.3);transition: .15s; white-space: nowrap;
             &::after{content: ''; position: absolute; left: 0;top: 0; bottom: 0;width: 4px;  background-color: lighten($primaryColor, 8%);}
@@ -113,9 +118,17 @@
                 border-left: none; border-bottom: none;
               }
             }
-            ul{ top: 0; left: 180px;}
+
+            // 第三層及其之後
+            ul{ top: 0; }
           }
         }
+
+        // &:last-child{
+        //   ul {
+        //     ul {left: -180px;}
+        //   }
+        // }
 
       }
     }

@@ -4,10 +4,6 @@ $(function(){
   var _body = $('body');
   var _window = $(window);
 
-  var ww = _window.width();
-  var wh = _window.height();
-  var wwNew = ww;
-
   const wwSlim = 480;
   const wwMedium = 700; //此值以下是手機
   const wwNormal = 960;  //此值以上是電腦
@@ -17,6 +13,10 @@ $(function(){
   var _menu = _webHeader.find('.menu');
   var _sidebar = $('.sidebar');
 
+  var ww = _window.width();
+  var wwNew = ww;
+  var wh = _window.innerHeight();
+  var hh = _webHeader.innerHeight();
 
   _html.removeClass('no-js');
 
@@ -75,8 +75,6 @@ $(function(){
   // 找出_menu中有次選單的li
   _menu.find('li').has('ul').addClass('hasChild');
 
-
-
   // 行動版＊側欄選單
   //複製「主選單」到側欄給行動版用
   _menu.clone().prependTo(_sidebar);
@@ -109,47 +107,101 @@ $(function(){
   _menu.each( function(){
     let _this = $(this);
     let _hasChild = _this.find('.hasChild');
+    let _hasChildTop = _this.children('ul').children('.hasChild');
+    let subMenuH;
     let _hasChildA = _hasChild.children('a');
-    // let _subMenuA = _this.children('ul').find('ul').find('a');
-
     let liA = _this.find('li>a');
+
+    // let _subMenuA = _this.children('ul').find('ul').find('a');
+    
     _hasChild.hover(
       function(){
-        $(this).children('ul').stop(true, false).slideDown(300);
+        wh = _window.height();
+        hh = _webHeader.innerHeight();
+
+        // $(this).children('ul').stop(true, false).slideDown(300);
+        $(this).children('ul').show(0, function(){
+
+          // console.log(!$(this).parent().is(_hasChildTop));
+          if ( !$(this).parent().is(_hasChildTop) ) {
+            $(this).css('left', $(this).prev().innerWidth());
+            // $(this).parent('li').parent('ul').removeAttr('style').show();
+          }
+
+          subMenuH = $(this).innerHeight();
+          if ( subMenuH > wh - hh) {
+            console.log(subMenuH);
+            // console.log( $(this).mousemove(function(e){ e.pageX, e.pageY} ))
+          }
+            // $(this).css( {
+            //   'height': wh - hh - 20 ,
+            //   'overflow-y' : 'scroll',
+            // });
+
+        });
       },
       function(){
-        $(this).children('ul').stop(true, false).slideUp(200);
+        // $(this).children('ul').stop(true, false).slideUp(200);
+        $(this).children('ul').hide().removeAttr('style');
       }
     );
     
     _hasChildA.focus(function(){
       $(this).next('ul').show();
+      $(this).parent('li').addClass('here').siblings().removeClass('here');
     })
+
+
     liA.focus(function(){
-      $(this).parent('li').siblings().children('ul').hide();
+      $(this).parent('li').siblings().find('ul').hide();
     })
+
+    // let mt = 0;
+    // liA.mouseenter(
+    //   function(e){
+    //     // console.log( e.pageY, e.clientY )
+    //     let moveUp = $(this).innerHeight();
+    //     if ( e.clientY > wh - moveUp*1.5) {
+    //       console.log('yes');
+    //       $(this).parent('li').parent('ul').animate({
+    //         'margin-top' : mt - moveUp
+    //       }, 600, function(){
+    //         mt = mt - moveUp;
+    //       });
+    //     } else {
+    //       console.log('no');
+    //       $(this).parent('li').parent('ul').css({
+    //         'margin-top' : 0
+    //       });
+    //     }
+    //   }
+    // )
+
+    // blur 隱藏所有次選單
     // _subMenuA.blur(function(){
     //   if ( $(this).parent('li').next().length == 0 && !($(this).parent('li').hasClass('hasChild'))) {
     //     $(this).parent('li').parent().hide();
     //   }
     // })
+
   })
 
 
   // 固定版頭 -----------------------------------------------------
   function fixHeader(){
-    let hh = _webHeader.innerHeight();
+    hh = _webHeader.innerHeight();
     if (_window.scrollTop() > hh ) {
       _webHeader.addClass('fixed').css('top', -1*hh);
       _body.offset( {top : hh})
-    } else if(_window.scrollTop() == 0 ) {
+    } 
+    if(_window.scrollTop() == 0 ) {
       _webHeader.removeClass('fixed').css('top', 0);
       _body.offset( {top : 0})
     }
   }
 
   // 清除固定版頭時產生的 style 屬性
-  function fxH_clearStyle(){
+  function fxH_clearStyle() {
     _webHeader.removeAttr('style').removeClass('fixed');
     _body.removeAttr('style');
   }
