@@ -1,4 +1,5 @@
-.category{ width: $mmw; margin: 0 auto;
+.category{ 
+  @extend %blockWidth; 
   ul{ list-style: none; margin: 0; padding: 0; line-height: 1.1;
     &::after{ content: ''; display: block; clear: both;}
   }
@@ -18,9 +19,4 @@
       }
     }
   }
-
-  @media screen and (min-width: $wwNormal){
-    width: auto;
-  }
-  
 }

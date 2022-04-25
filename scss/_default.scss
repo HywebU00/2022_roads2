@@ -19,19 +19,13 @@ a{ color: $linkColor; text-decoration: underline;
 
 // main：版頭和頁腳之間，主要內容區 -------------------------------------------- //
 .main{
-  position: relative; padding:0;
-  //  background-color: $mainBg;
+  position: relative; padding: 0;
+
+  &.inner{padding:0 0 60px;}
+
   @media screen and (min-width: $wwNormal){
-    // background-position: center 0;
-    // background-repeat: no-repeat;
-    // background-size: 100% auto;
+    &.inner{padding-bottom:100px;}
 
-    // &.inner{margin-top: -33vw; padding: 3em 70px 120px 140px;}
-  }
-
-
-  @media screen and (min-width: $wwMaximum){
-    // &.inner{margin-top: -1*$wwMaximum*.33;}
   }
 }
 

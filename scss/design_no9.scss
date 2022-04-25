@@ -9,13 +9,22 @@ $sideBarWidth: 280px;  // 行動版側欄選單
 $wwSlim: 480px;
 $wwMedium: 700px;
 $wwNormal: 960px;
-// $wwWide: 1200px;
 $wwMaximum: 1200px;
 // ---------- RWD 斷點 ------------- //
 
 $mmw: 90vw; // 行動版內頁模組寬度 modeles width in mobile
 $mmw2: 86vw; 
 $mmwMaximum: $wwMaximum*.86;
+
+%blockWidth {
+  width: 92vw; margin: 30px auto;
+  @media screen and (min-width: $wwNormal){
+    width: 86vw;
+  }
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum*.88;
+  }
+}
 
 @import "_colorVar_no9"; // 「檔案應用專區」顏色變數
 @import "_default";

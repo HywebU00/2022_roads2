@@ -1,4 +1,5 @@
-.pagination { width: $mmw; margin: 1em auto;padding: 0;
+.pagination { 
+  @extend %blockWidth; padding: 10px 0;
   text-align: center;font-size: 1rem; line-height: 1.5;
   form{display: inline-block;}
   input, select{font-size: inherit; height: 2.4em; line-height: 2.4;}
@@ -86,7 +87,4 @@
     }
   }
 
-  @media screen and (min-width: $wwNormal){
-    width: auto;
-  }
 }

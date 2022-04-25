@@ -1,6 +1,7 @@
 // 現在位置
-.breadcrumb { width: $mmw;
-  padding: 2px 0;margin: 0 auto 3px; overflow: hidden;
+.breadcrumb { 
+  @extend %blockWidth; 
+  margin-top: 15px; padding: 2px 0; overflow: hidden;
   color:lighten($fontColor, 10) ;
   // &::before{
   //   float: left; content: attr(title)"："; 
@@ -21,9 +22,6 @@
         &:hover, &:focus{ color: $assistant; border-bottom-color: $assistant; }
     }
   }
-  @media screen and (min-width: $wwNormal){
-    width: 100%;
-  }
 }
 
 // ---------- 內頁標題圖區
@@ -38,7 +36,8 @@
 }
 
 // ---------- 節點標題+副標題
-.pageHeader{ width: $mmw;
+.pageHeader{
+  @extend %blockWidth;
   font-size: 1.55em; color: $primaryColor; 
   margin: 2em auto 1em ; letter-spacing: 2px;
   line-height: 1.5;
@@ -61,7 +60,7 @@
     }
   }
   @media screen and (min-width: $wwNormal){
-    position: relative; width: auto;
+    position: relative; 
     h2{padding-right: 200px;}
     .share{ position: absolute; right: 4px; bottom: .3em;}
   }
@@ -69,7 +68,9 @@
 
 
 // ---------- 前言、後記
-.preface{ overflow: hidden; line-height: 1.8; width: $mmw; margin: 1.5em auto 2.5em;
+.preface{ 
+  @extend %blockWidth;
+  overflow: hidden; line-height: 1.8; margin-bottom: 40px;
   border-bottom: 2px solid $borderColorLight; padding-bottom: 1em;
   &~.preface{margin-top: 3em; margin-bottom: 5em;border-top: 2px solid $borderColorLight; padding-top: 1.5em; }
   img{ float: left;  margin: 0 1em .5em 0;
@@ -90,7 +91,7 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    width: 100%; padding: 1.5em;
+    padding: 1.5em 0;
     background-color: $transLighten; border: $fontInvert solid 2px;
     &~.preface{border: $fontInvert solid 2px;}
   }
