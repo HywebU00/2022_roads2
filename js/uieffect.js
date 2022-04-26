@@ -130,7 +130,7 @@ $(function(){
 
           subMenuH = $(this).innerHeight();
           if ( subMenuH > wh - hh) {
-            console.log(subMenuH);
+           // console.log(subMenuH);
             // console.log( $(this).mousemove(function(e){ e.pageX, e.pageY} ))
           }
             // $(this).css( {
@@ -147,7 +147,12 @@ $(function(){
     );
     
     _hasChildA.focus(function(){
-      $(this).next('ul').show();
+      let _this = $(this);
+      _this.next('ul').show();
+      if ( !_this.parent().is(_hasChildTop) ) {
+        _this.next('ul').css('left', _this.innerWidth());
+      }
+
       $(this).parent('li').addClass('here').siblings().removeClass('here');
     })
 

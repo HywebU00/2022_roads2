@@ -1,31 +1,19 @@
 
 // imgSlick 大圖容器包含圖片資料表
 .imgSlick{ 
-  // width: $mmw; margin: 0 auto 5em; 
   position: relative; @extend %blockWidth;
-  margin-top: 0; margin-bottom: 5em;
+  margin-top: 0; margin-bottom: 5em; padding: 10px;
+  background: #000;
 
-  .slick-arrow{ position: absolute; z-index: 9;
-    top: 50%; transform: translateY(-50%);
-    width: 56px; height: 56px; border-radius: 50%; 
-    text-indent: -20em; overflow: hidden;
-    margin: 0; border: none;
-    &::before{content: ''; position: absolute; width: 20px; height: 20px;
-      left: 50%; top: 50%; margin-top: -12px;
-      border: 4px solid #fff;border-top: none; border-right: none; transform: rotate(45deg);
-    }
-    &.slick-prev{ left: 0; 
-      &::before{ margin-left: -7px; }
-    }
-    &.slick-next{ right: 0;
-        &::before{transform: rotate(225deg); margin-left: -15px;}
-    }
+  .slick-arrow{
+    &.slick-prev{ left: -4px; }
+    &.slick-next{ right: -4px; }
   }
 
   .slider-for{ 
     .slick-slide{ position: relative; cursor: pointer;
       img{ display: block; width: 100%; height: $mmw; object-fit: contain;
-        margin: 0 auto;  background: #000;}
+        margin: 0 auto; }
       .caption{
         position: absolute; bottom: 0;left: 0; right: 0;
         padding:40px 10px 13px; margin: 0;
@@ -34,15 +22,19 @@
         white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         transition: .6s;
         .photoViewCount{ display: block; margin-top: .5em; font-size: .9em;
-          &::before{content: ''; display: inline-block; width: 22px; height: 16px; vertical-align: middle;  margin-right: 3px;
-            background: url(../images/icon_eye2.png) no-repeat 0 0; background-size: 22px; }
+          &::before{
+            content: ''; display: inline-block; 
+            vertical-align: middle;  margin-right: 3px; width: 22px; height: 16px;
+            background: url(../images/icon_eye2.png) no-repeat 0 0; background-size: 22px;
+          }
         }
       }
       &:hover{
         .caption{ transform: translateY(100%);}
       }
 
-      &::before{content: ''; position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+      &::before{
+        content: ''; position: absolute; left: 0; right: 0; top: 0; bottom: 0;
         box-shadow: $assistant 0 0 0 2px inset; z-index: -1;  display: none;
       }
       &:focus{
@@ -50,15 +42,10 @@
       }
     }
 
-    .slick-arrow{
-      background-color: rgba(0,0,0,.3); border: none;
-      &:hover{ background-color: rgba(0,0,0,.65);}
-      &:focus{background-color: $btnBg2; box-shadow: $btnBg2 0 0 0 3px; border-color: $hilight;}
-    }
   }
   
-  .slider-nav{ margin: 10px auto; padding: 5px 0 5px 10px;
-    background: $transLighten;
+  .slider-nav{ 
+    margin: 10px auto; padding: 10px 0;
     .slick-slide{ cursor: pointer;display: block;
       height: calc(#{$mmw}/3 - 10px);padding: 5px; margin: 5px;
       box-shadow: $borderColor 0 0 0 1px inset;
@@ -66,13 +53,7 @@
 
       &.slick-current{ box-shadow: $hilight 0 0 0 3px inset; }
     }
-    .slick-arrow{
-      background-color: rgba(255,255,255,.4);
-      &:hover{background-color: #fff;}
-      &:focus{background-color: #fff;}
 
-      &::before{border-color: #000;}
-    }
   }
 
   &>time{
@@ -104,13 +85,11 @@
 
 
   // 瀏覽人次
-  .viewCount{
-    text-align: right; padding-right: .5em;
-  }
+  .viewCount{text-align: right; padding-right: .5em;}
 
   // 相片張數
   .photoCount{
-    position: absolute; right: 5px; top: 5px; z-index: 9;
+    position: absolute; right: 12px; top: 12px; z-index: 9;
     background: rgba(#000 , .7); color: $fontInvert;
   }
 

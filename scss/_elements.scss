@@ -119,22 +119,27 @@ a:focus{outline: none;}
 }
 
 // slick套件 圖左右滑動箭頭
-.slick-arrow{position: absolute; z-index: 9;
-  top: 50%; 
+.slick-arrow{
+  position: absolute; top: 50%; z-index: 9;
   transform: translateY(-50%);
   width: 56px; height: 56px; border-radius: 50%; 
   text-indent: -20em; overflow: hidden;
   margin: 0; border: none;
+  background-color: rgba(0,0,0,.6);
   &::before{content: ''; position: absolute; width: 15px; height: 15px;
     left: 50%; top: 50%; margin-top: -9px;
     border: 3px solid #fff;border-top: none; border-right: none; transform: rotate(45deg);
   }
-  &.slick-prev{ left: 0; 
-    &::before{ margin-left: -6px; }
+  &.slick-prev{ left: 6px; 
+    &::before{ margin-left: -6px;}
   }
-  &.slick-next{ right: 0;
-      &::before{transform: rotate(225deg); margin-left: -12px;}
+  &.slick-next{ right: 6px;
+    &::before{transform: rotate(225deg); margin-left: -12px;}
   }
+
+  &:hover{ background-color: $btnBg1;}
+  &:focus{ background-color: $btnBg1; box-shadow: $btnBg1 0 0 0 3px;}
+
 }
 
 
@@ -157,7 +162,7 @@ a:focus{outline: none;}
   &:hover, &:focus{ background: $fontColor; border: none;
     &::before{border-color: $fontInvert;}
   }
-  &:focus{ box-shadow: $fontInvert 0 0 0 2px, #0004 0 0 12px 2px; color: $fontInvert; }
+  &:focus{ box-shadow: $hilight 0 0 0 2px; color: $fontInvert; }
   &.show{bottom: 24px; }
 
   @media screen and (min-width: $wwMaximum + 74px){
@@ -247,9 +252,6 @@ button.diskBtn{
   border: none; width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
   background: $fontColor; color: $fontInvert; text-indent: -10em;
 
-  &:hover, &:focus{
-    background: $primaryColor; box-shadow: $primaryColor 0 0 0 2px;
-  }
 
   &.prev, &.next{
     &::before, &::after{
@@ -272,6 +274,10 @@ button.diskBtn{
       border: 2px solid $fontInvert; border-bottom: none; border-left: none;
     }
   }
+
+  &:hover{ background-color: $primaryColor; }
+  &:focus{ background-color: $primaryColor; box-shadow: $primaryColor 0 0 0 2px;}
+
 }
 
 
@@ -336,10 +342,10 @@ a:hover .videoThumb{
 
 
 // 相簿瀏覽人次 .viewCount
-.viewCount{ display: block; height: 2em; line-height: 2; color: $assistant;
+.viewCount{ display: block; height: 2em; line-height: 2; color: $fontInvert;
   &::before{
-    content: attr(title)"："; display: inline; vertical-align: middle;
-    color: $fontColorLight; font-size: .9em;
+    content: attr(title) "："; display: inline; vertical-align: middle;
+    color: darken($fontInvert, 30%); font-size: .9em;
   }
 }
 
@@ -354,23 +360,25 @@ a:hover .videoThumb{
 
 // 瀏覽人次、發布日期、發布單位
 time[attr="title"], .visitCount[attr="title"], .from[attr="title"]{ display: inline-block;margin-top: .6em; font-size: .95em; text-decoration: none;
-  &::before{ content: attr(title)'：'; display: inline-block; color: $fontColorLight;}
+  &::before{ content: attr(title) '：'; display: inline-block; color: $fontColorLight;}
   &+time, &+.visitCount,  &+.from{ margin-left: 1em;}
 }
 // cp 頁的瀏覽人次與發布日期容器
 .pubInfo{
-  width: $mmw;
-  padding: 8px; margin: 1em auto; text-align: right;
+  @extend %blockWidth;
+  margin: 1em auto; padding: 8px;text-align: right;
   border-bottom: 3px solid $borderColorDark;
 
-  @media screen and (min-width: $wwNormal){
-    width: auto;
+  time[title], .visitCount[title], .from[title]{
+    display: inline-block;margin-top: .6em; font-size: .95em; text-decoration: none;
+    &::before{ content: attr(title) "：" ; display: inline-block; color: $fontColorLight;}
+    &+time, &+.visitCount,  &+.from{ margin-left: 1em;}
   }
 }
 
 // 上一則、下一則
 .cpNav{
-  width: $mmw; margin: 1em auto 5em;
+  @extend %blockWidth; margin: 1em auto 5em;
   ul{ list-style: none; margin: 0; padding: 0;
     display: flex; justify-content: space-between;
     &>li{margin: 0; padding: 0;
@@ -405,11 +413,6 @@ time[attr="title"], .visitCount[attr="title"], .from[attr="title"]{ display: inl
 
     }
   }
-
-  @media screen and (min-width: $wwNormal){
-    width: auto;
-  }
-
 }
 
 
