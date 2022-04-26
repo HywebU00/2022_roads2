@@ -107,59 +107,39 @@ $(function(){
   _menu.each( function(){
     let _this = $(this);
     let _hasChild = _this.find('.hasChild');
-    let _hasChildTop = _this.children('ul').children('.hasChild');
-    let subMenuH;
+    let _topItem = _this.children('ul').children('li');
     let _hasChildA = _hasChild.children('a');
     let liA = _this.find('li>a');
-
-    // let _subMenuA = _this.children('ul').find('ul').find('a');
     
     _hasChild.hover(
       function(){
-        wh = _window.height();
-        hh = _webHeader.innerHeight();
-
-        // $(this).children('ul').stop(true, false).slideDown(300);
-        $(this).children('ul').show(0, function(){
-
-          // console.log(!$(this).parent().is(_hasChildTop));
-          if ( !$(this).parent().is(_hasChildTop) ) {
-            $(this).css('left', $(this).prev().innerWidth());
-            // $(this).parent('li').parent('ul').removeAttr('style').show();
-          }
-
-          subMenuH = $(this).innerHeight();
-          if ( subMenuH > wh - hh) {
-           // console.log(subMenuH);
-            // console.log( $(this).mousemove(function(e){ e.pageX, e.pageY} ))
-          }
-            // $(this).css( {
-            //   'height': wh - hh - 20 ,
-            //   'overflow-y' : 'scroll',
-            // });
-
-        });
+        if ( $(this).is(_topItem) ) {
+          $(this).children('ul').stop(true, false).slideDown(300);
+        } else {
+          $(this).children('ul').css('left', $(this).parent().innerWidth()).stop(true, false).slideDown(300);
+        }
       },
       function(){
-        // $(this).children('ul').stop(true, false).slideUp(200);
-        $(this).children('ul').hide().removeAttr('style');
+        $(this).children('ul').stop(true, false).slideUp(200, function(){
+          $(this).removeAttr('style');
+        });
       }
     );
     
     _hasChildA.focus(function(){
       let _this = $(this);
-      _this.next('ul').show();
-      if ( !_this.parent().is(_hasChildTop) ) {
-        _this.next('ul').css('left', _this.innerWidth());
+      if ( _this.parent().is(_topItem) ) {
+        _this.next('ul').show();
+      } else {
+        _this.next('ul').css('left', _this.innerWidth()).show();
       }
-
-      $(this).parent('li').addClass('here').siblings().removeClass('here');
+      _this.parent().addClass('here');
     })
-
 
     liA.focus(function(){
-      $(this).parent('li').siblings().find('ul').hide();
+      $(this).parent('li').siblings().removeClass('here').find('ul').hide();
     })
+
 
     // let mt = 0;
     // liA.mouseenter(
@@ -182,13 +162,13 @@ $(function(){
     //   }
     // )
 
-    // blur 隱藏所有次選單
-    // _subMenuA.blur(function(){
-    //   if ( $(this).parent('li').next().length == 0 && !($(this).parent('li').hasClass('hasChild'))) {
-    //     $(this).parent('li').parent().hide();
-    //   }
-    // })
+  })
 
+  // 離開 _menu 隱藏所有次選單
+  $('*').focus(function(){
+    if( $(this).parents('.menu').length == 0 ){
+      _menu.find('.hasChild').removeClass('here').find('ul').removeAttr('style');
+    }
   })
 
 

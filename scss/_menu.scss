@@ -100,7 +100,7 @@
          
           li:last-child>a{border-bottom-color: transparent;}
           li>a{ position: relative;color: $fontInvert; padding: .9em 1em .8em; 
-            border-bottom:1px solid rgba(255,255,255,.3);transition: .15s; white-space: nowrap;
+            border-bottom:1px solid rgba(255,255,255,.3); transition: .15s; white-space: nowrap;
             &::after{content: ''; position: absolute; left: 0;top: 0; bottom: 0;width: 4px;  background-color: lighten($primaryColor, 8%);}
             &:hover, &:focus{ border-bottom-color:lighten($hilight, 25%); background-color: $primaryColor;
               &::after{ background-color: lighten($hilight, 25%);}
@@ -108,6 +108,9 @@
           }
 
           li.hasChild{ position: relative;
+            &.here>a{background: darken($primaryColor, 12%); color: $fontInvert;
+              &:focus{background-color: $primaryColor;}
+            }
             &>a{ padding-right: 36px;
               &::before{content: ''; position: absolute;left: auto; right: 13px; top: 1.1em;
                 width: 10px; height: 10px; border: 2px solid $fontInvert; transform: rotate(45deg);
