@@ -22,7 +22,7 @@ $mmwMaximum: $wwMaximum*.86;
     width: 86vw;
   }
   @media screen and (min-width: $wwMaximum){
-    width: $wwMaximum*.88;
+    width: $wwMaximum*.86;
   }
 }
 
@@ -39,7 +39,7 @@ $mmwMaximum: $wwMaximum*.86;
 // @import "_tabs";
 @import "_webFooter";
 @import "_form";
-// @import "_formLayout";
+@import "_formLayout";
 @import "_flow2"; // 最新公告（兩個半）
 @import "_flow3"; // 計劃路線進度
 // @import "_flow";
@@ -47,12 +47,12 @@ $mmwMaximum: $wwMaximum*.86;
 @import "_category";
 @import "_np";
 @import "_lp";
-// @import "_article";
-// @import "_thumbnail";
+@import "_article"; // cp頁用
+@import "_thumbnail";
 // @import "_qa";
 @import "_paginations";
-// @import "_imgSlicks"; // 使用 slick 套件的模組
-// @import "_lightbox"; // 燈箱
-// @import "_sitemap";
+@import "_imgSlicks"; // 使用 slick 套件的模組
+@import "_lightbox"; // 燈箱
+@import "_sitemap";
 // // ------------------------------------------
 // @import "_style_mhm"; // 「九號公路」用

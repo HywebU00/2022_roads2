@@ -4,12 +4,8 @@
     &:nth-child(odd) {vertical-align: top; width: 20%;
       padding:1.2em 0.5em 0 0; min-width: 8.5em;}
     &:nth-child(even) { padding-bottom: .8em;}
-    // input[type="text"], input[type="tel"], input[type="number"], input[type="password"],
-    // textarea{}
   }
 
-  @media screen and (max-width: $wwNormal - 1){
-  }
 
 
   @media screen and (max-width: $wwMedium - 1) {
@@ -28,7 +24,7 @@
 
 // formA /////////////////////////////////
 .formA{
-  width: $mmw; margin: 0 auto;
+  @extend %blockWidth; 
   .note:first-child{ margin: 0 auto;width: 100%; max-width: 36em;}
   .formLayout{max-width: 34em;}
   
@@ -39,7 +35,7 @@
   }
   
   @media screen and (min-width: $wwNormal){
-    width: auto; padding: 2em 0; background: $transLighten;
+    padding: 2em 0; background: $transLighten;
     .note:first-child{ max-width: none;width: 46em;}
     .formLayout{max-width: none;width: 44em;}
   }

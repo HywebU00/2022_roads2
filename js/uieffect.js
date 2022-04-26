@@ -21,31 +21,31 @@ $(function(){
   _html.removeClass('no-js');
 
   // --------------------- 外掛套件 slick 參數設定
-  $('.slider-for').slick({
+  $('.imgSlick').find('.slider-for').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
     fade: true,
-    asNavFor: '.slider-nav'
+    asNavFor: '.imgSlick .slider-nav'
   });
-  $('.slider-nav').slick({
+  $('.imgSlick').find('.slider-nav').slick({
     variableWidth: true,
     slidesToShow: 3,  
     slidesToScroll: 1,
-    asNavFor: '.slider-for',
+    asNavFor: '.imgSlick .slider-for',
     centerPadding: 0,
     dots: false,
     centerMode: true,
-    focusOnSelect: false
+    focusOnSelect: true
   });
 
-  $('.bigImgShow').slick({
-    dots: false,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear'
-  });
+  // $('.bigImgShow').slick({
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   fade: true,
+  //   cssEase: 'linear'
+  // });
   // --------------------- slick 參數設定：結束
 
 
@@ -1052,16 +1052,16 @@ $(function(){
     _lightboxNow.stop(true, false).fadeIn(speed).addClass('show');
     _lightboxNow.prev(_cover).fadeIn(speed);
     _body.addClass('noScroll');
-    if( _lightboxNow.has('.bigImgShow')) {
-      $('.bigImgShow').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        mobileFirst: true,
-        cssEase: 'linear'
-      });
-    }
+    // if( _lightboxNow.has('.bigImgShow')) {
+    //   $('.bigImgShow').slick({
+    //     dots: true,
+    //     infinite: true,
+    //     speed: 500,
+    //     fade: true,
+    //     mobileFirst: true,
+    //     cssEase: 'linear'
+    //   });
+    // }
   })
 
   _hideLightbox.click(function(){

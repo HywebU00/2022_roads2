@@ -9,9 +9,12 @@
   box-shadow:rgba(0,0,0,.6) 0 0 28px;
   z-index:999;
 
-  .closeThis{position: fixed; right:8px; top: 8px;  
-    margin: 0 0 4px;z-index:99;padding: 5px;
-    transform: scale(1.5);
+  .closeThis{position: fixed; right:3vw; top: 3vw;  
+    margin: 0;z-index:99;padding: 0; border-radius: 0;
+    // transform: scale(1.5);
+    background-color: rgba(0,0,0,.6);
+    &:hover, &:focus{ background-color: #c00; }
+    &:focus{box-shadow: #c00 0 0 0 2px;}
   }
 
   .head{border-bottom: 3px solid $borderColorLight;padding:30px 0 .2em; margin-bottom:15px; overflow: hidden;
@@ -22,15 +25,17 @@
     }
   }
  
+  @media screen and (min-width:$wwNormal){
+    top: $wwNormal*.03; height: calc(100vh - #{$wwNormal}*.06);
+    .closeThis{top: $wwNormal*.03;}
+  }
+  
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum*.94; left:calc(50vw - #{$wwMaximum}*.47);
+    .closeThis{right:calc(50vw - #{$wwMaximum}*.47) }
+  }
 }
 
-@media screen and (min-width:$wwMedium){
-
-}
-
-@media screen and (min-width: $wwNormal){
-
-}
 
 
 

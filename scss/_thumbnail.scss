@@ -1,5 +1,5 @@
 .thumbnail{
-  width: $mmw; margin: 2em auto;
+  @extend %blockWidth; 
   ul{list-style: none; margin: 0; padding: 0;}
   &>ul{ line-height: 1.1;
     &>li{ margin: 0 0 16px;
@@ -42,7 +42,6 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    width: auto;
     &>ul{ 
       &>li{ margin-bottom: 15px;
         flex-basis: calc(33.33% - 10px);
@@ -52,7 +51,6 @@
         &>a:hover{ transform: translateY(-4px);}
         img{height: calc(33.33vw - 96px); }
         .videoThumb{ height: calc((33.33vw - 96px)*.56);}
-
       }
     }
   }
