@@ -46,7 +46,7 @@
   }
 
   // ---------- 分享文章到社群
-  .share{ 
+  .share{ padding-right: 5px; font-size: 1rem;
     ul{ list-style: none; margin: 0;padding: 0;
       display: flex; flex-flow: row wrap; justify-content: flex-end;}
     li{margin:8px 0 4px 8px;padding: 0; float: left; text-indent: -20em;
@@ -55,6 +55,9 @@
       }
       img{ display: block; width: 100%; height: 100%; margin: 0 auto;border-radius: 50%; }
       &.back{
+        img{background-color: $linkColor;}
+      }
+      &.print, &.forward{
         img{background-color: $primaryColor;}
       }
     }
@@ -100,13 +103,13 @@
 
 // ---------- 以下待分檔 ---------- //
 // ---------- 影音內容頁
-.videoPlay{ width: $mmw; margin: 0 auto; padding: 0 0 1em; background: #000; color: #fff;
+.videoPlay{ @extend %blockWidth;  margin: 0 auto; 
+  padding: 0 0 1em; background: #000; color: #fff;
   iframe{ width: 100%; height: $mmw*.5625;}
   h3{ line-height: 1.5;font-size: 1.3em; margin: 1.5em 15px .4em;}
   p{line-height: 1.9; margin: 1em 15px;}
 
   @media screen and (min-width: $wwNormal){
-    width: auto;
     iframe{ height: calc(56.25vw - 118.125px);}
     h3, p{ margin-left: 20px; margin-right: 20px;}
   }
@@ -119,7 +122,7 @@
 
 // 圖與資料
 .imgMetaSet{
-  width: $mmw; margin: 16px auto; padding:20px 0;
+  @extend %blockWidth; margin: 16px auto; padding:20px 0;
   border: 1px solid $borderColor;
   // outline: 1px solid red;
 

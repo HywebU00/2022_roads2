@@ -64,7 +64,7 @@
 }
 
 .fileDownload, .seeAlso, .photoflow{
-  @extend %blockWidth;
+  @extend %blockWidth; margin-top: 60px;
   h3{font-size: 1.4em; margin: 0 0 .5em;}
   ul, ol{margin: 0; padding: 0; list-style: none; line-height: 1.6;}
   a{text-decoration: none; }
@@ -122,29 +122,66 @@
 
 
 .seeAlso{
-  li{ margin: 5px 0;
-    a{ display: block; border-bottom: 1px solid $borderColor; color: $fontColor;
-      padding: .5em 0 .5em 24px; position: relative;
+  li{ margin: 10px 0;
+    a{ display: block; color: $fontColor; box-shadow: $borderColor 0 2px 0 -1px;
+      padding: .5em 0 .4em 24px; position: relative;
       &::before{content: ''; width: 0; height: 0; border-style: solid; 
         border-width: 6px 0 6px 8px; border-color: transparent transparent transparent $fontColorLight;
-        position: absolute; left: 6px; top: .95em;
+        position: absolute; left: 7px; top: .93em; transition: .15s;
       }
 
-      &:hover, &:focus{ border-bottom-color: $assistant;
-        &::before{border-left-color: $assistant;}
+      &:hover, &:focus{ box-shadow: $primaryColor 0 3px 0 -1px;
+        &::before{border-left-color: $primaryColor; transform: scale(1.25)}
       }
     }
   }
   
 }
 
+// cp 頁，上一則、下一則
+.cpNav{
+  @extend %blockWidth; margin-bottom: 5em;
+  ul{ list-style: none; margin: 0; padding: 0;
+    display: flex; justify-content: space-between;
+    &>li{margin: 0; padding: 0;
+      a{ display: block; position: relative;
+        background: $mainBg; color: $linkColor; text-decoration: none;
+        height: 2.8em; line-height: 2.9; padding: 0 1em; border-radius: 2em;
+        box-shadow:$borderColor 0 0 0 1px, #0005 0 1px 3px; transition:.2s ;
+        &::before{
+          content: ''; position: absolute; top: 1em;
+          width: 11px;height: 11px;
+          border: 3px solid $borderColorDark;border-bottom: none;border-left: none;
+          transform: rotate(45deg); transition: .2s;
+        }
+
+        &:hover, &:focus{box-shadow:$primaryColor 0 0 0 2px, #0007 0 6px 18px -4px;
+          color: $fontInvert; background-color: $primaryColor;
+          &::before{ border-color: $fontInvert;}
+        }
+      }
+
+      &.prev{
+        a{ padding-left: 40px; 
+          &::before{ left: 20px; transform: rotate(225deg);}
+        }
+      }
+      &.next{
+        a{ padding-right: 40px;
+          &::before{ left: auto; right: 20px;}
+        }
+      }
+
+
+    }
+  }
+}
+
 // 特殊樣式編號
 .topMost, .imgPreface{
-  width: $mmw; margin: 0 auto 1em;padding:1.2em 1.5em 1em;line-height: 1.9;
+  @extend %blockWidth;
+  margin: 0 auto 1em;padding:1.2em 1.5em 1em;line-height: 1.9;
   box-shadow: rgba(#000, .15) 0 0 16px;
-  @media screen and (min-width: $wwNormal){ 
-    width: auto;
-  }
 }
 .topMost{
   background-color: rgba(#fff , .6);
@@ -183,22 +220,22 @@
 
   .flowList{list-style: none; margin: 0 0 10px; padding: 0;
     display: flex; flex-flow: row nowrap;
-    &>li{ flex: 0 0 calc(#{$mmw}/2 - 10px); margin: 0 5px; padding: 5px 0 0; overflow: hidden;
-      &>a{ display: block; width: 100%; position: relative; transition: .5s;
+    &>li{ flex: 0 0 calc(#{$mmw}/2 - 10px);  margin: 0 5px; padding: 5px 0 0; overflow: hidden;
+      &>a{ display: block; width: 100%;  position: relative; transition: .5s; overflow: hidden;
         &::before{content: ''; 
           position: absolute; left: 0; right: 0; top: 0; bottom: 0;
-          box-shadow: $assistant 0 0 0 2px inset; opacity: 0; z-index: 9;
+          box-shadow: $primaryColor 0 0 0 2px inset; opacity: 0; z-index: 9;
         }
         &:hover, &:focus {
-          transform: translateY(-5px);
           p{ transform:  translateY(0); }
+          img{ transform: scale(1.1);}
         }
         &:focus {
           p{ transition: none;}
         }
         &:focus::before{opacity: 1;}
       }
-      img{ display: block; width: 100%; height: calc(#{$mmw}*.5 - 10px); object-fit: cover;  transition: .3s;}
+      img{ display: block; width: 100%; height: calc(#{$mmw}*.5 - 10px); object-fit: cover; transition: .3s;}
       p{ position: absolute; left: 0; right: 0; bottom: 0;
         background: #000a; color: #fff;  padding:5px 10px; margin: 0;
         transform: translateY(101%); transition: .5s;
@@ -207,8 +244,8 @@
   }
 
   .flowNav{ position: absolute; bottom: $flowBottom - $dotDia/2 - 1px; z-index: 9;
-    width: calc(100% - 144px - 4vw);
-    ul{list-style: none; margin: 0; padding: 0; display: flex;justify-content: center;}
+    width: calc(100% - 164px);
+    ul{list-style: none; margin: 0; padding: 0; display: flex;}
     li{ margin: 0 8px; padding: 0;
       &::before{ content: ''; display: block;
         width: $dotDia; height: $dotDia; border-radius: 50%; cursor: default;
@@ -216,7 +253,7 @@
         transition: .2s;
       }
       &.active{
-        &::before{ box-shadow: $assistant 0 0 0 4px;background:$assistant}
+        &::before{ box-shadow: $primaryColor 0 0 0 3px;background:$primaryColor}
       }
     }
   }
@@ -239,7 +276,6 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    // background-color: $mainBg;
     .flowList{
       &>li{ flex-basis: calc(25vw - 62.5px);
         img{ height: calc(25vw - 62.5px);}
@@ -253,7 +289,6 @@
         img{height: calc(#{$wwMaximum}*.25 - 62.5px);}
       }
     }
-
   }
 
 }

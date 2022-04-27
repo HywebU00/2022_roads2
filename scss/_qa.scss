@@ -1,4 +1,4 @@
-.qaList{ width: $mmw; margin: 0 auto;
+.qaList{   @extend %blockWidth;  margin: 0 auto;
   padding: 1px 0 0;
   background: url(../images/qaList_bg.png) repeat-y 26px 0;
   background-size: 48px auto;
@@ -46,14 +46,11 @@
     }
   }
 
-  @media screen and (min-width: $wwNormal){
-    width: auto;
-  }
-
 }
 
 .qaDecoImg{
-  margin: 0 auto; width: $mmw;
+  @extend %blockWidth;
+  margin: 0 auto; 
   img{ display: block;max-width: 200px; max-height: 200px; object-fit: scale-down;}
 
   &.end{ margin-top: 15px;}
@@ -66,6 +63,6 @@
   }
   
   @media screen and (min-width: $wwNormal){
-    width: auto; margin-left: -25px;
+    margin-left: -25px;
   }
 }

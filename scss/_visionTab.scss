@@ -13,16 +13,6 @@
     }
   }
 
-  // @media screen and (min-width: $wwMedium){
-  //   // .blockHeader{ 
-  //   //   h2{ width:250px; height: 250px;}
-  //   // }
-  //   // .tabset{ margin-top: -220px;
-  //   //   .tabItems{margin-top: 220px;width: 250px;}
-  //   //   .tabContent{ margin-left: calc(250px + 4.5vw);}
-  //   // }
-  // }
-
   @media screen and (min-width: $wwNormal){
     width: $mmw2; margin-bottom: 150px;
     .blockHeader{ 

@@ -365,8 +365,7 @@ time[attr="title"], .visitCount[attr="title"], .from[attr="title"]{ display: inl
 }
 // cp 頁的瀏覽人次與發布日期容器
 .pubInfo{
-  @extend %blockWidth;
-  margin: 1em auto; padding: 8px;text-align: right;
+  @extend %blockWidth; margin-top: 3em; padding: 8px;text-align: right;
   border-bottom: 3px solid $borderColorDark;
 
   time[title], .visitCount[title], .from[title]{
@@ -376,44 +375,7 @@ time[attr="title"], .visitCount[attr="title"], .from[attr="title"]{ display: inl
   }
 }
 
-// 上一則、下一則
-.cpNav{
-  @extend %blockWidth; margin: 1em auto 5em;
-  ul{ list-style: none; margin: 0; padding: 0;
-    display: flex; justify-content: space-between;
-    &>li{margin: 0; padding: 0;
-      a{ display: block; position: relative;
-        background: $mainBg; color: $primaryColor; text-decoration: none;
-        height: 2.8em; line-height: 2.9; padding: 0 1em; border-radius: 2em;
-        box-shadow:$borderColor 0 0 0 1px, #0005 0 1px 3px; transition:.2s ;
-        &::before{
-          content: ''; position: absolute; top: 1em;
-          width: 11px;height: 11px;
-          border: 2px solid $primaryColor;border-bottom: none;border-left: none;
-          transform: rotate(45deg); transition: .2s;
-        }
 
-        &:hover{box-shadow:$borderColor 0 0 0 2px, #0007 0 6px 18px -4px;
-          color: $assistant;
-          &::before{ border-color: $assistant;}
-        }
-      }
-
-      &.prev{
-        a{ padding-left: 40px; 
-          &::before{ left: 20px; transform: rotate(225deg);}
-        }
-      }
-      &.next{
-        a{ padding-right: 40px;
-          &::before{ left: auto; right: 20px;}
-        }
-      }
-
-
-    }
-  }
-}
 
 
 // 鍵盤樣式
