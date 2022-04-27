@@ -113,14 +113,24 @@ $(function(){
     
     _hasChild.hover(
       function(){
-        if ( $(this).is(_topItem) ) {
-          $(this).children('ul').stop(true, false).slideDown(300);
+        let _this = $(this);
+        let _thisSubMenu = _this.children('ul');
+
+        if ( _this.is(_topItem) ) {
+          _thisSubMenu.stop(true, false).slideDown(300);
         } else {
-          $(this).children('ul').css('left', $(this).parent().innerWidth()).stop(true, false).slideDown(300);
+          // let _thisSubMenu = $(this).children('ul');
+          _this.addClass('here');
+          if ( _this.offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
+            _thisSubMenu.css( 'left', -1*(_thisSubMenu.innerWidth()) );
+          } else {
+            _thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
+          }
+          _thisSubMenu.stop(true, false).slideDown(300);
         }
       },
       function(){
-        $(this).children('ul').stop(true, false).slideUp(200, function(){
+        $(this).removeClass('here').children('ul').stop(true, false).slideUp(200, function(){
           $(this).removeAttr('style');
         });
       }
@@ -128,10 +138,17 @@ $(function(){
     
     _hasChildA.focus(function(){
       let _this = $(this);
+      let _thisSubMenu = $(this).next('ul');
+
       if ( _this.parent().is(_topItem) ) {
-        _this.next('ul').show();
+        _thisSubMenu.show();
       } else {
-        _this.next('ul').css('left', _this.innerWidth()).show();
+        if (_this.parent().offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
+          _thisSubMenu.css('left', -1*(_thisSubMenu.innerWidth()) );
+        } else {
+          _thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
+        }
+        _thisSubMenu.show();
       }
       _this.parent().addClass('here');
     })

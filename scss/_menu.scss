@@ -76,7 +76,7 @@
 
   // 寬版選單
   .topRow .menu{ display: block; margin:0 5vw;
-    a{ color: $fontInvert; text-decoration: none; }
+    a{ color: $fontInvert; text-decoration: none; display: block; }
 
     &>ul{ display: flex; flex-flow: row nowrap; justify-content: flex-end;
       line-height: 1.5; font-size: 1.15em;text-align: center;
@@ -93,23 +93,26 @@
         &>ul{ top: auto; left: 0;} // 第二層選單
 
         
-        ul{ display: none; position: absolute; min-width: 180px; font-size: 1rem;
-          text-align: left; width: auto;
+        ul{ display: none; position: absolute;  width: auto; font-size: 1rem;
+          text-align: left; max-width: 360px; min-width: 160px;
           background-color: $secondaryColor; color: $fontInvert;
           box-shadow: #0006 0 5px 20px;
          
           li:last-child>a{border-bottom-color: transparent;}
           li>a{ position: relative;color: $fontInvert; padding: .9em 1em .8em; 
             border-bottom:1px solid rgba(255,255,255,.3); transition: .15s; white-space: nowrap;
-            &::after{content: ''; position: absolute; left: 0;top: 0; bottom: 0;width: 4px;  background-color: lighten($primaryColor, 8%);}
+            text-overflow: ellipsis; overflow: hidden;
+            &::after{content: ''; position: absolute; left: 0;top: 0; bottom: 0;width: 4px; 
+              background-color: lighten($primaryColor, 8%);}
             &:hover, &:focus{ border-bottom-color:lighten($hilight, 25%); background-color: $primaryColor;
               &::after{ background-color: lighten($hilight, 25%);}
             }
           }
 
           li.hasChild{ position: relative;
-            &.here>a{background: darken($primaryColor, 12%); color: $fontInvert;
-              &:focus{background-color: $primaryColor;}
+            &.here{background: darken($primaryColor, 12%);
+              &>a:hover{}
+              &>a:focus{background-color: $primaryColor;}
             }
             &>a{ padding-right: 36px;
               &::before{content: ''; position: absolute;left: auto; right: 13px; top: 1.1em;
@@ -119,7 +122,8 @@
             }
 
             // 第三層及其之後
-            ul{ top: 0; }
+            ul{ top: 0; z-index: 99;}
+            // ul ul { z-index: 99;}
           }
         }
 
