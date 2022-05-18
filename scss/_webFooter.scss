@@ -25,15 +25,30 @@
     em{ font-style: normal; display: inline-block;}
   }
 
-  .aaAndOthers{ text-align: right; border-top: 1px solid $borderColor;
-    padding:20px 0 10px; overflow: hidden;
+  .copyright{
+    margin: 0 auto; padding: 20px 0 0; line-height: 1.3;
+    border-top: 1px solid $borderColor; text-align: center;
+    ul{ list-style: none; margin: 0; padding: 0;}
+    li{display: inline-block; margin: 0 0 .5em; padding: 0;
+      &+li{margin-left: 1em;}
+      a{display: block;
+        &:hover, &:focus{ text-decoration: underline;}
+      }
+    }
+    p{margin:.5em 0 0;}
+  }
+
+  .aaAndOthers{
+    text-align: right; 
+    border-top: 1px dotted $borderColor;
+    padding:15px 0 10px; overflow: hidden;
     .aMark{ float: left; margin: 4px;
       a{ display: block; border-radius: 5px;
         img { display: block; width: 150px; border-radius: 5px;}
         &:hover img, &:focus img{ box-shadow:$footerBg2 0 0 0 1px, $linkColor 0 0 0 3px;}
       }
     }
-    p{margin:3px 0 0; white-space: nowrap;}
+    p{margin:3px 0 0; }
     p+p{margin-top: .4em;}
   }
 
@@ -48,9 +63,16 @@
     .base{display: flex; flex-flow: row wrap; justify-content: space-between; padding-left: calc(115px + 4vw);}
     .logo{ position: absolute; left: 4vw;}
     .contact {flex: 0 0 calc( 50% - 20px );margin: 0 10px 40px;}
-    .aaAndOthers{flex: 0 0 calc( 50% - 10px ); text-align: left; padding: 12px 0 0 0; margin: 0;
-      .aMark{float: none;display:inline-block; }
-      p{margin-left: 5px;}
+
+    .copyright{
+      flex: 0 0 calc(100% + 115px);  margin-left: -115px;
+      text-align: left; overflow: hidden;
+     ul{ float: left;}
+     p{ float: right; margin-top: 0;}
+    }
+    .aaAndOthers{ flex:0 0 calc(100% + 115px); margin-left: -115px;
+      .aMark{ float: left; }
+      .count, .date{white-space: nowrap;text-align: right;}
     }
   }
 
@@ -61,7 +83,13 @@
       img{margin: 0;}
     }
     .contact{ flex: 1 1 calc(33% - 20px); }
-    .aaAndOthers{ flex:0 0 100%; margin-left: 0; padding-top: 20px;  border-top: 1px solid $borderColor;
+    .copyright{ margin-left: 0; flex:1 0 50%;
+      ul, p{float: none;}
+      p{margin-top: .5em;}
+    }
+    .aaAndOthers {
+      flex:0 0 calc(165px + 11em); margin: 0; padding-top: 20px;
+      border-top: 1px solid $borderColor;
       .aMark{ float: left; }
       .count, .date{white-space: nowrap;text-align: right;}
     }
