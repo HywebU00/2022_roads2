@@ -12,37 +12,28 @@
 
 // ---------- webHeader
 .webHeader{
-  // position: fixed; 
-  top: 0; z-index: 991; 
-  width: 100vw; margin: 0 ; height: 72px;
-  background-color: #fffe;
-  box-shadow: #0003 0 2px 12px -3px;
+  position: fixed; top: 0; z-index: 991; width: 100vw;
+  background-color: #fffe; box-shadow: #0003 0 2px 12px -3px;
 
-
-  h1{margin: 0 ; padding:10px 0 8px 10px; overflow: hidden;
-    width: calc( 100vw - 150px); 
+  h1{margin: 0 ; padding:5px 5px 5px 8px; overflow: hidden;
+    width: calc( 100vw - 130px); 
     &>a{ display: block;}
     img{
       &.normal { display: none;}
-      &.mobile { display: block; margin: 0 5px;
-        height: 54px; max-width: 100%; object-fit: contain;}
+      &.mobile { display: block; margin: 0; height: 56px; max-width: 100%; object-fit: contain;}
     }
   }
 
-  .searchCtrl{position: absolute; top: 5px; right: 10px; margin: 0; border-radius: 0;  }
-  // .menuCtrl{ display: none;}
-  .sidebarCtrl{ display: block;position: absolute; top: 5px; right: 70px;}
+  .searchCtrl{position: absolute; top: 5px; right: 5px; margin: 0; border-radius: 0; }
+  .sidebarCtrl{ display: block;position: absolute; top: 5px; right: 64px;}
+
 
   @media screen and (min-width: $wwNormal) {
     position: relative; height: auto; padding:16px 0 0;
     box-shadow: #0003 0 3px 15px -3px;
 
-    // transition:transform 1s linear;
-
-
     .sidebarCtrl {display: none;}
-    .searchCtrl{display: block; position: absolute; left: auto; top: auto; right: 5vw; z-index: 99; }
-    .searchCtrl{ top: 15px;}
+    .searchCtrl{display: block; position: absolute; left: auto; top: auto;top: 15px; right: 5vw; z-index: 99; }
   
     h1{ position: static; margin: 0 0 6px 5vw; padding: 0; height: 52px; max-width: 500px;
       width: calc(100% - 5vw - 18em);
@@ -67,7 +58,6 @@
     .searchCtrl{ right: 60px; }
     h1{margin-left: 60px; }
 
-
     &.fixed{ width: $wwMaximum; left: calc(50vw - #{$wwMaximum}*.5);}
   }
 
@@ -78,9 +68,7 @@
   @media screen and (min-width: $wwNormal){
     display: block; overflow: hidden;
     position: absolute; right:0; top: 20px; 
-    // float: right; margin: 10px calc(5vw + 72px) 0 0;
     font-size: 1em; margin: 0; padding:8px calc(5vw + 72px) 14px 80px;
-    // outline: 1px dashed red;
     ul{list-style: none; margin:0; padding: 0;}
     &>ul{ overflow: hidden; line-height: 1;
       &>li{ float: left; position: relative; margin: 0; padding: 0 .85em 0 .8em;
@@ -101,8 +89,9 @@
       }
     }
 
-    &::after{ content: ''; position: absolute; left: 0; width: 150%; height: 15px; background: #1234; border-radius: 50%; bottom: -15px;
-      filter: blur(14px);
+    &::after{ 
+      content: ''; position: absolute; left: 0; width: 150%; height: 15px;bottom: -15px;
+      background: #1234; border-radius: 50%; filter: blur(14px);
     }
   }
 

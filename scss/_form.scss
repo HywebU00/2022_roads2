@@ -216,19 +216,6 @@ fieldset {
   font-size: 1.3em;line-height: .6; margin-right: 3px;
 }
 
-// 單獨存在的 checkbox //
-label.singleCheck{
- padding: 0; margin: 3px; line-height: 2.4em; line-height: 2.4; line-height: 1.5;
-}
-
-// 單獨存在的區塊型 checkbox //
-label.readAndAgree{
-  display: block; margin: 3em auto; padding:.65em 1em .6em;
-  border-radius: 4px;
-  border: 1px solid $borderColorLight;
-  &:hover{ border-color: $borderColor;}
-  input{margin-top: -3px;}
-}
 
 
 // 日期區間 //
@@ -250,33 +237,3 @@ label.readAndAgree{
     max-width: 32em; 
   }
 }
-
-.formA fieldset .duration{
-  width:calc(86vw - 4px);
-}
-
-
-
-
-
-
-
-
-
-// 證號輸入（忘記密碼） //
-.idInput{
-  margin: 1.5em auto;
-
-  line-height: 1.7;
-  p{ line-height: inherit;}
-  label{
-    height: 2em; line-height: 2em; cursor: pointer;
-    margin: 3px;
-    &+label{ margin-left: 2em;}
-    input[type="radio"]{ margin: -2px 6px 0 5px;}
-  }
-  input[type="text"], input[type="number"] {
-    width: calc(100% - 6px); 
-  }
-}
-

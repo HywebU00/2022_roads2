@@ -91,7 +91,7 @@
 
 
 
-// 
+// 小 banner 列表
 .bannerList{
   @extend %blockWidth;
   ul{ list-style: none; margin: 0; padding: 0; line-height: 1.6; text-align: center;}
@@ -144,7 +144,8 @@
 
 
 // 左邊可能有圖的條列，影片、照片
-.listRow{ width: $mmw; margin: 1em auto;
+.listRow{ 
+  @extend %blockWidth; 
   ul{list-style: none; padding: 0; margin: 0;}
   &>ul{ line-height: 1.9;
     &>li{ position: relative;margin: 15px 0; padding:1.5em 1em;
@@ -177,17 +178,33 @@
         a{color: $fontColor;
           &:hover, &:focus{ text-decoration: none; color: $assistant;}
         }
+        span{position: relative; display: inline-block; padding: .16em 1.8em .1em .9em; margin-left: -4px; background: $assistant1; color: $fontInvert; border-radius: 1.5em;
+          &::after{ content: ''; display: inline-block; vertical-align: baseline; margin:0 0 -1px 12px; width: 10px; height: 10px; background-color: $hilight2;}
+          a{ color: $fontInvert; text-decoration: none;
+            &:hover, &:focus{ text-decoration: none; color: $hilight2;}
+          }
+        }
+
       }
       p{ margin: 0 0 1em;}
-      // time, .visitCount, .from{ display: inline-block;margin-top: .6em; font-size: .95em; text-decoration: none;
-      //   &::before{ content: attr(title)'：'; display: inline-block; color: $fontColorLight;}
-      //   &+time, &+.visitCount,  &+.from{ margin-left: 1em;}
-      // }
-      .label{ position: absolute; right: 1em; top: 0;
+
+      .label{
+        position: absolute; right: 1em; top: 0;
+        height: 2.1em; line-height: 2.3em; padding: 0 1em;
         border-radius: 0 0 5px 5px; box-shadow: #0004 0 2px 3px;
+        background-color: $assistant1; color: $fontInvert;
         &+h3{ margin-top: .5em;}
       }
+
       .moreFake{float: right; margin-top: .5em;}
+
+      time, .visitCount, .from{
+        clear: both; margin-right: 1em; height: 2em; line-height: 2;
+        display: inline-block; font-size: .87em; text-decoration: none;
+        &::before{ content: attr(title) "：" ; display: inline-block; color: $fontColorLight;}
+      }
+      time ~  .more{ float: right; }
+
     }
   }
 
@@ -198,7 +215,6 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    width: auto;
     &>ul>li{
       &>a{padding:2em 1.5em;}
     }
