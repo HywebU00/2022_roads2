@@ -11,7 +11,6 @@
 //.flow2 , .flow3 共用：1.左右箭頭 2.指示點點（或數字）
 .flow2 , .flow3 {margin: 0 auto;
   .blockHeader{ position: relative; width: $mmw; margin: 0 auto 10px; padding-right: 6em; text-align: left;
-    outline: 1px solid red;
     h2{font-size: 2em;}
     .more{position: absolute; right: 0; bottom: 0; margin: 0;}
   }
