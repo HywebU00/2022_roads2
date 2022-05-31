@@ -11,7 +11,7 @@
 // 行動版側欄
 .sidebar{ position: fixed; z-index: 990;
   width: $sideBarWidth; margin-left:$sideBarWidth * (-1);
-  top: 72px; bottom: 0; overflow: auto;
+  top: 66px; bottom: 0; overflow: auto;
   background: $sidebarBg; color: $fontInvert;
   transition: .5s;
 
@@ -93,13 +93,15 @@
         &>ul{ top: auto; left: 0;} // 第二層選單
 
         
-        ul{ display: none; position: absolute;  width: auto; font-size: 1rem;
-          text-align: left; max-width: 360px; min-width: 160px;
+        ul{ 
+          display: none; position: absolute;  width: auto;
+          max-width: 360px; min-width: 100%;
+          font-size: 1rem;text-align: left;
           background-color: $secondaryColor; color: $fontInvert;
           box-shadow: #0006 0 5px 20px;
          
           li:last-child>a{border-bottom-color: transparent;}
-          li>a{ position: relative;color: $fontInvert; padding: .9em 1em .8em; 
+          li>a{ position: relative;color: $fontInvert; padding: .9em 1.2em .8em; 
             border-bottom:1px solid rgba(255,255,255,.3); transition: .15s; white-space: nowrap;
             text-overflow: ellipsis; overflow: hidden;
             &::after{content: ''; position: absolute; left: 0;top: 0; bottom: 0;width: 4px; 
