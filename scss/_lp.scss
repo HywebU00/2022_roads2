@@ -32,12 +32,20 @@
   }
 }
 
-.list{ background: #fff;
+
+
+
+.list{
+  background: #fff;
   &>table{ border-collapse: collapse; line-height: 1.5; width: calc(100% - 16px); margin:0 8px;
     border-top: 2px solid $borderColor;border-bottom: 2px solid $borderColor;
-    tr{ border-bottom: 1px solid $borderColor;}
-    th, td{ padding: 14px 16px 12px; position: relative;
-      &::before{content: ''; position: absolute;
+    tr{ border-bottom: 1px solid $borderColor;
+      &:hover{ background-color: lighten($hilight2 , 40%);}
+    }
+    th, td{
+      padding: 14px 16px 12px; position: relative;
+      &::before{
+        content: ''; position: absolute;
          width: 1px; background: $borderColor; top: 4px; bottom: 4px; left: 0;
       }
       &:first-child{
@@ -54,6 +62,13 @@
         padding: 12px 15px 9px; margin: -10px -12px -8px -11px;
         &:hover, &:focus{background: $hilight2;text-decoration: underline;}
       }
+    }
+  }
+
+  // 台九線「路樹管理」專用
+  &.trees{
+    &>table{
+
     }
   }
 
@@ -78,6 +93,17 @@
           width:calc(#{$mmw} - 3rem);
         }
         time{margin-left: .8em;}
+      }
+    }
+
+    &.trees{
+      &>table{
+        tr{ padding-left: 0;}
+        td{
+          width: 45%;
+          // &:nth-child(2) {text-align: right;}
+          a{width: auto;}
+        }
       }
     }
   }

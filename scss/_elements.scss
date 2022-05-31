@@ -3,13 +3,13 @@ a:focus{outline: none;}
 // ---------- 快捷鍵
 .accesskey{ display: none; }
 @media screen and (min-width: $wwNormal){
-  .accesskey{ display: block; z-index: 9; 
+  .accesskey{ 
+    display: block; z-index: 9; 
     position: absolute; left: 0; top: 0; margin: 2px;
-    text-decoration: none;color: $primaryColor;
-    &:focus{ outline: 2px solid $assistant;}
+    text-decoration: none; color: $fontColorLight;
+    &:focus{ outline: 2px solid $primaryColor;}
   }
-  .main .accesskey{ top: 100px;}
-  .webFooter .accesskey{ top: 4px;color: $fontInvert;}
+  .webFooter .accesskey{ color: $fontInvert;}
 }
 
 
@@ -20,7 +20,7 @@ a:focus{outline: none;}
     opacity: 0; top: -2em;
     font-size: .9rem; border-radius: 0 0 4px 4px;
     height: 1.6em; line-height: 1.6; padding: 0 .5em; margin-left: 120px;
-    background: $assistant; color: $fontInvert;
+    background: $assistant2 ; color: $fontInvert;
     text-decoration: none; outline: none;  cursor: pointer;
     transition:.3s; 
     &:focus{ top: 0; color: $fontInvert;opacity: 1;}
