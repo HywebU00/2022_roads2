@@ -345,45 +345,6 @@ $(function(){
 	});
 
 
-  // 右側點點快速連結 -----------------------------------------------------
-  // var _main = $('.main');
-  // var _mainRow = _main.children('.row');
-  // var roleCount = _mainRow.length;
-  // var rowDotLi = '';
-  // _body.append('<nav class="mpNav"><ul></ul></nav>');
-  // var _navDotsUl = $('.mpNav>ul');
-
-  // // 產生<li><a>元件
-  // for (let n = 0; n < roleCount; n++) {
-  //   let rowtext = _mainRow.eq(n).find('.blockHeader>h2').text();
-  //   rowDotLi = rowDotLi + `<li><a href="#row${n}" title="${rowtext}"></a></li>`;
-  //   _mainRow.eq(n).attr('id', 'row' + n);
-  // }
-  // _navDotsUl.append(rowDotLi);
-  // var _navDots = _navDotsUl.find('li');
-  // var navDotTop;
-
-  // _navDots.children('a').focus( function(e){
-  //   e.preventDefault();
-  //   let _dotliNow = $(this).parent();
-  //   _dotliNow.addClass('focused').siblings().removeClass('focused');
-
-  // })
-  // _navDots.children('a').click(function(e){
-  //   e.preventDefault();
-  //   let _dotliNow = $(this).parent();
-  //   _dotliNow.addClass('focused').siblings().removeClass('focused');
-
-  //   navDotTop = _mainRow.eq(_dotliNow.index()).offset().top;
-
-  //   _html.stop(true, false).animate({'scrollTop': navDotTop }, 800, function(){
-  //     setTimeout(() => {
-  //       _navDots.removeClass('focused');
-  //     }, 1000);
-  //   });
-  // })
-
-
   // 大圖自動輪播 -----------------------------------------------------
   var _bigBanner = $('.bigBanner');
   // _bigBanner.each( function() {
@@ -999,7 +960,6 @@ $(function(){
 
 
   // 頁籤，March 2022 新做  ======================================================================
-
   var _tabset = $('.tabset');
   _tabset.each(function(){
     let _this = $(this);
@@ -1030,6 +990,25 @@ $(function(){
   })
 
   // ======================================================================
+  // rwd list Table
+  // 把 th 的內容複製到對應的td的 data-th 屬性值
+  _rwdTable = $('.rwdTable');
+  _rwdTable.each( function(){
+    let _this = $(this);
+    let _th = _this.find('thead>tr>th');
+    let count = _th.length;
+    let _tr = _this.find('tbody').children('tr');
+
+      _tr.each(function(){
+        let _td = $(this).children('td');
+        for ( let i = 0; i<count; i++ ) {
+          _td.eq(i).attr('data-th', _th.eq(i).text());
+        }
+      })
+  })
+
+
+
   // ======================================================================
   // ======================================================================
 
@@ -1087,48 +1066,4 @@ $(function(){
     );
     _body.removeClass('noScroll');
   })
-
-
-
-
-  // // 條列頁 active 樣式
-  // var _category = $('.category');
-  // _category.each(function(){
-  //   let _item = $(this).find('li');
-  //   _item.click(function(){
-  //     $(this).addClass('active').siblings().removeClass('active');
-  //   })
-  // })
-
-
-  // // 開合區 slideToggle
-  // var _slideToggle = $('.slideToggle');
-  // _slideToggle.each(function(){
-  //   let _this = $(this);
-  //   let _ctrl = _this.find('.slideCtrl');
-  //   let _drawer = _this.find('.drawer');
-  //   let text1 = _ctrl.text();
-  //   let text2 = _ctrl.attr('data-altTitle');
-
-  //   if(_drawer.is(':hidden')) {
-  //     _ctrl.addClass('openIt').text(text2);
-  //   } else {
-  //     _ctrl.removeClass('openIt').text(text1);
-  //   }
-
-  //   _ctrl.click(function(){
-  //     if (_drawer.is(':visible')) {
-  //       _drawer.slideUp();
-  //       $(this).addClass('openIt').text(text2);
-  //     } else {
-  //       _drawer.slideDown();
-  //       $(this).removeClass('openIt').text(text1);
-  //     }
-  //   })
-  // })
-
-
-
-
-
 })

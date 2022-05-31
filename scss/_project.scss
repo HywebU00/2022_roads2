@@ -1,5 +1,5 @@
 .project{
-  @extend %blockWidth; padding: 0;
+  @extend %blockWidth; padding:0 0 1px;
   box-shadow: $borderColor 0 0 0 1px inset;
 
   .list, .meta, .cpArticle { margin:20px 2vw; width: auto;}
