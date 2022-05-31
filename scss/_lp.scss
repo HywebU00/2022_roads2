@@ -9,8 +9,7 @@
       &:last-child{border-bottom: none;}
       &>a{ 
         padding: .9em 8px .9em 3.5rem; margin: 0 0 5px; transition: .3s;
-        &:hover, &:focus{background: $hilight2; text-decoration: underline;
-          // time{text-decoration: none;}
+        &:hover, &:focus{ background-color: lighten($hilight2 , 40%); text-decoration: underline;
         }
       }
       .numb{ display: inline-block; font-size: 1rem; 
@@ -69,6 +68,9 @@
     }
   }
 
+  // &.rwdTable{
+  //   thead{ position: sticky; top: 145px; z-index: 9; background: rgba(220,220,220, .9);}
+  // }
 
   @media screen and (max-width: $wwNormal - 1){
     &>table{ margin: 0; width: 100%;}
@@ -108,6 +110,7 @@
 
     // RWD table, 帶入th內的文字到 td 的 ::before
     &.rwdTable{
+      thead{ position: sticky; top: 100px; z-index: 99; background: #eee;}
       td{
         &::before {
           content: attr(data-th) ' :'; display: inline-block; margin-right: .2em;

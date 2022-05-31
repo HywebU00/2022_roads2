@@ -991,7 +991,7 @@ $(function(){
 
   // ======================================================================
   // rwd list Table
-  // 把 th 的內容複製到對應的td的 data-th 屬性值
+  // 把 th 的內容複製到對應的td的 title 屬性值
   _rwdTable = $('.rwdTable');
   _rwdTable.each( function(){
     let _this = $(this);
@@ -1002,7 +1002,7 @@ $(function(){
       _tr.each(function(){
         let _td = $(this).children('td');
         for ( let i = 0; i<count; i++ ) {
-          _td.eq(i).attr('data-th', _th.eq(i).text());
+          _td.eq(i).attr('title', _th.eq(i).text());
         }
       })
   })
