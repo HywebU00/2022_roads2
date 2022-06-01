@@ -58,7 +58,7 @@
     .searchCtrl{ right: 60px; }
     h1{margin-left: 60px; }
 
-    &.fixed{ width: $wwMaximum; left: calc(50vw - #{$wwMaximum}*.5);}
+    &.fixed{ width: $wwMaximum; left: auto; /* left: calc(50vw - #{$wwMaximum}*.5) */;}
   }
 
 }
