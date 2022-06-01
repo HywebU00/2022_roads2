@@ -25,7 +25,7 @@
         &:last-child{ border-bottom: none;}
         a{ padding: .9em .8em .8em;
           transition: .2s;
-          &:hover{ background-color: #0003 }
+          &:hover{ background-color: rgba(0, 0, 0, 0.2) }
         }
 
         &.hasChild{
@@ -98,7 +98,7 @@
           max-width: 360px; min-width: 100%;
           font-size: 1rem;text-align: left;
           background-color: $secondaryColor; color: $fontInvert;
-          box-shadow: #0006 0 5px 20px;
+          box-shadow: rgba(0, 0, 0, 0.4) 0 5px 20px;
          
           li:last-child>a{border-bottom-color: transparent;}
           li>a{ position: relative;color: $fontInvert; padding: .9em 1.2em .8em; 

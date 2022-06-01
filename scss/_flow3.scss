@@ -11,14 +11,14 @@
   .flowList{display: flex; flex-flow: row nowrap; padding-bottom: 30px;
     &>li{ position: relative; flex: 0 0 76vw ;width: 76vw;height:114vw; margin-left: 5vw; 
       &>a{ display: block; width: 100%; height: 100%; text-decoration: none;
-        box-shadow: #0003 0 0 20px;color: $fontColor;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;color: $fontColor;
         &::before{content: ''; position: absolute; left: 0;right: 0;top: 0;bottom: 0; 
           box-shadow: $assistant 0 0 0 2px inset; display: none;}
-          &:hover{ box-shadow: #0005 0 8px 35px;}
+          &:hover{ box-shadow: rgba(0, 0, 0, 0.3) 0 8px 35px;}
           &:focus::before{ display: block; z-index: 9; }
         }
       header{padding: 55px 30px 100px; line-height: 1.6; position: relative; z-index: 8;
-        background-image: linear-gradient(#ffff 70%, #fff0 100% );
+        background-image: linear-gradient(rgba(255, 255, 255, 255) 70%, rgba(255, 255, 255, 0) 100% );
         h3{ font-size: 1.5rem; margin: 0 0 .5em;}
         p{margin: 0; font-size: 1.2rem;
           &.kilometer{ font-size: 1.3rem; font-weight: bold; overflow: hidden; text-overflow: ellipsis;}

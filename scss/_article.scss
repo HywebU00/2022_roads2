@@ -211,7 +211,7 @@
       a{ display: block; position: relative;
         background: $mainBg; color: $linkColor; text-decoration: none;
         height: 2.8em; line-height: 2.9; padding: 0 1em; border-radius: 2em;
-        box-shadow:$borderColor 0 0 0 1px, #0005 0 1px 3px; transition:.2s ;
+        box-shadow:$borderColor 0 0 0 1px, rgba(0, 0, 0, 0.3) 0 1px 3px; transition:.2s ;
         &::before{
           content: ''; position: absolute; top: 1em;
           width: 11px;height: 11px;
@@ -245,13 +245,13 @@
 .topMost, .imgPreface{
   @extend %blockWidth;
   margin: 0 auto 1em;padding:1.2em 1.5em 1em;line-height: 1.9;
-  box-shadow: rgba(#000, .15) 0 0 16px;
+  box-shadow: rgba(0,0,0, .15) 0 0 16px;
 }
 .topMost{
-  background-color: rgba(#fff , .6);
+  background-color: rgba(255,255,255 , .6);
 }
 .imgPreface{  
-  background-color: rgba(#F6F3EA, .5);
+  background-color: rgba(246, 243, 234, .5);
 }
 .specialOrderList{
   h3{ font-size: 1.1em;  margin: 1.5em 0 .5em; line-height: 1.6;
@@ -301,7 +301,7 @@
       }
       img{ display: block; width: 100%; height: calc(#{$mmw}*.5 - 10px); object-fit: cover; transition: .3s;}
       p{ position: absolute; left: 0; right: 0; bottom: 0;
-        background: #000a; color: #fff;  padding:5px 10px; margin: 0;
+        background: rgba(0, 0, 0, 0.667); color: #fff;  padding:5px 10px; margin: 0;
         transform: translateY(101%); transition: .5s;
       }
     }

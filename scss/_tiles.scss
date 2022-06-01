@@ -49,7 +49,7 @@
         .info{ font-size: .8rem;padding:10px 5px;
           position: absolute; left: 0; top: 0; right: 0; bottom: 0;
           transform: translateY(-100%); transition: .4s;
-          background: #000a; color: #fff; text-align: center;
+          background: rgba(0, 0, 0, 0.667); color: #fff; text-align: center;
           h3{ margin: .5em 0; font-size: 1.15em;}
           time{position: relative;
             &::before{content: attr(title); display: inline-block; margin-right:1em;}

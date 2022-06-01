@@ -8,7 +8,7 @@
         transition:background .3s , border-color .3s;}
       &::before{
         width: 64px; height: 64px;border-radius: 50%; 
-        background: #fffb; z-index: 8;
+        background: rgba(255, 255, 255, 0.7); z-index: 8;
       }
       &::after{
         width: 1px; height: 1px;margin: 20px 0 0 26px;
@@ -35,7 +35,7 @@
     }
     img{ 
       display: block; margin:0; width: 87vw; height: 56vw; object-fit: cover;
-      box-shadow: #0006 0 0 30px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0 0 30px;
     }
   }
   .brief{ line-height: 1.9;

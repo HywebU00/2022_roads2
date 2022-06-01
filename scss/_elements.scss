@@ -150,7 +150,7 @@ a:focus{outline: none;}
   padding: 0;margin: 0; width: 52px; height: 52px; line-height: 52px;
   border: none; border-radius: 50%; box-shadow: none;
   background: transparentize($mainBg, .3); color: $fontColorLight; font-size: 14px; line-height: 66px;
-  box-shadow: #0004 0 0 12px;
+  box-shadow: rgba(0, 0, 0, 0.267) 0 0 12px;
   transition: bottom .5s;
   &::before{  content: ''; position: absolute;
     width: 12px; height: 12px; top: 15px; left: 19px;
@@ -286,7 +286,7 @@ button.diskBtn{
     height: 2.5em; line-height: 2.5; padding: 0 1.6em;
     background: $mainBg; color: $primaryColor;
     text-decoration: none; transition: .2s;
-    box-shadow: #0003 0 0 16px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 16px;
     &:hover, &:focus{ background-color: $primaryColor; color: #fff;}
     &:focus{ box-shadow: $primaryColor 0 0 0 2px; }
   }
@@ -315,7 +315,7 @@ a:focus .moreFake{ background-color: $linkColor; color: $fontInvert;}
 .videoThumb{ position: relative;
   &::before, &::after{ content: ''; position: absolute; left: 50%; top: 50%; opacity: .7; transition: .2s;}
   &::before{ width: 44px; height: 44px; border-radius: 50%; 
-    margin: -22px 0 0 -22px; background-color: #0008; box-shadow: #fff 0 0 0 4px; }
+    margin: -22px 0 0 -22px; background-color: rgba(0, 0, 0, 0.5); box-shadow: #fff 0 0 0 4px; }
   &::after{ width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 15px;
     border-color: transparent transparent transparent #fff;
     margin: -10px 0 0 -4px;
@@ -323,7 +323,7 @@ a:focus .moreFake{ background-color: $linkColor; color: $fontInvert;}
 }
 a:hover .videoThumb{
   &::before, &::after{opacity: 1;}
-  &::before {background-color: #c00c;/* box-shadow: #c00b 0 0 0 4px; */}
+  &::before {background-color: rgba(204, 0, 0, 0.8);}
 }
 
 // 點選看大圖

@@ -57,10 +57,10 @@
     &>li{ position: relative; flex: 0 0 76vw ;width: 76vw ; margin-left: 5vw; 
       background: #fff;
       &>a{ display: block; width: 100%; height: 100%; text-decoration: none;
-        box-shadow: #0003 0 0 20px;color: $fontColor; transition: .2s;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;color: $fontColor; transition: .2s;
         &::before{content: ''; position: absolute; left: 0;right: 0;top: 0;bottom: 0; 
           box-shadow: $assistant 0 0 0 2px inset; display: none;}
-        &:hover{ box-shadow: #0005 0 8px 35px;}
+        &:hover{ box-shadow: rgba(0, 0, 0, 0.3) 0 8px 35px;}
         &:focus::before{ display: block; z-index: 9; }
       }
       .image{width: 100%; height: 57vw; overflow: hidden; position: relative;

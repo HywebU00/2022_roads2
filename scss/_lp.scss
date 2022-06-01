@@ -247,7 +247,7 @@
       .label{
         position: absolute; right: 1em; top: 0;
         height: 2.1em; line-height: 2.3em; padding: 0 1em;
-        border-radius: 0 0 5px 5px; box-shadow: #0004 0 2px 3px;
+        border-radius: 0 0 5px 5px; box-shadow: rgba(0, 0, 0, 0.267) 0 2px 3px;
         background-color: $assistant1; color: $fontInvert;
         &+h3{ margin-top: .5em;}
       }
