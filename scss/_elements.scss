@@ -375,8 +375,6 @@ time[attr="title"], .visitCount[attr="title"], .from[attr="title"]{ display: inl
     &::before{ content: attr(title) "：" ; display: inline-block; color: $fontColorLight;}
     &+time, &+.visitCount,  &+.from{ margin-left: 1em;}
   }
-
-
 }
 
 

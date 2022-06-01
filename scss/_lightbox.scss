@@ -1,5 +1,6 @@
-// 燈箱（.lightbox）與 彈出訊息（.popMessage）模組
-/*燈箱模組：需要燈箱效果的區塊可在原 class name 之後加 lightbox即可有燈箱效果，原來的class name單純用來控制樣式*/
+// 燈箱（.lightbox）
+// 燈箱模組：需要燈箱效果的區塊可在原 class name 之後加 lightbox 即可有燈箱效果
+// 原來的 class name 只用來控制樣式
 .lightbox{ 
   display: none;
   position:fixed;top:3vw;left:3vw;width:94vw;
@@ -35,7 +36,3 @@
     .closeThis{right:calc(50vw - #{$wwMaximum}*.47) }
   }
 }
-
-
-
-
