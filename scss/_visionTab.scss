@@ -1,4 +1,61 @@
-.vision{position: relative; width: $mmw; margin: 0 auto 150px; z-index: 39;
+// 願景專用頁籤
+.vision .tabset{
+  .tabItems{ display: flex; flex-flow: row nowrap;font-size: 1.15rem;
+    &>button{ border: none; box-shadow: none; background: transparent; cursor: pointer;
+      flex: 1 1 auto; position: relative; overflow: hidden;
+      font-size: 1em;margin: 0; padding:.2em 0 .2em 2em; line-height: 1.4; height: auto;
+      color: $fontColorLight; text-align: center;
+      &::after{content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background-color: $fontColorLight;}
+
+      .index{ display: inline-block; font-size: 1.3em; min-width: 1.5em; margin-left: -1.5em;
+        font-family: 'Times New Roman', Times, serif; font-weight: bold; text-align: center; transition: .2s;
+      }
+      .text{ display: none;}
+      &:focus{
+        // &::before{ transform: translateY(0);background-color: $primaryColor; }
+        .index{ transform: scale(1.5);}
+      }
+      &.active{ flex-basis: 42%; color: $primaryColor; text-align: left;
+        .text{ display: inline-block; vertical-align: middle;}
+        &::after{background-color: $primaryColor;}
+      }
+      &+button{ margin-left: 3px;}
+    }    
+  }
+
+  .tabContent{
+    display: none; position: relative;
+    padding: 20px 0; margin: 0;line-height: 1.8;
+
+    p{ margin: 0 0 2em; padding: 0;}
+
+    .skip {
+      position: absolute; right: 0; bottom: 0;
+      background-color: transparent; border: none;
+      width: 1px; height: 1px; padding: 0;
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    &::after{content: ''; display: block; clear: both;}
+    .tabItems{ display: block;float: left; font-size: 1.2rem;
+      &>button{ display: block; text-align: left; margin: 25px 0 0; padding-bottom:1.2em; width: 100%;
+        &::after{height: 2px;}
+        .index{ font-size: 1.8em;}
+        .text{display: inline-block; vertical-align: middle;}
+        &+button{ margin-left:0;}
+        &.active::after{height: 4px;}
+      }
+    }
+
+    .tabContent{ line-height: 2.1; padding: 30px 0;}
+  }
+
+}
+
+
+.vision{
+  position: relative; width: $mmw; margin: 0 auto 150px; z-index: 39;
   .blockHeader{ margin: 0 auto; padding-bottom: 30px;
     h2{ width: 42vw; height: 42vw; max-width: 240px; max-height: 240px; min-width: 180px; min-height: 180px;
       margin: 0; padding: 15px;
@@ -18,9 +75,9 @@
     .blockHeader{ 
       h2{ width:260px; height: 260px; max-width: none; max-height: none;}
     }
-    .tabset{ margin-top: -220px;
-      .tabItems{margin-top: 220px;width: 260px;
-      }
+    .tabset{ 
+      margin-top: -220px;
+      .tabItems{margin-top: 220px;width: 260px;}
       .tabContent{ margin-left: calc(260px + 5vw); padding-top: 90px;}
     }
   }
@@ -41,54 +98,4 @@
 }
 
 
-// 願景專用頁籤
-.tabset{
-  .tabItems{ display: flex; flex-flow: row nowrap;font-size: 1.15rem;
-    &>button{ border: none; box-shadow: none; background: transparent; cursor: pointer;
-      flex: 1 1 auto; position: relative; overflow: hidden;
-      font-size: 1em;margin: 0; padding:.2em 0 .2em 2em; line-height: 1.4; height: auto;
-      color: $fontColorLight; text-align: center;
-      &::after{content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background-color: $fontColorLight;}
-      // &::before{content: ''; position: absolute; left: 1.6em; top: 0; bottom: 0; width: 2px; 
-        //  transform: translateY(100%); transition: .2s; }
 
-
-      .index{ display: inline-block; font-size: 1.3em; min-width: 1.5em; margin-left: -1.5em;
-        font-family: 'Times New Roman', Times, serif; font-weight: bold; text-align: center; transition: .2s;
-      }
-      .text{ display: none;}
-      &:focus{
-        // &::before{ transform: translateY(0);background-color: $primaryColor; }
-        .index{ transform: scale(1.5);}
-      }
-      &.active{ flex-basis: 42%; color: $primaryColor; text-align: left;
-        .text{ display: inline-block; vertical-align: middle;}
-        &::after{background-color: $primaryColor;}
-      }
-      &+button{ margin-left: 3px;}
-    }    
-  }
-
-  .tabContent{
-    display: none; position: relative;padding: 20px 0; margin: 0;line-height: 1.8;
-    p{ margin: 0 0 2em; padding: 0;}
-
-    .skip{ position: absolute; right: 0; bottom: 0; border: none; background-color: transparent; width: 1px; height: 1px; padding: 0; }
-  }
-
-  @media screen and (min-width: $wwNormal){
-    &::after{content: ''; display: block; clear: both;}
-    .tabItems{ display: block;float: left; font-size: 1.2rem;
-      &>button{ display: block; text-align: left; margin: 25px 0 0; padding-bottom:1.2em; width: 100%;
-        &::after{height: 2px;}
-        .index{ font-size: 1.8em;}
-        .text{display: inline-block; vertical-align: middle;}
-        &+button{ margin-left:0;}
-        &.active::after{height: 4px;}
-      }
-    }
-
-    .tabContent{ line-height: 2.1; padding: 30px 0;}
-  }
-
-}

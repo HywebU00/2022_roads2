@@ -5,9 +5,6 @@
   .list, .meta, .cpArticle { margin:20px 2vw; width: auto;}
   .imgSlick{ margin: 0; width: auto;}
 
-
-
-
   @media screen and (min-width: $wwMedium){
     .list, .meta, .cpArticle { margin:32px 14px;}
   }
@@ -16,65 +13,124 @@
 
 }
 
+.project .tabset {
 
-.dataLink{
-  background: #fff;border-bottom: 2px solid $borderColor;
-  ul{ 
-    list-style: none; margin: 0 0 4px; padding:0;
-    line-height: 1.1;text-align: center;
+  .tabContent {
+    display: none; position: relative;
+
+    button.skip{
+      position: absolute; width: 1px; height: 1px; padding: 0; right: 0;bottom: 0;
+    }
+  }
+
+  .tabItems{
     overflow: hidden;
-    &>li{
-      float: left; margin: 3px;
-      a{
-        display: block; 
-        text-decoration: none;
-        padding:.8em 1em .7em;
-        color: $fontColor;background-color: $borderColorLight;
-        border-radius: 4px;
-        &:hover, &:focus{
-          box-shadow: $assistant2 0 0 0 2px;
-        }
+    background: #fff;border-bottom: 2px solid $borderColor;
+    button{
+      float: left; height: 3em; line-height: 3.1; margin: 3px;padding:0 1em;
+      color: $fontColor;background-color: $borderColorLight;
+      border-radius: 4px; box-shadow: none; border: none;
+      &:hover, &:focus{
+        box-shadow: $assistant2 0 0 0 2px;
       }
       &.active{
-        a{background-color: $assistant2; color:$fontInvert;}
+        background-color: $assistant2; color:$fontInvert;
       }
     }
   }
 
   @media screen and (min-width: $wwMedium){
-    ul{
-      margin: 0;    display: flex; flex-flow: row wrap; justify-content: space-between;
-      align-items: flex-end; 
-  
-      &>li{
-        flex: 1 1 auto; padding:0; margin: 4px 2px 0;
-        a{
-          position: relative; overflow: hidden;
-          margin:3px 0 0; padding: 16px 1em 11px;
-          border-radius: 6px 6px 0 0;
+    .tabItems{
+      margin: 0; display: flex; flex-flow: row wrap;
+      justify-content: space-between; align-items: flex-end; 
+      button{
+        position: relative;
+        flex: 1 1 auto; padding:0; margin:3px 2px 0; 
+        border-radius: 6px 6px 0 0;
+        transition: .2s;
+        &::after{
+          content: ''; position: absolute; left: 0; right: 0;
+          bottom: -3px; height: 3px;
+          background: $hilight;
           transition: .2s;
-          &::after{
-            content: ''; position: absolute; left: 0; right: 0;
-            bottom: -3px; height: 3px;
-            background: $hilight;
-            transition: .2s;
-          }
-          &:hover, &:focus{
-            margin-top: 0; padding-bottom: 14px;
-            box-shadow: none;
-            &::after{ bottom: 0;}
-          }
         }
+        &:hover, &:focus{
+          margin-top: 0; padding-bottom: 14px;
+          box-shadow: none;
+          &::after{ bottom: 0;}
+        }
+  
         &.active{
-          a{
-            padding-bottom: 14px; 
-            background-color: $assistant2; color: $fontInvert;
-            &::after{ height: 5px;}
-            &:hover, &:focus{ padding-bottom: 17px; }
-          }
+          height: calc(3em + 3px); margin-top: 0;
+          background-color: $assistant2; color: $fontInvert;
+          &::after{ height: 5px;}
+          &:hover, &:focus{ padding-bottom: 17px; }
         }
-        }
+      }
     }
-    
   }
+
 }
+
+
+// .dataLink{
+//   background: #fff;border-bottom: 2px solid $borderColor;
+//   ul{ 
+//     list-style: none; margin: 0 0 4px; padding:0;
+//     line-height: 1.1;text-align: center;
+//     overflow: hidden;
+//     &>li{
+//       float: left; margin: 3px;
+//       a{
+//         display: block; 
+//         text-decoration: none;
+//         padding:.8em 1em .7em;
+//         color: $fontColor;background-color: $borderColorLight;
+//         border-radius: 4px;
+//         &:hover, &:focus{
+//           box-shadow: $assistant2 0 0 0 2px;
+//         }
+//       }
+//       &.active{
+//         a{background-color: $assistant2; color:$fontInvert;}
+//       }
+//     }
+//   }
+
+//   @media screen and (min-width: $wwMedium){
+//     ul{
+//       margin: 0;    display: flex; flex-flow: row wrap; justify-content: space-between;
+//       align-items: flex-end; 
+  
+//       &>li{
+//         flex: 1 1 auto; padding:0; margin: 4px 2px 0;
+//         a{
+//           position: relative; overflow: hidden;
+//           margin:3px 0 0; padding: 16px 1em 11px;
+//           border-radius: 6px 6px 0 0;
+//           transition: .2s;
+//           &::after{
+//             content: ''; position: absolute; left: 0; right: 0;
+//             bottom: -3px; height: 3px;
+//             background: $hilight;
+//             transition: .2s;
+//           }
+//           &:hover, &:focus{
+//             margin-top: 0; padding-bottom: 14px;
+//             box-shadow: none;
+//             &::after{ bottom: 0;}
+//           }
+//         }
+//         &.active{
+//           a{
+//             padding-bottom: 14px; 
+//             background-color: $assistant2; color: $fontInvert;
+//             &::after{ height: 5px;}
+//             &:hover, &:focus{ padding-bottom: 17px; }
+//           }
+//         }
+//         }
+//     }
+    
+//   }
+// }
