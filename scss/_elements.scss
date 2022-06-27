@@ -9,7 +9,9 @@ a:focus{outline: none;}
     text-decoration: none; color: $fontColorLight;
     &:focus{ outline: 2px solid $primaryColor;}
   }
-  .webFooter .accesskey{ color: $fontInvert;}
+  .webFooter .accesskey{ color: $fontInvert;
+    &:focus{  outline: 2px solid $fontColor;}
+  }
 }
 
 

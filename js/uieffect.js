@@ -39,13 +39,22 @@ $(function(){
     focusOnSelect: true
   });
 
-  // $('.bigImgShow').slick({
-  //   dots: false,
-  //   infinite: true,
-  //   speed: 500,
-  //   fade: true,
-  //   cssEase: 'linear'
-  // });
+  // 首頁大圖輪播
+  $('.bigBanner').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplaySpeed: 5000,
+    speed: 800,
+    autoplay: true,
+    arrows: true,
+    fade: false,
+    infinite: true,
+  });
+
+  // --------------------- slick 參數設定：結束
+
+
+
   // --------------------- slick 參數設定：結束
 
 
@@ -291,20 +300,7 @@ $(function(){
  
 
 
-  // --------------------- 外掛套件 slick 參數設定
-  // 首頁大圖輪播
-  $('.bigBanner').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplaySpeed: 5000,
-    speed: 800,
-    autoplay: true,
-    arrows: true,
-    fade: false,
-    infinite: true,
-  });
 
-  // --------------------- slick 參數設定：結束
 
 
 
@@ -978,6 +974,11 @@ $(function(){
       i = $(this).index();
       $(this).addClass('active').attr('tabindex' , '0' ).siblings().removeClass('active').attr('tabindex' , '-1' );
       _tabContent.hide().eq(i).show();
+      // 判斷 .tabContent 是否有 slick 元件
+      if ( _tabContent.eq(i).find('.imgSlick').length > 0 ) {
+        _tabContent.eq(i).find('.imgSlick').find('.slick-prev').trigger('click');
+        setTimeout( function (){_tabContent.eq(i).find('.imgSlick').find('.slick-next').trigger('click');}, 600)
+      }
     })
 
     _skip.on('focus', function(){
