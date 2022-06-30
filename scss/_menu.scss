@@ -78,9 +78,11 @@
   .topRow .menu{ display: block; margin:0 5vw;
     a{ color: $fontInvert; text-decoration: none; display: block; }
 
-    &>ul{ display: flex; flex-flow: row nowrap; justify-content: flex-end;
+    &>ul{
+      display: flex; flex-flow: row nowrap; justify-content: flex-end;
       line-height: 1.5; font-size: 1.15em;text-align: center;
-      &>li{flex: 1 1 auto;
+      &>li{
+        flex: 1 1 auto;
         margin: 0; position: relative; transition: .2s;
         &:hover{ background: $primaryColor;color: $fontInvert;
           a{color: $fontInvert;}
@@ -88,14 +90,29 @@
         &>a{padding:20px .5em 18px; color: $fontColor; white-space: nowrap; 
           &:focus { background: $primaryColor; color: $fontInvert;}
         }
-        &.here>a{background: $primaryColor; color: $fontInvert;}
+        &.here{
+          &>a{background: $primaryColor; color: $fontInvert;}
+        }
 
-        &>ul{ top: auto; left: 0;} // 第二層選單
+        &>ul{ top: auto; left: 0; z-index: 99;} // 第二層選單
+
+        // &.hasChild.here ul:hover{
+        //   max-height: 99vh; overflow-y: scroll;
+        // }
+
+
+        button{
+          display: none;
+          width: 50px; height: 50px;
+          position: fixed; bottom: 5px; top: 90vh;
+
+          z-index: 109;
+        }
 
         
         ul{ 
-          display: none; position: absolute;  width: auto;
-          max-width: 360px; min-width: 100%;
+          display: none; position: absolute;
+          width: auto; max-width: 360px; min-width: 100%;
           font-size: 1rem;text-align: left;
           background-color: $secondaryColor; color: $fontInvert;
           box-shadow: rgba(0, 0, 0, 0.4) 0 5px 20px;
@@ -111,9 +128,11 @@
             }
           }
 
-          li.hasChild{ position: relative;
+          li.hasChild{ 
+            position: relative;
+
             &.here{background: darken($primaryColor, 12%);
-              &>a:hover{}
+              // &>a:hover{}
               &>a:focus{background-color: $primaryColor;}
             }
             &>a{ padding-right: 36px;
@@ -124,7 +143,9 @@
             }
 
             // 第三層及其之後
-            ul{ top: 0; z-index: 99;}
+            ul{ top: 0; z-index: 99;
+              // max-height: 99vh; overflow-y: scroll;
+            }
             // ul ul { z-index: 99;}
           }
         }

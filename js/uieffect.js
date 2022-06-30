@@ -113,82 +113,138 @@ $(function(){
 
 
   // 寬版主選單 -----------------------------------------------------
-  _menu.each( function(){
+  var _hasChild = _menu.find('.hasChild');
+  var _topItem = _menu.children('ul').children('li');
+  var _hasChildA = _hasChild.children('a');
+  var liA = _menu.find('li>a');
+
+  _hasChild.each(function(){
     let _this = $(this);
-    let _hasChild = _this.find('.hasChild');
-    let _topItem = _this.children('ul').children('li');
-    let _hasChildA = _hasChild.children('a');
-    let liA = _this.find('li>a');
-    
-    _hasChild.hover(
+    let _thisSubMenu = _this.children('ul');
+    _this.hover(
       function(){
-        let _this = $(this);
-        let _thisSubMenu = _this.children('ul');
+        let offset1 = _window.scrollTop() + _window.height();
+        let offset2;
+        let translate;
+        // let i , j;
+        // let ddd = 0;
 
         if ( _this.is(_topItem) ) {
-          _thisSubMenu.stop(true, false).slideDown(300);
+          _thisSubMenu.css('left', 0);
         } else {
-          // let _thisSubMenu = $(this).children('ul');
           _this.addClass('here');
           if ( _this.offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
             _thisSubMenu.css( 'left', -1*(_thisSubMenu.innerWidth()) );
           } else {
             _thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
           }
-          _thisSubMenu.stop(true, false).slideDown(300);
         }
+
+        _thisSubMenu.stop(true, false).slideDown(300, function(){
+          offset2 = _thisSubMenu.offset().top + _thisSubMenu.innerHeight();
+         
+          if (offset2 > offset1) {
+            if (_thisSubMenu.innerHeight() <= _window.height()) {
+              // 如果次選單高度 小於 視窗高度
+              translate = 'translateY(' + String( offset1 - offset2 ) + 'px)';
+            } else {
+              // 如果次選單高度 大於 視窗高度
+              translate = 'translateY(' + String( _window.scrollTop() - _thisSubMenu.offset().top ) + 'px)';             
+            }
+            _thisSubMenu.css('transform', translate );
+          };
+
+        });
       },
       function(){
         $(this).removeClass('here').children('ul').stop(true, false).slideUp(200, function(){
           $(this).removeAttr('style');
+          _this.find('button').hide();
         });
       }
     );
-    
-    _hasChildA.focus(function(){
-      let _this = $(this);
-      let _thisSubMenu = $(this).next('ul');
-
-      if ( _this.parent().is(_topItem) ) {
-        _thisSubMenu.show();
-      } else {
-        if (_this.parent().offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
-          _thisSubMenu.css('left', -1*(_thisSubMenu.innerWidth()) );
-        } else {
-          _thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
-        }
-        _thisSubMenu.show();
-      }
-      _this.parent().addClass('here');
-    })
-
-    liA.focus(function(){
-      $(this).parent('li').siblings().removeClass('here').find('ul').hide();
-    })
-
-
-    // let mt = 0;
-    // liA.mouseenter(
-    //   function(e){
-    //     // console.log( e.pageY, e.clientY )
-    //     let moveUp = $(this).innerHeight();
-    //     if ( e.clientY > wh - moveUp*1.5) {
-    //       console.log('yes');
-    //       $(this).parent('li').parent('ul').animate({
-    //         'margin-top' : mt - moveUp
-    //       }, 600, function(){
-    //         mt = mt - moveUp;
-    //       });
-    //     } else {
-    //       console.log('no');
-    //       $(this).parent('li').parent('ul').css({
-    //         'margin-top' : 0
-    //       });
-    //     }
-    //   }
-    // )
 
   })
+  
+  
+  _hasChildA.focus(function(){
+    let _this = $(this);
+    let _thisSubMenu = $(this).next('ul');
+
+    if ( _this.parent().is(_topItem) ) {
+      _thisSubMenu.show();
+    } else {
+      if (_this.parent().offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
+        _thisSubMenu.css('left', -1*(_thisSubMenu.innerWidth()) );
+      } else {
+        _thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
+      }
+      _thisSubMenu.show();
+    }
+    _this.parent().addClass('here');
+  })
+
+  liA.focus(function(){
+    $(this).parent('li').siblings().removeClass('here').find('ul').hide();
+  })
+
+
+  // ------------------------------------------------------------
+  // _menu.each( function(){
+  //   let _this = $(this);
+  //   let _hasChild = _this.find('.hasChild');
+  //   let _topItem = _this.children('ul').children('li');
+  //   let _hasChildA = _hasChild.children('a');
+  //   let liA = _this.find('li>a');
+    
+  //   _hasChild.hover(
+  //     function(){
+  //       let _this = $(this);
+  //       let _thisSubMenu = _this.children('ul');
+
+  //       if ( _this.is(_topItem) ) {
+  //         _thisSubMenu.stop(true, false).slideDown(300);
+  //       } else {
+  //         _this.addClass('here');
+  //         if ( _this.offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
+  //           _thisSubMenu.css( 'left', -1*(_thisSubMenu.innerWidth()) );
+  //         } else {
+  //           _thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
+  //         }
+  //         _thisSubMenu.stop(true, false).slideDown(300);
+  //       }
+  //     },
+  //     function(){
+  //       $(this).removeClass('here').children('ul').stop(true, false).slideUp(200, function(){
+  //         $(this).removeAttr('style');
+  //       });
+  //     }
+  //   );
+    
+  //   _hasChildA.focus(function(){
+  //     let _this = $(this);
+  //     let _thisSubMenu = $(this).next('ul');
+
+  //     if ( _this.parent().is(_topItem) ) {
+  //       _thisSubMenu.show();
+  //     } else {
+  //       if (_this.parent().offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
+  //         _thisSubMenu.css('left', -1*(_thisSubMenu.innerWidth()) );
+  //       } else {
+  //         _thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
+  //       }
+  //       _thisSubMenu.show();
+  //     }
+  //     _this.parent().addClass('here');
+  //   })
+
+  //   liA.focus(function(){
+  //     $(this).parent('li').siblings().removeClass('here').find('ul').hide();
+  //   })
+  // })
+
+
+
 
   // 離開 _menu 隱藏所有次選單
   $('*').focus(function(){
