@@ -80,40 +80,28 @@
 
     &>ul{
       display: flex; flex-flow: row nowrap; justify-content: flex-end;
-      line-height: 1.5; font-size: 1.15em;text-align: center;
+      line-height: 1.5; font-size: 1.15em;
       &>li{
         flex: 1 1 auto;
         margin: 0; position: relative; transition: .2s;
         &:hover{ background: $primaryColor;color: $fontInvert;
           a{color: $fontInvert;}
         }
-        &>a{padding:20px .5em 18px; color: $fontColor; white-space: nowrap; 
+        &>a{padding:20px .5em 18px;text-align: center; color: $fontColor; white-space: nowrap; 
           &:focus { background: $primaryColor; color: $fontInvert;}
         }
         &.here{
           &>a{background: $primaryColor; color: $fontInvert;}
         }
 
-        &>ul{ top: auto; left: 0; z-index: 99;} // 第二層選單
-
-        // &.hasChild.here ul:hover{
-        //   max-height: 99vh; overflow-y: scroll;
-        // }
-
-
-        button{
-          display: none;
-          width: 50px; height: 50px;
-          position: fixed; bottom: 5px; top: 90vh;
-
-          z-index: 109;
+        &>ul{ // 第二層選單
+          top: auto; left: 0; z-index: 99;
+          max-width: 360px; min-width: 100%;
         }
-
-        
-        ul{ 
+ 
+        ul{ //  第二層及其之後
           display: none; position: absolute;
-          width: auto; max-width: 360px; min-width: 100%;
-          font-size: 1rem;text-align: left;
+          font-size: 1rem;
           background-color: $secondaryColor; color: $fontInvert;
           box-shadow: rgba(0, 0, 0, 0.4) 0 5px 20px;
          
@@ -130,32 +118,47 @@
 
           li.hasChild{ 
             position: relative;
-
-            &.here{background: darken($primaryColor, 12%);
-              // &>a:hover{}
+            &.here{
+              background: darken($primaryColor, 12%);
               &>a:focus{background-color: $primaryColor;}
             }
-            &>a{ padding-right: 36px;
+            &>a{
+              padding-right: 36px;
               &::before{content: ''; position: absolute;left: auto; right: 13px; top: 1.1em;
                 width: 10px; height: 10px; border: 2px solid $fontInvert; transform: rotate(45deg);
                 border-left: none; border-bottom: none;
               }
             }
-
             // 第三層及其之後
-            ul{ top: 0; z-index: 99;
-              // max-height: 99vh; overflow-y: scroll;
-            }
-            // ul ul { z-index: 99;}
+            ul{ top: 0; z-index: 99; left: 100%; width: 200px;}
+
           }
         }
-
+        
+      }
+    }
+    //*** 控制滑出選單向上（下）移動的 button 元件。 20220630 /////
+    .xButton {
+      position: fixed; top: calc(100vh - 40px); left: 0; z-index: 199;
+      width: 36px; height: 36px; margin: 0; padding: 0;
+      transform: translateX(calc(-100% - 4px));      
+      transition:none;
+      border: 2px solid rgba(0,0,0,.6);
+      &::before{
+        content: ''; position: absolute; width: 8px; height: 8px; top: 50%; left: 50%;
+        border: 2px solid #fff; border-left: none; border-top: none;
+        transform: translate(-4px, -6px) rotate(45deg);
       }
     }
   }
   @media screen and (min-width: $wwMaximum){
     .topRow .menu{
       margin-right: 60px; margin-left: 60px;
+    }
+    // *** 20220630 *** //
+    .topRow .fixed .menu .xButton {
+      transform: translateX( calc( -100% - 4px - 50vw + #{$wwMaximum}*.5 ) );
+
     }
   }
 }

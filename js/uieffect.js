@@ -121,18 +121,22 @@ $(function(){
   _hasChild.each(function(){
     let _this = $(this);
     let _thisSubMenu = _this.children('ul');
+    let _xBotton;
+
     _this.hover(
       function(){
         let offset1 = _window.scrollTop() + _window.height();
         let offset2;
-        let translate;
-        // let i , j;
-        // let ddd = 0;
+        let translate = '';
+        let dd = 0;
+        let disB = 0;
+
+        _this.addClass('here');
 
         if ( _this.is(_topItem) ) {
           _thisSubMenu.css('left', 0);
         } else {
-          _this.addClass('here');
+          // _this.addClass('here');
           if ( _this.offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
             _thisSubMenu.css( 'left', -1*(_thisSubMenu.innerWidth()) );
           } else {
@@ -140,33 +144,47 @@ $(function(){
           }
         }
 
-        _thisSubMenu.stop(true, false).slideDown(300, function(){
-          offset2 = _thisSubMenu.offset().top + _thisSubMenu.innerHeight();
-         
+        _thisSubMenu.stop(true, true).slideDown(300, function(){
+          offset2 = parseInt(_thisSubMenu.offset().top + _thisSubMenu.innerHeight());
+          const itemHeight = _thisSubMenu.find('li:first-child').innerHeight();
+
           if (offset2 > offset1) {
             if (_thisSubMenu.innerHeight() <= _window.height()) {
-              // 如果次選單高度 小於 視窗高度
               translate = 'translateY(' + String( offset1 - offset2 ) + 'px)';
             } else {
-              // 如果次選單高度 大於 視窗高度
-              translate = 'translateY(' + String( _window.scrollTop() - _thisSubMenu.offset().top ) + 'px)';             
+              translate = 'translateY(' + String( _window.scrollTop() - _thisSubMenu.offset().top ) + 'px)';
+
+              // 加入控制 button -------------------------------------
+              _this.append('<button class="xButton" type="button"></button>');
+              _xBotton = _this.find('.xButton');
+              _xBotton.css('left', _thisSubMenu.offset().left + _thisSubMenu.width());
+
+              // disB = 選單高度 - 視窗高度
+              disB =  _thisSubMenu.innerHeight() - _window.height();
             }
             _thisSubMenu.css('transform', translate );
-          };
 
+            _xBotton.click(function(){
+              if ( dd + disB > 0) {
+                dd = dd - itemHeight;
+                if (dd + disB < itemHeight) { dd = dd - disB%itemHeight;}
+                _thisSubMenu.stop(true, false).animate({'margin-top': dd}, 200);
+              }
+            })
+          };
         });
       },
       function(){
-        $(this).removeClass('here').children('ul').stop(true, false).slideUp(200, function(){
+        _this.removeClass('here').find('.xButton').remove();
+        _thisSubMenu.stop(true, false).slideUp(200, function(){
           $(this).removeAttr('style');
-          _this.find('button').hide();
         });
       }
     );
 
   })
   
-  
+  // 鍵盤操作 
   _hasChildA.focus(function(){
     let _this = $(this);
     let _thisSubMenu = $(this).next('ul');
@@ -187,64 +205,6 @@ $(function(){
   liA.focus(function(){
     $(this).parent('li').siblings().removeClass('here').find('ul').hide();
   })
-
-
-  // ------------------------------------------------------------
-  // _menu.each( function(){
-  //   let _this = $(this);
-  //   let _hasChild = _this.find('.hasChild');
-  //   let _topItem = _this.children('ul').children('li');
-  //   let _hasChildA = _hasChild.children('a');
-  //   let liA = _this.find('li>a');
-    
-  //   _hasChild.hover(
-  //     function(){
-  //       let _this = $(this);
-  //       let _thisSubMenu = _this.children('ul');
-
-  //       if ( _this.is(_topItem) ) {
-  //         _thisSubMenu.stop(true, false).slideDown(300);
-  //       } else {
-  //         _this.addClass('here');
-  //         if ( _this.offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
-  //           _thisSubMenu.css( 'left', -1*(_thisSubMenu.innerWidth()) );
-  //         } else {
-  //           _thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
-  //         }
-  //         _thisSubMenu.stop(true, false).slideDown(300);
-  //       }
-  //     },
-  //     function(){
-  //       $(this).removeClass('here').children('ul').stop(true, false).slideUp(200, function(){
-  //         $(this).removeAttr('style');
-  //       });
-  //     }
-  //   );
-    
-  //   _hasChildA.focus(function(){
-  //     let _this = $(this);
-  //     let _thisSubMenu = $(this).next('ul');
-
-  //     if ( _this.parent().is(_topItem) ) {
-  //       _thisSubMenu.show();
-  //     } else {
-  //       if (_this.parent().offset().left + _this.innerWidth() + _thisSubMenu.innerWidth() > _window.innerWidth()) {
-  //         _thisSubMenu.css('left', -1*(_thisSubMenu.innerWidth()) );
-  //       } else {
-  //         _thisSubMenu.css('left', _thisSubMenu.parent().innerWidth());
-  //       }
-  //       _thisSubMenu.show();
-  //     }
-  //     _this.parent().addClass('here');
-  //   })
-
-  //   liA.focus(function(){
-  //     $(this).parent('li').siblings().removeClass('here').find('ul').hide();
-  //   })
-  // })
-
-
-
 
   // 離開 _menu 隱藏所有次選單
   $('*').focus(function(){
