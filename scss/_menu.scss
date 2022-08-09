@@ -155,10 +155,11 @@
     .topRow .menu{
       margin-right: 60px; margin-left: 60px;
     }
+    
     // *** 20220630 *** //
     .topRow .fixed .menu .xButton {
       transform: translateX( calc( -100% - 4px - 50vw + #{$wwMaximum}*.5 ) );
-
     }
+
   }
 }

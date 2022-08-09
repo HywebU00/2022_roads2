@@ -85,7 +85,7 @@ $(function(){
   _menu.find('li').has('ul').addClass('hasChild');
 
   // 行動版＊側欄選單
-  //複製「主選單」到側欄給行動版用
+  // 複製「主選單」到側欄給行動版用
   _menu.clone().prependTo(_sidebar);
   $('.topNav').clone().appendTo(_sidebar);
   var _sidebarCtrl = _webHeader.find('.sidebarCtrl');
@@ -121,7 +121,7 @@ $(function(){
   _hasChild.each(function(){
     let _this = $(this);
     let _thisSubMenu = _this.children('ul');
-    let _xBotton;
+    let _xButton;
 
     _this.hover(
       function(){
@@ -156,15 +156,15 @@ $(function(){
 
               // 加入控制 button -------------------------------------
               _this.append('<button class="xButton" type="button"></button>');
-              _xBotton = _this.find('.xButton');
-              _xBotton.css('left', _thisSubMenu.offset().left + _thisSubMenu.width());
+              _xButton = _this.find('.xButton');
+              _xButton.css('left', _thisSubMenu.offset().left + _thisSubMenu.width());
 
               // disB = 選單高度 - 視窗高度
               disB =  _thisSubMenu.innerHeight() - _window.height();
             }
             _thisSubMenu.css('transform', translate );
 
-            _xBotton.click(function(){
+            _xButton.click(function(){
               if ( dd + disB > 0) {
                 dd = dd - itemHeight;
                 if (dd + disB < itemHeight) { dd = dd - disB%itemHeight;}
@@ -356,125 +356,6 @@ $(function(){
 		}
 	});
 
-
-  // 大圖自動輪播 -----------------------------------------------------
-  var _bigBanner = $('.bigBanner');
-  // _bigBanner.each( function() {
-  //   let _this = $(this);
-  //   let _floxBox = _this.find('.flowBox');
-  //   let _flowList = _floxBox.find('.flowList');
-  //   let _flowItem = _flowList.children('li');
-  //   let count = _flowItem.length;
-  //   let _btnRight = _this.find('.diskBtn.next');
-  //   let _btnLeft = _this.find('.diskBtn.prev');
-  //   const speed = 900;
-  //   const duration = 4000;
-  //   const actClassName = 'active';
-  //   let i = 0;
-  //   let j;
-  //   let _dots = '';
-  //   let _indicatItem;
-    
-  //   if (count > 1){
-  //     // 產生 indicator
-  //     _floxBox.append('<div class="flowNav"><ul></ul></div>');
-  //     let _indicator = _this.find(".flowNav>ul");
-  //     for (let n = 0; n < count; n++) {
-  //       _dots = _dots + '<li></li>';
-  //     }
-  //     _indicator.append(_dots);
-  //     _indicatItem = _indicator.find('li');
-  //     _indicatItem.eq(i).addClass(actClassName);
-  //   } else {
-  //     _btnRight.add(_btnLeft).hide();
-  //   }
-
-  //   // 開始自動輪播
-  //   let autoLoop = setInterval( slideForward , duration);
-
-
-  //   // 滑鼠移入、移出輪播區
-  //   _floxBox.mouseenter(function(){
-  //     clearInterval(autoLoop);
-  //   });
-  //   _floxBox.mouseleave(function(){
-  //     autoLoop = setInterval( slideForward , duration);
-  //   });
-
-  //   function slideForward() {
-  //     j = (i + 1) % count;
-  //     _flowItem.eq(i).stop(true, false).animate({'left': '-100%'}, speed, function(){
-  //       $(this).css('left', '100%');
-  //     })
-  //     _flowItem.eq(j).stop(true, false).animate({ 'left': 0}, speed);
-  //     _indicatItem.eq(i).removeClass(actClassName);
-  //     _indicatItem.eq(j).addClass(actClassName);
-  //     i = j;
-  //   }
-
-  //   function slideBackward() {
-  //     j = (i - 1) % count;
-  //     _flowItem.eq(j).css('left', '-100%').stop(true, true).animate({left: 0} , speed);
-  //     _flowItem.eq(i).stop(true, true).animate({'left': '100%'}, speed );
-  //     _indicatItem.eq(i).removeClass(actClassName);
-  //     _indicatItem.eq(j).addClass(actClassName);
-  //     i = j;
-  //   }
-
-  //   // 點擊向右箭頭
-  //   _btnRight.click(function () { 
-  //     clearInterval(autoLoop);
-  //     slideForward();
-  //   });
-
-  //   // 點擊向左箭頭
-  //   _btnLeft.click(function () {
-  //     clearInterval(autoLoop);
-  //     slideBackward();
-  //   });
-  //   _btnRight.add(_btnLeft).focus(function(){
-  //     clearInterval(autoLoop);
-  //   })
-
-  //   // touch and swipe 左右滑動
-  //   _floxBox.swipe({
-  //     swipeRight: function () {slideBackward();},
-  //     swipeLeft: function () {slideForward();},
-  //     threshold: 20,
-  //   });      
-
-
-  //   // 改變視窗大小時，暫停自動輪播
-  //   let winResizeTimer;
-  //   _window.resize(function () {
-  //     clearTimeout(winResizeTimer);
-  //     winResizeTimer = setTimeout(function () {
-  //       clearInterval(autoLoop);
-  //       autoLoop = setInterval( slideForward , duration);
-  //     }, 200);
-  //   });
-
-  //   // tab 鍵遊走
-  //   _flowItem.children('a').focus(function(){
-  //     clearInterval(autoLoop);
-  //     $(this).parent().css('left', 0).siblings().css('left', '-100%');
-  //     i = $(this).parent().index();
-  //     _indicatItem.removeClass(actClassName).eq(i).addClass(actClassName);
-  //   })
-  //   _flowItem.last().children('a').blur( function(){
-  //     _flowItem.css('left', '100%');
-  //     _flowItem.last().css('left', 0);
-  //     i = count - 1;
-  //     j = (i + 1) % count;
-  //   })
-  //   _floxBox.focusout( function(){
-  //     clearInterval(autoLoop);
-  //     autoLoop = setInterval( slideForward , duration);
-  //   })
-
-  // })
-
-  
   
   // .flow2：寬版顯示兩筆完整，第三筆顯示局部 ------------------------------
   var _flow2 = $('.flow2');

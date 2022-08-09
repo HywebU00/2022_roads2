@@ -40,8 +40,8 @@
     border-collapse: collapse; line-height: 1.5; width: calc(100% - 16px); margin:0 8px;
     border-top: 2px solid $borderColor;border-bottom: 2px solid $borderColor;
     tr{
-      border-bottom: 1px solid $borderColor;
-      &:hover{ background-color: lighten($hilight2 , 40%);}
+      
+      &:hover{ background-color: lighten($hilight , 52%);}
     }
     th, td{
       padding: 14px 16px 12px; position: relative;
@@ -53,17 +53,24 @@
         &::after{display: none;}
       }
     }
-    th{ white-space: nowrap;}
+    th{
+      white-space: nowrap; background-color: lighten($gray, 8%);
+      border-bottom: 1px solid $borderColorDark;
+    }
 
-    td{ text-align: center;
-      &.numb{text-align: right;
-        // &::after{content: '.';}
-      }
+    td{
+      text-align: center;border-bottom: 1px solid $borderColor;
+      &.numb{text-align: right;}
       &>a{
-        display: block;
-        // padding: 12px 15px 9px; margin: -10px -12px -8px -11px;
-        font-size: 1.2em; text-align: left; transition: .3s;
-        &:hover, &:focus{/* background: $hilight2; */text-decoration: underline;}
+        text-decoration: underline;color: $linkColor;
+        &:hover, &:focus{ text-decoration: none;}
+        &:focus{box-shadow: $linkColor 0 0 0 1px;}
+      }
+      &.title{
+        text-align: left;font-size: 1.2em;
+        &>a{
+          display: block;transition: .3s;
+        }
       }
     }
   }

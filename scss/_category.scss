@@ -3,7 +3,7 @@
   ul{ list-style: none; margin: 0; padding: 0; line-height: 1.1;
     &::after{ content: ''; display: block; clear: both;}
   }
-  li{ float: left; margin: 3px;
+  li{ float: left; margin: 5px;
     a {display: block; 
       color: $fontColor; background: $fontInvert; text-decoration: none;
       height: 2.6em; line-height: 2.6em; padding: 0 1em; border-radius: 1.5em;
