@@ -67,8 +67,6 @@ a:focus{outline: none;}
   }
 
   &.closeIt{
-    // background-color: $notice;
-    // &:focus{background-color: $notice; box-shadow: $notice 0 0 0 3px;}
     &::before, &::after{ width: 28px; right: 13px;}
     &::before{box-shadow: none;top: 26px; transform: rotate(45deg);}
     &::after{transform: rotate(-45deg);}
@@ -159,7 +157,6 @@ a:focus{outline: none;}
     border: 2px solid $fontColor;  border-bottom: none; border-right: none;
     transform: rotate(45deg) ;
   }
-  // &::after{ content: 'top'; position: absolute;top: 26px; left: 50%; color: $fontColor;}
 
   &:hover, &:focus{ background: $fontColor; border: none;
     &::before{border-color: $fontInvert;}
@@ -172,61 +169,6 @@ a:focus{outline: none;}
   }
 
 }
-
-
-// 本頁快速連結點點
-// .mpNav{
-//   display: none;
-//   @media screen and (min-width: $wwNormal){
-//     display: block;
-//     position: fixed; top: 45vh; right: 16px; z-index: 995;
-//     transform: translateY(-55%);
-//     ul{list-style: none; margin: 0; padding: 0;}
-//     li{margin:8px auto; padding: 0;
-//       a{
-//         position: relative;
-//         display: block; width: 20px; height: 20px; 
-//         &::before{
-//           content: ''; position: absolute; left: 4px;top: 4px;
-//           width: 12px; height: 12px; border-radius: 50%; z-index: 9;
-//           background: $primaryColor; box-shadow: $fontInvert 0 0 3px;
-//           background-size: contain;
-//         }
-//         &::after{ content: attr(title);
-//           position: absolute; right: -2px; top: -2px; white-space: nowrap; 
-//           height: 1.5em; line-height: 1.5; border-radius: 1em;
-//           background-color: transparent; color: transparent;
-//           width: 0; padding: 0; overflow: hidden;
-//           transition:background-color .5s, color .5s;
-//         }
-//         &:hover{
-//           &::before{background: $assistant;}
-//           &::after{
-//             background-color: transparentize($fontColor, .4); color: $fontInvert;
-//             width: auto;padding: 0 25px 0 .6em; 
-//           }
-//         }
-//         &:focus{outline: none;}
-//       }
-
-//       &.focused a{
-//         &::before{background: $assistant; box-shadow:  $fontInvert 0 0 0 3px; }
-//         &::after{
-//           background-color: $fontColor; color: $fontInvert;
-//           width: auto;padding: 0 25px 0 .6em;
-//           transition:background-color .5s, color .5s;
-//         }
-//       }
-//     }
-//   }
-
-//   @media screen and (min-width: $wwMaximum + 96px){
-//     right: auto;
-//     left: calc(50% + #{$wwMaximum}/2 + 12px );
-//   }
-
-// }
-
 
 // 「實境展覽」連結圖示
 .vrLink{ display: none;
@@ -244,7 +186,6 @@ a:focus{outline: none;}
 
   @media screen and (min-width: $wwMaximum ){
     right: calc( 50vw - #{$wwMaximum}/2 + 6px );
-
   }
 }
 
@@ -253,7 +194,6 @@ button.diskBtn{
   position: relative; cursor: pointer; transition: .2s;
   border: none; width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
   background: $fontColor; color: $fontInvert; text-indent: -10em;
-
 
   &.prev, &.next{
     &::before, &::after{
