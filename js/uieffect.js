@@ -946,7 +946,7 @@ $(function(){
   })
 
   _hideLightbox.click(function(){
-    let _targetLbx = $(this).parents('.lightbox');
+    let _targetLbx = _lightbox;
     _targetLbx.stop(true, false).fadeOut(speed,
       function(){
         _targetLbx.removeClass('show');
@@ -957,13 +957,14 @@ $(function(){
   })
 
   _cover.click(function(){
-    let _targetLbx = $(this).next('.lightbox');
+    let _targetLbx = _lightbox;
     $(this).fadeOut(speed);
     _targetLbx.fadeOut(speed,
       function(){
         _targetLbx.removeClass('show');
       }
     );
+	_targetLbx.prev(_cover).fadeOut(speed);
     _body.removeClass('noScroll');
   })
 })
