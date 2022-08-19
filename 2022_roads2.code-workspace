@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveSassCompile.settings.formats": [
+			{
+				"format": "compressed",
+				"extensionName": ".css",
+				"savePath": "/css"
+			}
+		],
+		"liveSassCompile.settings.includeItems": [
+			"/scss/design_no9.scss"
+		],
+		"liveSassCompile.settings.generateMap": true,
+		"liveSassCompile.settings.autoprefix": [
+		
+			"> 1%",
+      "last 2 versions"
+		],
+		"css.completion.completePropertyWithSemicolon": false,
+		"css.completion.triggerPropertyValueCompletion": false,
+		"liveSassCompile.settings.excludeList": [
+
+		],
+		"liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+		"auto-rename-tag.activationOnLanguage": [
+
+
+			"*"
+		],
+		"liveServer.settings.port": 5501
+	}
+}
