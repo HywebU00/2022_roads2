@@ -1,6 +1,6 @@
 .bigBanner{ margin: 0 auto; position: relative;
-  .slick-slide { margin: 0; width: 100vw; height: 100vw;
-   
+  .slick-slide {
+    margin: 0; width: 100vw; height: 50vw;
     &>a{ display: block; position: relative;
       &::before{ content: ''; opacity: 0;
         position: absolute; left: 0; right: 0; top: 0; bottom: 0;
@@ -14,7 +14,7 @@
         img{ transform: scale(1.05);}
       }
     }
-    img{ display: block; width: 100%; height: 100vw; object-fit: cover;
+    img{ display: block; width: 100%; height: 50vw; object-fit: cover;
       transition:transform .4s;
     }
   }
@@ -40,11 +40,11 @@
     }
   }
  
-  @media screen and (min-width: $wwSlim){
-    .slick-slide{ height: 50vw; 
-      img{ height: 50vw;}
-    }
-  }
+  // @media screen and (min-width: $wwSlim){
+  //   .slick-slide{ height: 50vw; 
+  //     img{ height: 50vw;}
+  //   }
+  // }
 
   @media screen and (min-width: $wwMaximum){
     .slick-slide{ width: $wwMaximum; height: $wwMaximum*.5;
