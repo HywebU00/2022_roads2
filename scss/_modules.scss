@@ -3,10 +3,7 @@
   @extend %blockWidth; 
   margin-top: 15px; padding: 2px 0; overflow: hidden;
   color:lighten($fontColor, 10) ;
-  // &::before{
-  //   float: left; content: attr(title)"："; 
-  //   color: lighten($fontColor,  10% );
-  // }
+
   ul, li{ list-style: none; margin: 0;padding: 0;}
   ul{ float: left; line-height: 1.2; overflow: hidden; }
   li{float: left; position: relative;
