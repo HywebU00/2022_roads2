@@ -15,13 +15,21 @@
   position: fixed; top: 0; z-index: 991; width: 100vw;
   background-color: rgba(255, 255, 255, 0.93); box-shadow: rgba(0, 0, 0, 0.2) 0 2px 12px -3px;
 
-  h1{margin: 0 ; padding:5px 5px 5px 8px; overflow: hidden;
+  h1{
+    margin: 0 ; padding:5px 5px 5px 8px; overflow: hidden;
     width: calc( 100vw - 130px); 
-    &>a{ display: block;}
     img{
       &.normal { display: none;}
       &.mobile { display: block; margin: 0; height: 56px; max-width: 100%; object-fit: contain;}
     }
+    &>a{
+      &:nth-child(1){display: none;}
+      &:nth-child(2){display: block;}
+      &:hover, &:focus{
+        img{box-shadow: $linkColor 0 0 0 2px;}
+      }
+    }
+
   }
 
   .searchCtrl{position: absolute; top: 5px; right: 5px; margin: 0; border-radius: 0; }
@@ -38,9 +46,19 @@
     h1{ position: static; margin: 0 0 6px 5vw; padding: 0; height: 52px; max-width: 500px;
       width: calc(100% - 5vw - 18em);
       text-indent: -20em; overflow: hidden;
+      
       img{
         &.mobile{ display: none;}
-        &.normal{ display: block; height: 100%; width: 100%; object-fit: contain; margin: 0;}}
+        &.normal{ display: block; height: 100%; width: 100%; object-fit: contain; margin: 0;}
+      }
+      &>a{
+        &:nth-child(2){display: none;}
+        &:nth-child(1){display: block;}
+        &:hover, &:focus{
+          img.normal{box-shadow: $linkColor 0 0 0 2px inset;}
+        }  
+      }
+
     }
 
     h1, .searchCtrl{ z-index: 9;}

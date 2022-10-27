@@ -173,7 +173,7 @@
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     img{ display: block; margin: 0 auto; transition: .2s;
-     width: 100%; height: $mmw/3; object-fit: cover;
+     width: 100%; height: calc($mmw/3); object-fit: cover;
      max-width: 349px; max-height: 117px;
      @extend %shadow1;
     }

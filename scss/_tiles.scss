@@ -2,7 +2,7 @@
 .tiles{ position: relative;  margin: 0 auto 150px;
   .blockHeader{width: $mmw; margin: 0 auto 1.5em; 
     display: flex; flex-flow: row wrap; align-items: flex-end;
-    h2{ width: $mmw/2; height: $mmw/2; max-width: 260px; max-height: 260px;
+    h2{ width: calc($mmw/2); height: calc($mmw/2); max-width: 260px; max-height: 260px;
       margin: 0; padding: 15px;
       display: flex; flex-flow: column nowrap; justify-content: center;
       text-align: center; font-size: 1.8rem;
