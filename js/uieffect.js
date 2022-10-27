@@ -308,10 +308,20 @@ $(function(){
   })
   function searchHide(){
     _search.removeClass('reveal');
-    setTimeout(function(){_search.removeAttr('style')}, 800);
+    _searchCtrl.focus();
+    setTimeout(function(){
+      _search.removeAttr('style');
+    }, 800);
   }
   _searchSkip.focus(function(){
     _closeSearch.focus();
+  })
+  _body.keydown(function(e){
+    if ( ( e.altKey ) && (e.keyCode != 18) ) {
+      if ( e.keyCode == 83 ) {
+        _search.show().addClass('reveal').find('input[type="text"]').focus();
+      }
+    }
   })
  
 
