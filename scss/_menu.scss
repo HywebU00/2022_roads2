@@ -25,7 +25,7 @@
         &:last-child{ border-bottom: none;}
         a{ padding: .9em .8em .8em;
           transition: .2s;
-          &:hover{ background-color: rgba(0, 0, 0, 0.2) }
+          &:hover, &:focus{ background-color: rgba(0, 0, 0, 0.2) }
         }
 
         &.hasChild{

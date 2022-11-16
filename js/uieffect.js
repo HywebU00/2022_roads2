@@ -356,7 +356,9 @@ $(function(){
   // 向上捲動箭頭 -----------------------------------------------------
 	var _goTop = $('.goTop');
   _goTop.click(function(){
-    _html.stop(true,false).animate({scrollTop: 0}, 800);
+    _html.stop(true,false).animate({scrollTop: 0}, 800, function(){
+      $('.goCenter').focus();
+    });
   });
 	_window.scroll(function() {
 		if ( $(this).scrollTop() > 200){
