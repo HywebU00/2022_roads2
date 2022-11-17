@@ -1,6 +1,25 @@
 .cpArticle{
   @extend %blockWidth;
   line-height: 1.9; font-size: 1.15rem;
+  a{ 
+    text-decoration: none; border-bottom: 1px solid $linkColor;
+    &:hover{ border-bottom: 3px solid $linkColor;}
+    &:focus{
+      background: $linkColor; color: $fontInvert;
+      box-shadow: $linkColor 0 0 0 1px;
+    }
+  }
+
+  p{ margin: 1em 0;}
+
+  h3, h4, h5, h6{ font-weight: bold; margin: 1.5rem 0 .5rem;
+    & + p{margin-top: .5rem;}
+  }
+  h3{ font-size: 1.3em;}
+  h4{ font-size: 1.2em;}
+  h5{ font-size: 1.15em;}
+  h6{ font-size: 1em;}
+
   figure{
     margin: 0 auto 1em; padding: 5px; width: 100%;
     text-align: center; background: #fff; @extend %shadow1;
@@ -12,7 +31,7 @@
       text-align: left; line-height: 1.6; font-size: .9em;
     }
     a{
-      display: block; text-decoration: none; 
+      display: block; text-decoration: none; border: none;
       overflow: hidden; width: 100%; max-height: 70vh;
       &.showLightbox{
         position: relative;
@@ -26,21 +45,15 @@
       }
 
       &:hover, &:focus{
-        img{ transform: scale(1.1);}
+        border: none; background: none;
+        img{ transform: scale(1.1); }
         &::after{background-color: rgba(255,255,255,.85);}
       }
-      &:focus{ box-shadow: $fontInvert 0 0 0 1px,  $linkColor 0 0 0 3px;}
+      &:hover{box-shadow: $fontInvert 0 0 0 1px, $linkColor 0 0 0 2px;}
+      &:focus{ box-shadow: $fontInvert 0 0 0 1px, $linkColor 0 0 0 3px;}
     }
   }
-  p{ margin: 1em 0;}
 
-  h3, h4, h5, h6{ font-weight: bold; margin: 1.5rem 0 .5rem;
-    & + p{margin-top: .5rem;}
-  }
-  h3{ font-size: 1.3em;}
-  h4{ font-size: 1.2em;}
-  h5{ font-size: 1.15em;}
-  h6{ font-size: 1em;}
 
   blockquote{
     position: relative; font-style: italic;
@@ -67,6 +80,28 @@
   .imageCenter{
     margin: 1em auto; width: auto;
     img{ display: block; max-width: 100%; margin: 0 auto; }
+  }
+
+  .btnDv{ margin: 2em 0; padding: 10px 0;}
+
+  .bigButton{
+    display: inline-block;
+    &>a{
+     display: block; height: 2.5em; line-height: 2.5; padding:0 1em;
+     border-radius: 2em;
+     font-size: 1.5rem; text-decoration: none; border: none;
+     box-shadow:$linkColor 0 0 0 1px, rgba(0, 0, 0, 0.3) 0 6px 24px;
+     transition:transform .2s, box-shadow .1s;
+     &:hover{
+      box-shadow:$linkColor 0 0 0 3px, rgba(0, 0, 0, 0.3) 0 6px 24px;
+    }
+    &:focus{
+      box-shadow:$linkColor 0 0 0 3px, rgba(0, 0, 0, 0.6) 0 2px 10px;
+      background-color: $linkColor; color: $fontInvert;
+      transform: translateY(5px);
+    }
+  
+    }
   }
 
   @media screen and (min-width: $wwMedium){
