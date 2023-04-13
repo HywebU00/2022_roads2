@@ -1,6 +1,6 @@
-// ---------- 「台九線」顏色變數 ---------- //
-$primaryColor: #629B28;
-$secondaryColor: #080808;
+// ---------- 「公路博物館」顏色變數 ---------- //
+$primaryColor: #2b2c4b;
+$secondaryColor: #e1e1e1;  
 
 $assistant: #C54938;
 $assistant1: $primaryColor;
@@ -12,7 +12,7 @@ $hilight2: #fcbf0a;
 
 $sidebarBg : $primaryColor;
 $bodyBg: #dedede;
-$webHeaderBg: rgba(255, 255, 255, 0.93);
+$webHeaderBg: $primaryColor;
 $footerBg: $primaryColor;
 $footerBg2: #fff;
 $mainBg:#fff;

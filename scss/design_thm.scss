@@ -26,17 +26,18 @@ $mmwMaximum: $wwMaximum*.86;
   }
 }
 
-@import "_colorVar_no9"; // 「台九線」顏色變數
+
+@import "_colorVar_thm"; // 「公路博物館」顏色變數
 @import "_default";
 @import "_elements";
 @import "_modules";
 @import "_webHeader";
 @import "_bigBanner";
 @import "_menu";
-@import "_visionTab";   // 首頁「願景」頁籤
+@import "_visionTab"; // 首頁「願景」頁籤
 @import "_tiles"; // 首頁「公民參與」方塊矩陣
 @import "_stacks"; // 首頁「景觀區、聚落區、生態友善區」堆疊區塊
-@import "_data"; // 首頁「公路數據知多少」
+@import "_data"; // 首頁「公路數據知多少」2023
 
 // @import "_tabs";
 @import "_webFooter";

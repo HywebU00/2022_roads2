@@ -900,6 +900,28 @@ $(function(){
   })
 
 
+  // 數字累加效果，２０２３０４１２  ======================================================================
+  var _number = $('.number');
+  _number.each(function() {
+    var $this = $(this),
+      countTo = $this.attr('data-count');
+    $({ countNum: $this.text() }).animate({
+      countNum: countTo
+    }, {
+      duration: 18000,
+      easing: 'linear',
+      step: function() {
+        // $this.text(Math.floor(this.countNum));
+        $this.text(Intl.NumberFormat().format(Math.floor(this.countNum)));
+      },
+      complete: function() {
+        // $this.text(this.countNum);
+        $this.text(Intl.NumberFormat().format(this.countNum));
+      }
+    });
+  });
+
+
   
   // ======================================================================
   // rwd list Table

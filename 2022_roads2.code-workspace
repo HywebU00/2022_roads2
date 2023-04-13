@@ -13,7 +13,8 @@
 			}
 		],
 		"liveSassCompile.settings.includeItems": [
-			"/scss/design_no9.scss"
+			"/scss/design_no9.scss",
+			"/scss/design_thm.scss"
 		],
 		"liveSassCompile.settings.generateMap": true,
 		"liveSassCompile.settings.autoprefix": [
@@ -23,6 +24,7 @@
 		],
 		"css.completion.completePropertyWithSemicolon": false,
 		"css.completion.triggerPropertyValueCompletion": false,
+		"liveSassCompile.settings.showOutputWindowOn": "Warning",
 		"liveSassCompile.settings.excludeList": [
 
 		],
@@ -32,6 +34,6 @@
 
 			"*"
 		],
-		"liveServer.settings.port": 5501
+		"liveServer.settings.port": 5502
 	}
 }
