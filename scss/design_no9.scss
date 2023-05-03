@@ -1,30 +1,32 @@
-// ---------- 長度常數 ---------- //
-// $sideStripe : 100px;  //寬版 logo 區寬度
-$sideBarWidth: 280px;  // 行動版側欄選單
+// // ---------- 長度常數 ---------- //
+// // $sideStripe : 100px;  //寬版 logo 區寬度
+// $sideBarWidth: 280px;  // 行動版側欄選單
 
 
-// ---------- 長度常數 ---------- //
+// // ---------- 長度常數 ---------- //
 
-// ---------- RWD 斷點 ---------- //
-$wwSlim: 480px;
-$wwMedium: 700px;
-$wwNormal: 960px;
-$wwMaximum: 1200px;
-// ---------- RWD 斷點 ------------- //
+// // ---------- RWD 斷點 ---------- //
+// $wwSlim: 480px;
+// $wwMedium: 700px;
+// $wwNormal: 960px;
+// $wwMaximum: 1200px;
+// // ---------- RWD 斷點 ------------- //
 
-$mmw: 92vw; // 行動版內頁模組寬度 modeles width in mobile
-$mmw2: 86vw; 
-$mmwMaximum: $wwMaximum*.86;
+// $mmw: 92vw; // 行動版內頁模組寬度 modeles width in mobile
+// $mmw2: 86vw; 
+// $mmwMaximum: $wwMaximum*.86;
 
-%blockWidth {
-  width: 92vw; margin: 30px auto;
-  @media screen and (min-width: $wwNormal){
-    width: 86vw;
-  }
-  @media screen and (min-width: $wwMaximum){
-    width: $wwMaximum*.86;
-  }
-}
+// %blockWidth {
+//   width: 92vw; margin: 30px auto;
+//   @media screen and (min-width: $wwNormal){
+//     width: 86vw;
+//   }
+//   @media screen and (min-width: $wwMaximum){
+//     width: $wwMaximum*.86;
+//   }
+// }
+
+@import "_widthVar.scss"; // 長度變數
 
 @import "_colorVar_no9"; // 「台九線」顏色變數
 @import "_default";
@@ -57,5 +59,3 @@ $mmwMaximum: $wwMaximum*.86;
 @import "_imgSlicks"; // 使用 slick 套件的模組
 @import "_lightbox"; // 燈箱
 @import "_sitemap";
-// // ------------------------------------------
-// @import "_style_mhm"; // 「九號公路」用

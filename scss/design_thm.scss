@@ -1,31 +1,4 @@
-// ---------- 長度常數 ---------- //
-// $sideStripe : 100px;  //寬版 logo 區寬度
-$sideBarWidth: 280px;  // 行動版側欄選單
-
-
-// ---------- 長度常數 ---------- //
-
-// ---------- RWD 斷點 ---------- //
-$wwSlim: 480px;
-$wwMedium: 700px;
-$wwNormal: 960px;
-$wwMaximum: 1200px;
-// ---------- RWD 斷點 ------------- //
-
-$mmw: 92vw; // 行動版內頁模組寬度 modeles width in mobile
-$mmw2: 86vw; 
-$mmwMaximum: $wwMaximum*.86;
-
-%blockWidth {
-  width: 92vw; margin: 30px auto;
-  @media screen and (min-width: $wwNormal){
-    width: 86vw;
-  }
-  @media screen and (min-width: $wwMaximum){
-    width: $wwMaximum*.86;
-  }
-}
-
+@import "_widthVar.scss"; // 長度變數
 
 @import "_colorVar_thm"; // 「公路博物館」顏色變數
 @import "_default";
@@ -39,24 +12,20 @@ $mmwMaximum: $wwMaximum*.86;
 @import "_stacks"; // 首頁「景觀區、聚落區、生態友善區」堆疊區塊
 @import "_data"; // 首頁「公路數據知多少」2023
 
-// @import "_tabs";
 @import "_webFooter";
 @import "_form";
 @import "_formLayout";
 @import "_flow2"; // 最新公告（兩個半）
 @import "_flow3"; // 計劃路線進度
-// @import "_flow";
-// @import "_videoPreview";
 @import "_category";
 @import "_np";
 @import "_lp";
 @import "_article"; // cp頁用
 @import "_project"; // sp頁用（計畫分類內容頁）
-@import "_thumbnail";
-// @import "_qa";
+@import "_thumbnail"; // 相簿
 @import "_paginations";
 @import "_imgSlicks"; // 使用 slick 套件的模組
 @import "_lightbox"; // 燈箱
 @import "_sitemap";
-// // ------------------------------------------
-// @import "_style_mhm"; // 「九號公路」用
+@import "_steps"; // 步驟
+@import "_notice"; // 同意書

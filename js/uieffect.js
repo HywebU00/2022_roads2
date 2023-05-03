@@ -901,26 +901,28 @@ $(function(){
 
 
   // 數字累加效果，２０２３０４１２  ======================================================================
-  var _number = $('.number');
-  _number.each(function() {
-    var $this = $(this),
-      countTo = $this.attr('data-count');
-    $({ countNum: $this.text() }).animate({
+  var _numberCount = $('.data').find('.number');
+  _numberCount.each(function() {
+    let _this = $(this);
+    let countTo = _this.text();
+    _this.attr('data-count', countTo).text(0);
+
+    $({ countNum: 0 }).animate({
       countNum: countTo
     }, {
-      duration: 18000,
+      duration: 12000,
       easing: 'linear',
       step: function() {
-        // $this.text(Math.floor(this.countNum));
-        $this.text(Intl.NumberFormat().format(Math.floor(this.countNum)));
+        // _this.text(Math.floor(this.countNum));
+        _this.text(Intl.NumberFormat().format(Math.floor(this.countNum)));
       },
       complete: function() {
-        // $this.text(this.countNum);
-        $this.text(Intl.NumberFormat().format(this.countNum));
+        // _this.text(this.countNum);
+        _this.text(Intl.NumberFormat().format(this.countNum));
       }
     });
-  });
 
+  });
 
   
   // ======================================================================

@@ -51,19 +51,20 @@ a:focus{outline: none;}
 .menuCtrl, .sidebarCtrl{
   &::before, &::after{
     content: ''; position: absolute; right: 12px;height: 3px;
-    background: $fontColor; border-radius: 1px;
+    background: $burger; border-radius: 1px;
     transition: .2s;
   }
   &::before{
-    top: 16px; width: 32px; box-shadow: $fontColor 0 20px 0;
+    top: 16px; width: 32px; box-shadow: $burger 0 20px 0;
   }
   &::after{
     top: 26px; width: 24px;
   }
 
   &:hover, &:focus{
-    &::before, &::after{background-color: $fontInvert;}
-    &::before{box-shadow: $fontInvert 0 20px 0;}
+    background-color: $burgerHoverBg;
+    &::before, &::after{background-color: $burgerInvert;}
+    &::before{box-shadow: $burgerInvert 0 20px 0;}
   }
 
   &.closeIt{
@@ -80,17 +81,18 @@ a:focus{outline: none;}
   }
   &::before{
     left: calc(50% - 14px); top: calc(50% - 14px);
-    width: 18px; height: 18px; border: 2px solid $fontColor; border-radius: 50%;
+    width: 18px; height: 18px; border: 2px solid $burger; border-radius: 50%;
   }
   &::after{
-    width: 12px; height: 2px; background-color: $fontColor; border-radius:1px;
+    width: 12px; height: 2px; background-color: $burger; border-radius:1px;
     left: calc(50% + 2px); top: calc(50% + 6px);
     transform: rotate(45deg);
   }
 
   &:hover, &:focus{
-    &::before{ border-color: $fontInvert;}
-    &::after{background-color: $fontInvert;}
+    background-color: $burgerHoverBg;
+    &::before{ border-color: $burgerInvert;}
+    &::after{background-color: $burgerInvert;}
   }
 }
 

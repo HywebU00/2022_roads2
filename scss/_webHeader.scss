@@ -93,15 +93,15 @@
       &>li{ float: left; position: relative; margin: 0; padding: 0 .85em 0 .8em;
         &::before{ content: ''; 
           position: absolute; right: 0; top: .5em;
-          width: 1px; height: .85em; background: $fontColor;
+          width: 1px; height: .85em; background: $menuColor;
         }
         &:last-child::before{display: none;}
         a{ display: block; position: relative;
-          padding: 0; text-decoration: none; color: $fontColor;
+          padding: 0; text-decoration: none; color: $topNavColor;
           height: 2em; line-height: 2;
           &::after{content: ''; 
             position: absolute; left: 50%; bottom: .2em; height: 3px; width: 0;
-            background-color: $primaryColor; transition: .2s;
+            background-color: $topNavHover; transition: .2s;
           }
           &:hover::after, &:focus::after{ width: 100%; left: 0; }
         }

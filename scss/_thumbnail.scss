@@ -98,7 +98,14 @@
         }
       }
 
-      .label{position: absolute; right: 4px; top: -3px; border-radius: 2px 2px 6px 6px; box-shadow: rgba(0, 0, 0, 0.267) 0 2px 3px; z-index: 9;}
+      .label {
+        position: absolute;right: 4px;top: -3px;
+        height: 2.1em;line-height: 2.3em;padding: 0 1em;
+        background-color: $assistant1;color: $fontInvert;
+        border-radius: 2px 2px 6px 6px;
+        box-shadow: rgba(0, 0, 0, 0.267) 0 2px 3px;
+        z-index: 9;
+      }
 
       h3{ font-size: 1.3em; margin: .5em 0;
         display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;

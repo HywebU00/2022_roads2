@@ -76,7 +76,7 @@
 
   // 寬版選單
   .topRow .menu{ display: block; margin:0 5vw;
-    a{ color: $fontInvert; text-decoration: none; display: block; }
+    a{ color: $menuColor; text-decoration: none; display: block; }
 
     &>ul{
       display: flex; flex-flow: row nowrap; justify-content: flex-end;
@@ -84,14 +84,17 @@
       &>li{
         flex: 1 1 auto;
         margin: 0; position: relative; transition: .2s;
-        &:hover{ background: $primaryColor;color: $fontInvert;
-          a{color: $fontInvert;}
+        &:hover{ 
+          // background: $primaryColor;color: $menuColor;
+          // a{color: $menuColor;}
         }
-        &>a{padding:20px .5em 18px;text-align: center; color: $fontColor; white-space: nowrap; 
-          &:focus { background: $primaryColor; color: $fontInvert;}
+        &>a{
+          padding:20px .5em 18px;color: $menuColor;
+          text-align: center; white-space: nowrap; 
+          &:focus, &:hover { background: $menuBgHover; color: $menuColorHover; }
         }
         &.here{
-          &>a{background: $primaryColor; color: $fontInvert;}
+          &>a{background: $menuBgHover; color: $menuColorHover; }
         }
 
         &>ul{ // 第二層選單
@@ -102,31 +105,41 @@
         ul{ //  第二層及其之後
           display: none; position: absolute;
           font-size: 1rem;
-          background-color: $secondaryColor; color: $fontInvert;
+          background-color: $menuBg2; color: $menuColor2;
           box-shadow: rgba(0, 0, 0, 0.4) 0 5px 20px;
          
           li:last-child>a{border-bottom-color: transparent;}
-          li>a{ position: relative;color: $fontInvert; padding: .9em 1.2em .8em; 
-            border-bottom:1px solid rgba(255,255,255,.3); transition: .15s; white-space: nowrap;
-            text-overflow: ellipsis; overflow: hidden;
-            &::after{content: ''; position: absolute; left: 0;top: 0; bottom: 0;width: 4px; 
-              background-color: lighten($primaryColor, 8%);}
-            &:hover, &:focus{ border-bottom-color:lighten($hilight, 25%); background-color: $primaryColor;
-              &::after{ background-color: lighten($hilight, 25%);}
+          li>a{ position: relative;color: $menuColor2; padding: .9em 1.2em .8em; 
+            text-overflow: ellipsis; overflow: hidden;white-space: nowrap; transition: .15s; 
+            border-bottom:1px solid $menuBorder;
+            &::after{
+              content: ''; position: absolute; left: 0;top: 0; bottom: 0;width: 4px; 
+              background-color: $menuDeco;
+            }
+            &:hover, &:focus{ 
+              background-color: $menuBg2Hover; color: $menuColor2Hover;
+              border-bottom-color:$menuBorderHover; 
+              &::after{ background-color: $menuBorderHover;}
             }
           }
 
           li.hasChild{ 
             position: relative;
-            &.here{
-              background: darken($primaryColor, 12%);
-              &>a:focus{background-color: $primaryColor;}
-            }
             &>a{
               padding-right: 36px;
               &::before{content: ''; position: absolute;left: auto; right: 13px; top: 1.1em;
-                width: 10px; height: 10px; border: 2px solid $fontInvert; transform: rotate(45deg);
-                border-left: none; border-bottom: none;
+                width: 10px; height: 10px; transform: rotate(45deg);
+                border: 2px solid $menuColor2;
+                border-left: none; border-bottom: none; 
+              }
+              &:hover, &:focus{
+                &::before{border-color: $menuColor2Hover;}
+              }
+            }
+            &.here{
+              background: $menuBg2Hover; color: $menuBg2;
+              &>a:focus, &>a{background-color: $menuBg2Hover;color: $menuColor2Hover;
+                &::before{border-color: $menuColor2Hover;}
               }
             }
             // 第三層及其之後

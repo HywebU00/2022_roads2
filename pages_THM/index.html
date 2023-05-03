@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+  <title>《幸福公路》gui 清單</title>
+  <style>
+    body {margin: 0;font-family: 'Source Code Pro', Arial, Helvetica, sans-serif;font-size: 16px;background: #fff;}
+
+    h1 {text-align: center;background: #2b2c4b;color: #fff;margin: 0 0 10px;padding: 10px;font-size: 22px;font-family: Georgia, 'Times New Roman', Times, serif}
+
+    table {counter-reset: item;border-collapse: collapse;margin: 20px auto;max-width: 1400px;width: 96%;line-height: 1.5;border-bottom: 2px solid #bbb;color: #456;}
+
+    td,
+    th {position: relative;padding: .5em .9em;border-bottom: 1px solid #d6d6d6;}
+
+    th {border-bottom: 3px solid #bbb;white-space: nowrap;}
+
+    tr.new{background: #f1fad0;}
+
+    th:after,
+    td:after {content: '';position: absolute;top: 4px;bottom: 4px;right: 0;width: 1px;background: #ddd;}
+
+    th:last-child:after,
+    td:last-child:after {display: none}
+
+    td:first-child {text-align: center;font-size: .9em;}
+
+    td:first-child:before {content: counter(item);counter-increment: item;}
+
+    td[colspan] {font-size: 13px;padding: 3px 0 2px;}
+    td[colspan]::before{display: none}
+
+
+    td ul,
+    td ol {margin: 0;padding-left: 1.25em;line-height: 1.4;}
+
+    td ul,
+    td ol {display: none}
+
+    td li+li {margin-top: .6em;}
+
+    a {text-decoration: none;color: #084099;}
+
+    a:hover {text-decoration: underline;color: #0199eb;}
+
+
+    /* tr.hidden, tr.hidden ~ tr{display: none} */
+    @media screen and (max-width: 700px) {
+
+      tr,td,th {display: block;}
+
+      td:after {display: none;}
+
+      td {min-height: 1em;}
+
+      tr:first-child {display: none}
+
+      tr {border: 1px solid #999;margin: 0 0 10px;}
+
+      tr:nth-child(5n+1) td {border-bottom-color: #d6d6d6}
+
+      td:first-child,
+      td:nth-child(2) {float: left;padding: 8px;height: 16px;background: #eee;border: none;}
+
+      td:nth-child(2) {float: right;}
+
+      td:nth-child(3) {clear: both;}
+
+      td:last-child {border: none;}
+
+      .seperator td:nth-child(2) {float: none;background: transparent;padding: 0;}
+
+      .seperator td:first-child {display: none}
+    }
+  </style>
+
+</head>
+<body>
+  <h1>公路總局 2023 《幸福公路》 gui 清單</h1>
+  <table>
+    <tr>
+      <th style="width: 2em;">序號</th>
+      <th>功能、頁面名稱</th>
+      <th>檔名／連結（台九線）</th>
+      <th>備註</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td>首頁</td>
+      <td><a href="mp.html" target="_Blank">mp.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>NP-兩層</td>
+      <td><a href="np.html" target="_Blank">np.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>LP-標準版</td>
+      <td><a href="lp.html" target="_Blank">lp.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>LP-表格列表</td>
+      <td><a href="lp_table.html" target="_Blank">lp_table.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>LP-檔案下載條列頁(單檔)</td>
+      <td><a href="lp_table2.html" target="_Blank">lp_table2.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>LP-圖文橫式條列頁</td>
+      <td><a href="lp_row.html" target="_Blank">lp_row.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>LP-相簿條列頁</td>
+      <td><a href="lp_album.html" target="_Blank">lp_album.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>LP-相簿條列頁2</td>
+      <td><a href="lp_album2.html" target="_Blank">lp_album2.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>LP-影音條列頁</td>
+      <td><a href="lp_video.html" target="_Blank">lp_video.html</a></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td>LP-廣告小 banner 條列頁</td>
+      <td><a href="lp_banner.html" target="_Blank">lp_banner.html</a></td>
+      <td></td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td>FP-轉寄友人</td>
+      <td><a href="fp.html" target="_Blank">fp.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>QP-意見信箱</td>
+      <td><a href="qp.html" target="_Blank">qp.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Sitemap-網站導覽</td>
+      <td><a href="sitemap.html" target="_Blank">sitemap.html</a></td>
+      <td></td>
+    </tr>
+    <!-- <tr>
+      <td></td>
+      <td>搜尋結果列表頁</td>
+      <td><a href="search_list.html" target="_Blank">search_list.html</a></td>
+      <td></td>
+    </tr> -->
+    <tr>
+      <td></td>
+      <td>CP-一般內容頁</td>
+      <td><a href="cp.html" target="_Blank">cp.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>CP-圖文橫式</td>
+      <td><a href="cp_row.html" target="_Blank">cp_row.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>CP-相簿內容頁</td>
+      <td><a href="cp_image_slide.html" target="_Blank">cp_image_slide.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>CP-影音內容頁(YT)</td>
+      <td><a href="cp_video.html" target="_Blank">cp_video.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>SP-計畫分類內容頁</td>
+      <td><a href="sp.html" target="_Blank">sp.html</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Google Search 查詢結果頁</td>
+      <td><a href="gs.html" target="_Blank">gs.html</a></td>
+      <td></td>
+    </tr>
+
+  </table>
+
+</body>
+</html>

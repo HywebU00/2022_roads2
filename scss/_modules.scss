@@ -103,10 +103,18 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    padding: 1.5em 0;
+    padding: 1.5em 20px;
     background-color: $transLighten; border: $fontInvert solid 2px;
     &~.preface{border: $fontInvert solid 2px;}
+    img:first-child{
+      margin-left: -10px;
+    }
   }
+}
+
+.formA .preface{
+  margin:0 0 3em; background: none; border: none;
+
 }
 
 
@@ -205,7 +213,7 @@
     th{ width: 10em;}
   }
 
-  @media screen and (max-width: $wwSlim + 99 ){
+  @media screen and (max-width: calc($wwSlim + 99px) ){
     tr, th, td{ display: block; padding-left: 3px; padding-right: 3px;}
     th{ text-align: left; padding-bottom: 0;
       &::after{position: static; content: '：'; background: none;}
