@@ -1,6 +1,6 @@
 // 放 版頭（.webHeader）和 大圖輪播（.bigBanner）-------------------------------------------- //
 .topRow{
-  position: relative;margin: 0 auto;  padding-top: 72px; width: 100vw; 
+  position: relative;margin: 0 auto;  padding-top: 66px; width: 100vw; 
   @media screen and (min-width: $wwNormal){
     padding-top: 0;
   }
@@ -18,7 +18,7 @@
 
   h1{
     margin: 0 ; padding:5px 5px 5px 8px; overflow: hidden;
-    width: calc( 100vw - 130px); 
+    width: calc( 100vw - 130px);
     img{
       &.normal { display: none;}
       &.mobile { display: block; margin: 0; height: 56px; max-width: 100%; object-fit: contain;}

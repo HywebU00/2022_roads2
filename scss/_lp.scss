@@ -210,7 +210,8 @@
 .listRow{ 
   @extend %blockWidth; 
   ul{list-style: none; padding: 0; margin: 0;}
-  &>ul{ line-height: 1.9;
+  &>ul{ 
+    line-height: 1.9;
     &>li{ position: relative;margin: 15px 0; padding:1.5em 1em;
        background: $fontInvert;@extend %shadow1;
        &::after{content: ''; display: block; clear: both;}
@@ -226,17 +227,18 @@
           }
         }
 
-      article{ display: block; margin: 0 auto 1em;}
-      img{ float: left;
-        width: 45vw; max-height: 45vw; object-fit: contain; 
-        margin: .2em 1em .5em 0; border: 1px solid $borderColorLight;
+      article{ display: block; margin: 0 auto 1em;
+        img{ float: left;
+          width: 45vw; max-height: 45vw; object-fit: contain; 
+          margin: .2em 1em .5em 0; border: 1px solid $borderColorLight;
+        }
       }
-      .videoThumb{ float: left; 
-        width: 45vw; height: 25.25vw; margin: .2em 1em .5em 0;
-        max-width: 360px; max-height: 202px;
-        background: #000;
-        img{ display: block; font: none; width: 100%; height: 100%; object-fit: cover; border: none; max-height: none; margin: 0;}
-      }
+      // .videoThumb{ float: left; 
+      //   width: 45vw; height: 25.25vw; margin: .2em 1em .5em 0;
+      //   max-width: 360px; max-height: 202px;
+      //   background: #000;
+      //   img{ display: block; font: none; width: 100%; height: 100%; object-fit: cover; border: none; max-height: none; margin: 0;}
+      // }
       h3{margin: 0 0 .6em; font-size: 1.3em; line-height: 1.6;
         a{color: $fontColor;
           &:hover, &:focus{ text-decoration: none; color: $assistant;}
@@ -250,6 +252,8 @@
 
       }
       p{ margin: 0 0 1em;}
+
+
 
       .label{
         position: absolute; right: 1em; top: 0;
@@ -271,18 +275,61 @@
     }
   }
 
+  // 典藏
+  &.collection{
+    li{
+      img{
+        display: block;width: 100%;
+      }  
+    }
+    table.info{
+      margin: 10px 0 0;
+      width: 100%; border-collapse: collapse;
+      line-height: 1.5;
+      border-top: 1px solid $borderColor;
+      tr{
+        border-bottom: 1px solid $borderColor;
+      }
+      th, td{
+        padding: .4em 0; vertical-align: top;
+      }
+      th{width: 5em;}
+      td{padding-left: .5em;}
+    }
+  }
+
+
   @media screen and (min-width: $wwMedium){
     &>ul>li{
-      img{ width: 225px; max-height: 300px;}
+      article{
+        img{ width: 225px; max-height: 300px;}
+      }
     }
+
   }
 
   @media screen and (min-width: $wwNormal){
     &>ul>li{
       &>a{padding:2em 1.5em;}
     }
+
+    &.collection{
+      li{
+        img{
+          float: left; width: 320px; margin-right: 20px;
+        }
+      }
+      table.info{
+        width: calc(100% - 340px);
+      }
+    }
+  
   }
 }
+
+
+
+
 
 // 大事記要
 .events{ width: $mmw; margin: 0 auto 2em;

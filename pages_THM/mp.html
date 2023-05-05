@@ -63,38 +63,11 @@
 
       <nav class="menu">
         <ul>
-          <li><a href="#">簡介</a>
-            <ul>
-              <li><a href="#">成立宗旨</a></li>
-              <li><a href="#">館藏由來</a></li>
-            </ul>
-          </li>
           <li><a href="#">參觀</a>
             <ul>
               <li><a href="#">參觀須知</a></li>
               <li><a href="#">導覽預約</a></li>
               <li><a href="#">志工招募</a></li>
-              <li><a href="#">交通</a>
-                <ul>
-                  <li><a href="#">地理位置</a></li>
-                  <li><a href="#">大眾運輸</a></li>
-                  <li><a href="#">測試多層選單</a>
-                    <ul>
-                      <li><a href="#">測試多層選單</a></li>
-                      <li><a href="#">測試多層選單</a></li>
-                    </ul>             
-                  </li>
-                  <li><a href="#">測試多層選單</a>
-                    <ul>
-                      <li><a href="#">測試多層選單</a></li>
-                      <li><a href="#">測試多層選單測試多層選單</a></li>
-                      <li><a href="#">測試多層選單</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">選單選單</a></li>
-                </ul>
-              </li>
-    
             </ul>
           </li>
           <li><a href="#">展覽</a>
@@ -103,6 +76,19 @@
               <li><a href="#">最新特展</a></li>
               <li><a href="#">特展回顧</a></li>
               <li><a href="#">實境展覽</a></li>            
+              <li><a href="#">測試多層選單</a>
+                <ul>
+                  <li><a href="#">測試多層選單</a></li>
+                  <li><a href="#">測試多層選單</a></li>
+                </ul>             
+              </li>
+              <li><a href="#">測試多層選單</a>
+                <ul>
+                  <li><a href="#">測試多層選單</a></li>
+                  <li><a href="#">測試多層選單測試多層選單</a></li>
+                  <li><a href="#">測試多層選單</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li><a href="#">典藏</a>
@@ -119,11 +105,13 @@
       <button class="sidebarCtrl" type="button">行動版側欄開關</button>
     </header>
 
-    <!-- <section class="bigBanner">
-      <div><a href="javascript:void(0)"><img src="../publicData/bb1.jpg" alt="替代文字"></a></div>
-      <div><a href="javascript:void(0)"><img src="../publicData/bph01.jpg" alt="替代文字"></a></div>
-      <div><a href="javascript:void(0)"><img src="../publicData/bph02.jpg" alt="替代文字"></a></div>
-    </section> -->
+    <section class="bigBanner">
+      <div><a href="javascript:void(0)"><img src="../publicData/bb11.jpg" alt="替代文字"></a></div>
+      <div><a href="javascript:void(0)"><img src="../publicData/bb12.jpg" alt="替代文字"></a></div>
+      <div><a href="javascript:void(0)"><img src="../publicData/bb13.jpg" alt="替代文字"></a></div>
+      <div><a href="javascript:void(0)"><img src="../publicData/bb11.jpg" alt="替代文字"></a></div>
+      <div><a href="javascript:void(0)"><img src="../publicData/bb11.jpg" alt="替代文字"></a></div>
+    </section>
   </div>
 
   <!-- 行動版側欄選單容器 -->
@@ -134,32 +122,42 @@
     <a class="accesskey" href="#aC" id="aC" accesskey="C" title="中央內容區塊">:::</a>
   
 
-
-
     <!-- 公路數據知多少 -->
-    <section class="data">
+    <section class="roadData flow1">
       <header class="blockHeader">
-        <h2>公路數據知多少</h2>
-        <span class="xx">統計至110年</span>
+        <h2>公路數據知多少<span class="until">統計至110年</span></h2>
       </header>
 
-      <ul>
-        <li>
-          <div class="title">關於公路</div>
-          <p>公路長度</p>
-          <p>總計<em class="number">20707116</em>公尺</p>
-        </li>
-        <li>
-          <div class="title">關於橋梁</div>
-          <p>共有<em>10,203</em>座</p>
-          <p>總計<em class="number">1006001.4</em>公尺</p>
-        </li>
-        <li>
-          <div class="title">關於機動車</div>
-          <p>機動車輛登記數</p>
-          <p>總計<em class="number">22597694</em>輛</p>
-        </li>
-      </ul>
+      <button type="button" class="diskBtn prev">上一筆</button>
+      <div class="flowBox">
+        <ul class="flowList">
+          <li>
+            <img class="icon" src="../publicData/icon_st_road.png" alt="">
+            <div class="title">關於公路</div>
+            <div class="term">省道長度</div>
+            <div class="counting">總計約<em class="number">20707</em>公里</div>
+          </li>
+          <li>
+            <img class="icon" src="../publicData/icon_st_bridge.png" alt="">
+            <div class="title">關於橋梁</div>
+            <div class="term">共有<em class="number">10203</em>座</div>
+            <div class="counting">總計約<em class="number">1006</em>公里</div>
+          </li>
+          <li>
+            <img class="icon" src="../publicData/icon_st_card.png" alt="">
+            <div class="title">關於機動車</div>
+            <div class="term">機動車輛登記數</div>
+            <div class="counting">總計<em class="number">22597694</em>輛</div>
+          </li>
+          <li>
+            <img class="icon" src="../publicData/icon_st_x.png" alt="">
+            <div class="title">關於ＸＸ</div>
+            <div class="term">ＸＸ長度</div>
+            <div class="counting">總計約<em class="number">999999</em>公里</div>
+          </li>
+        </ul>
+      </div>
+      <button type="button" class="diskBtn next">下一筆</button>
 
     </section>
 
@@ -167,27 +165,36 @@
     <!-- 關於我們 -->
     <section class="stacks">
       <header class="blockHeader">
-        <h2>關於我們</h2>
+        <h2>關於我們<span lang="en">About Us</span>
+        </h2>
       </header>
   
       <div class="bulletin">
         <section class="board"><a href="#">
-          <img src="../publicData/ph03.jpg" alt="替代文字">
-          <h3>開放時間 <span lang="en">Opening Hours</span></h3>
+          <img src="../publicData/stack_1.jpg" alt="">
+          <h3>參觀<span lang="en">Visit</span></h3>
           <ul>
-            <li>幸福公路館開放時間</li>
-            <li>每週一～五，09:00～16:00。</li>
-            <li>遇有特展時週六、日及國定例假日09:00～16:00開放。</li>
+            <li>參訪資訊</li>
+            <li>交通指南</li>
+            <li>線上預約</li>
           </ul>
         </a></section>
         <section class="board"><a href="#">
-          <img src="../publicData/ph08.jpg" alt="替代文字">
-          <h3>交通指南 <span lang="en">Traffic Information</span></h3>
+          <img src="../publicData/stack_2.jpg" alt="">
+          <h3>展覽<span lang="en">Exhibits</span></h3>
           <ul>
-            <li>捷運</li>
-            <li>公車</li>
-            <li>火車</li>
-            <li>自行開車</li>
+            <li>常設展</li>
+            <li>特展</li>
+            <li>實境導覽</li>
+          </ul>
+        </a></section>
+        <section class="board"><a href="#">
+          <img src="../publicData/stack_3.jpg" alt="">
+          <h3>典藏<span lang="en">Collection</span></h3>
+          <ul>
+            <li>文物一覽</li>
+            <li>Podcast</li>
+            <li>公路打卡</li>
           </ul>
         </a></section>
       </div>
@@ -204,7 +211,7 @@
         <ul class="flowList">
           <li><a href="#">
             <div class="image">
-              <img src="../publicData/ph01.jpg" alt="圖說">
+              <img src="../publicData/newsPh02.jpg" alt="圖說">
               <header>
                 <h3>國立海洋大學運輸學系師生参訪幸福公路館</h3>
               </header>
@@ -217,7 +224,7 @@
           </a></li>
           <li><a href="#">
             <div class="image">
-              <img src="../publicData/ph02.jpg" alt="圖說">
+              <img src="../publicData/newsPh01.jpg" alt="圖說">
               <header>
                 <h3>幸福公路館恢復正常營運</h3>
               </header>
@@ -228,7 +235,7 @@
           </a></li>
           <li><a href="#">
             <div class="image">
-              <img src="../publicData/ph03.jpg" alt="圖說">
+              <img src="../publicData/ph09.jpg" alt="圖說">
               <header>
                 <h3><span class="status new">最新</span>幸福公路館因應新型冠狀病毒防範措施</h3>
               </header>
@@ -289,18 +296,11 @@
     <div class="fatFooter">
       <nav class="siteTree">
         <ul>
-          <li><a href="#">簡介</a>
-            <ul>
-              <li><a href="#">成立宗旨</a></li>
-              <li><a href="#">館藏由來</a></li>
-            </ul>
-          </li>
           <li><a href="#">參觀</a>
             <ul>
               <li><a href="#">參觀須知</a></li>
               <li><a href="#">導覽預約</a></li>
               <li><a href="#">志工招募</a></li>
-              <li><a href="#">交通</a></li>
             </ul>
           </li>
           <li><a href="#">展覽</a>

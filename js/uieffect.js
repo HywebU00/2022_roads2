@@ -368,6 +368,7 @@ $(function(){
 		}
 	});
 
+  // .flow1：寬版顯示３筆，平板顯示２筆，手機顯示１筆 ------------------------------
   
   // .flow2：寬版顯示兩筆完整，第三筆顯示局部 ------------------------------
   var _flow2 = $('.flow2');
@@ -506,7 +507,7 @@ $(function(){
   
   // 點選左右箭頭滑動（非自動輪播） -----------------------------------------
   // .flow3：寬版顯示三筆，每筆等寬，第四筆顯示局部 -----------------------------------------
-  var _flow3 = $('.flow3');
+  var _flow3 = $('.flow3, .flow1');
   _flow3.each(function () {
     let _this = $(this);
     let _floxBox = _this.find('.flowBox');
@@ -901,7 +902,7 @@ $(function(){
 
 
   // 數字累加效果，２０２３０４１２  ======================================================================
-  var _numberCount = $('.data').find('.number');
+  var _numberCount = $('.roadData').find('.number');
   _numberCount.each(function() {
     let _this = $(this);
     let countTo = _this.text();
@@ -910,8 +911,8 @@ $(function(){
     $({ countNum: 0 }).animate({
       countNum: countTo
     }, {
-      duration: 12000,
-      easing: 'linear',
+      duration: 0,
+      easing: 'swing',
       step: function() {
         // _this.text(Math.floor(this.countNum));
         _this.text(Intl.NumberFormat().format(Math.floor(this.countNum)));

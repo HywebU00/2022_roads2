@@ -130,7 +130,7 @@ a:focus{outline: none;}
   background-color: rgba(0,0,0,.6);
   &::before{content: ''; position: absolute; width: 15px; height: 15px;
     left: 50%; top: 50%; margin-top: -9px;
-    border: 3px solid #fff;border-top: none; border-right: none; transform: rotate(45deg);
+    border: 3px solid $white;border-top: none; border-right: none; transform: rotate(45deg);
   }
   &.slick-prev{ left: 6px; 
     &::before{ margin-left: -6px;}
@@ -141,7 +141,6 @@ a:focus{outline: none;}
 
   &:hover{ background-color: $btnBg1;}
   &:focus{ background-color: $btnBg1; box-shadow: $btnBg1 0 0 0 3px;}
-
 }
 
 

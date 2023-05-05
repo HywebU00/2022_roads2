@@ -31,8 +31,9 @@ a{ color: $linkColor; text-decoration: underline;
 
 // 首頁區塊標題
 .blockHeader{ margin: 0 auto; text-align: center; color: $primaryColor; 
-  &>h2{ font-size: 2em; line-height: 1.2; margin: 0; letter-spacing: 2px; 
-    font-weight: normal;
+  &>h2{ 
+    line-height: 1.2; margin: 0; 
+    font-size: 2em; font-weight: normal;letter-spacing: 2px; 
     *[lang='en']{ display: block;margin-top: .5rem; letter-spacing: 0; 
       font-size: .85em; font-family: 'Times New Roman', Times, serif;
     }

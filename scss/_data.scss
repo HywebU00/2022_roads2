@@ -1,59 +1,142 @@
-.data{
-  margin: 30px auto;
-  outline: 1px dashed red;
+.roadData{
+  position: relative;margin: 30px auto 60px;
 
-  ul{
-    list-style: none; margin: 0; padding: 0;
+  .blockHeader{
+    margin: 0 auto 40px;
+    .until{
+      display: inline-block; font-size: 1rem; letter-spacing: normal;
+      padding: 0 .8em; margin: .25em 0 0 8px;
+      height: 1.9em; line-height: 1.95; 
+      vertical-align: top; border-radius: 1em; font-weight: normal;
+      background-color: $primaryColor; color: $fontInvert;
+    }
+  }
 
+  button.diskBtn{ 
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 99;
+    &.prev{ left: 6px; }
+    &.next{ right: 6px;}
+  }
+  button.diskBtn{
+    cursor: pointer;margin: 0;
+    border: none; width: 64px; height: 64px; border-radius: 50%; overflow: hidden;
+    background: transparent; text-indent: -10em;
+    transition: .2s;
+
+    &::before{content: ''; position: absolute; width: 15px; height: 15px;
+      left: 50%; top: 50%; margin-top: -9px;
+      border: 3px solid $borderColorDark;border-top: none; border-right: none; transform: rotate(45deg);
+    }
+    &::after{display: none;}
+    &.prev{ 
+      &::before{ margin-left: -6px;}
+    }
+    &.next{
+      &::before{transform: rotate(225deg); margin-left: -12px;}
+    }
+    &:hover, &:focus{
+      &::before{ border-color: $white;}
+    }
+    &:hover{ background-color: $primaryColor;}
+    &:focus{ background-color: $primaryColor; box-shadow:$white 0 0 0 1px inset, $primaryColor 0 0 0 3px;}
+  }
+
+  .flowBox{
+    position: relative; width: calc(100vw - 60px); max-width: 28rem;
+    margin: 0 auto;overflow: hidden;
+  }
+
+  ul.flowList{
+    display: flex; line-height: 1; color: $primaryColor;
     &>li{
-      // outline: 1px solid red;
+      flex: 0 0 calc(100vw - 60px);max-width: 28rem; margin-right: 20px;
+    }
+  }
 
-      .title{ font-weight: bold;
-        &+p{ 
-          height: 3em; line-height: 3.5rem; 
-          em{font-size: 2rem; line-height: 1;}
-        }
-      }
-
-      p{
-        font-size: .85rem; margin: 0; 
-        border-bottom: 1px solid #000;
-        em{
-          font-style: normal;  margin: 0 5px;
-          font-family: 'Times New Roman', Times, serif;
-        }
-
-
-        &:last-child{
-          margin-top: 15px;line-height: 1.1;
-          em.number {
-            font-size: 2.8rem;
-          }
-        }
+  .flowNav{
+    text-align: center; margin: 30px 0 0;
+    ul{ list-style: none; margin: 0 auto; padding: 0; display: flex; justify-content: center;}
+    li{
+      text-indent: -10em; overflow: hidden; border-radius: 50%;
+      width: 8px;height: 8px;line-height: 1; margin: 4px 10px;
+      background-color: lighten($fontColorLight, 20%);
+      transition: .2s;
+      &.active{
+        background-color: $primaryColor;
+        box-shadow: $primaryColor 0 0 0 2px;
       }
     }
+  }
+  
+  // ----------
+  img.icon{
+    display: block; width: 153px; height: 153px; margin: 0 auto;
+    border-radius: 50%;
+  }
+  .title {
+    font-weight: bold; text-align: center; font-size: 1.25rem;
+    margin: 15px 0 18px;
+  }
+  .term, .counting {
+    font-size: 1.125rem; border-bottom: 2px solid $primaryColor;
+    em{ 
+      margin: 0 2px; text-align: right; font-style: normal;
+      font-family: 'Times New Roman', Times, serif;
+    }
+  }
+  .term{ 
+    height: 2.6rem; line-height: 2.6;
+    em{font-size: 2.25rem; line-height: 1;}
+  }
+  .counting{
+    display: flex; align-items: flex-end;
+    margin-top: 15px;line-height: 2; 
+    em{
+      flex: 1 1 60%;
+      font-size: 3.6rem; line-height: 1.1;
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .flowBox{max-width: none;}
+    ul.flowList{
+      &>li{flex-basis: calc(50vw - 40px);max-width: none;}
+    }
+    .counting{
+      em{ font-size: 3.3rem;}
+    }
+
   }
 
   @media screen and (min-width: $wwNormal){
-    width: $mmw2;
-    ul{
-      display: flex;
+    margin: 50px auto 100px; width: 100%;
 
-      &>li{
-        flex:1 0 32%; margin: 0 2% 0 0;
-        &:last-child{margin-right: 0;}
-  
-      }
+    .flowBox{ width: $mmw2;}
+    ul.flowList{
+      width: auto; max-width: none;
+      &>li{flex:0 0 calc($mmw2*.32); margin: 0 calc($mmw2*.02) 0 0;}
     }
-
+    .counting{
+      em{font-size: 4.7vw;} 
+    }
   }
 
   @media screen and (min-width: $wwMaximum){
-    width: $wwMaximum*.86;
+    width: $wwMaximum;
+    .counting{
+      em{font-size: 3.6rem;}
+    }
+
+    .flowBox{
+      width: $wwMaximum*.86; // width = 1200px * .86 = 1032px
+    }
+    ul.flowList{
+      &>li{flex-basis: 330px; margin-right: 21px;}
+    }
   }
 }
 
-.testCount{
-  margin: 0 auto;
-  font-size: 3em;
-}
+// .testCount{
+//   margin: 0 auto;
+//   font-size: 3em;
+// }
