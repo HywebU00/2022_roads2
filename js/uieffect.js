@@ -794,68 +794,6 @@ $(function(){
     });
 
 
-    // 點照片開啟燈箱 *********************************************
-    // _flowItem.children('a').click(function(){
-    //   i = $(this).parent().attr('data-index');
-    //   console.log(i);
-    //   _cpBigPhoto.add(_cover).stop(true, false).fadeIn();
-
-    //   // let _bigPhotoLbx = $('.lightbox.bigPhoto');
-    //   let _bbfloxBox = _cpBigPhoto.find('.flowBox');
-    //   let _bbflowList = _cpBigPhoto.find('.flowList');
-    //   let _bbflowItem = _bbflowList.children('li');
-    //   // let count = _bbflowItem.length;
-    //   let _bbtnRight = _cpBigPhoto.find('.diskBtn.next');
-    //   let _bbtnLeft = _cpBigPhoto.find('.diskBtn.prev');
-    //   const speed = 900;
-    //   const actClassName = 'show';
-    //   // let i = 0;
-    //   // let j;
-
-    //   // for ( n = 0; n < count; n++) {
-    //   //   _bbflowItem.eq(n).attr('data-index', n);
-    //   // }
-
-    //   _bbflowItem.removeClass(actClassName).filter(function(index){
-    //     return  $( this ).attr( "data-index" ) === i;
-    //   }).addClass(actClassName).siblings();
-  
-    //   function slideForward() {
-    //     j = (i + 1) % slideCount;
-    //     _bbflowItem.eq(i).stop(true, false).animate({'left': '-100%'}, speed, function(){
-    //       $(this).removeClass(actClassName).removeAttr('style');
-    //     })
-    //     _bbflowItem.eq(j).stop(true, false).animate({ 'left': 0}, speed, function(){
-    //       $(this).addClass(actClassName);
-    //     });
-    //     i = j;
-    //     console.log(i);
-    //   }
-  
-    //   function slideBackward() {
-    //     j = (i - 1) % slideCount;
-    //     _bbflowItem.eq(j).css('left', '-100%').stop(true, true).animate({left: 0} , speed);
-    //     _bbflowItem.eq(i).stop(true, true).animate({'left': '100%'}, speed );
-    //     i = j;
-    //   }
-  
-    //   // 點擊向右箭頭
-    //   _bbtnRight.click(function () { 
-    //     slideForward(i);
-    //   });
-  
-    //   // 點擊向左箭頭
-    //   _bbtnLeft.click(function () {
-    //     slideBackward(i);
-    //   });
-  
-    //   // touch and swipe 左右滑動
-    //   _bbfloxBox.swipe({
-    //     swipeRight: function () {slideBackward();},
-    //     swipeLeft: function () {slideForward();},
-    //     threshold: 20,
-    //   });      
-    // })
   });
 
 
@@ -911,7 +849,7 @@ $(function(){
     $({ countNum: 0 }).animate({
       countNum: countTo
     }, {
-      duration: 0,
+      duration: 6000,
       easing: 'swing',
       step: function() {
         // _this.text(Math.floor(this.countNum));
