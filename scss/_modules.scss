@@ -1,7 +1,7 @@
 // 現在位置
 .breadcrumb { 
   @extend %blockWidth; 
-  margin-top: 15px; padding: 2px 0; overflow: hidden;
+  margin-top: 0; padding: 17px 0 2px; overflow: hidden;
   color:lighten($fontColor, 10) ;
 
   ul, li{ list-style: none; margin: 0;padding: 0;}

@@ -150,7 +150,9 @@ a:focus{outline: none;}
 .goTop{ position: fixed; bottom: -64px; right: 12px;  z-index: 90; 
   padding: 0;margin: 0; width: 52px; height: 52px; line-height: 52px;
   border: none; border-radius: 50%; box-shadow: none;
-  background: transparentize($mainBg, .3); color: $fontColorLight; font-size: 14px; line-height: 66px;
+  // background: transparentize($mainBg, .3); 
+  background-color: $white;
+  color: $fontColorLight; font-size: 14px; line-height: 66px;
   box-shadow: rgba(0, 0, 0, 0.267) 0 0 12px;
   transition: bottom .5s;
   &::before{  content: ''; position: absolute;
@@ -165,7 +167,7 @@ a:focus{outline: none;}
   &:focus{ box-shadow: $hilight 0 0 0 2px; color: $fontInvert; }
   &.show{bottom: 24px; }
 
-  @media screen and (min-width: $wwMaximum + 74px){
+  @media screen and (min-width: calc($wwMaximum + 74px)){
     right:  50%; margin-right: -26px - $wwMaximum*.5;
   }
 
@@ -240,11 +242,13 @@ button.diskBtn{
 .moreFake{
   display: inline-block;
   padding: 0 2em; height: 2.1em; line-height: 2.2;
-  box-shadow: $linkColor 0 0 0 2px inset; color: $linkColor;
+  box-shadow: $borderColor 0 0 0 1px; color: $fontColor;
   transition: .2s;
 }
 a:hover .moreFake,
-a:focus .moreFake{ background-color: $linkColor; color: $fontInvert;}
+a:focus .moreFake{ background-color: $secondaryColor; color: $fontInvert;
+  box-shadow: $secondaryColor 0 0 0 3px;
+}
 
 
 

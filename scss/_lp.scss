@@ -37,7 +37,8 @@
 .list{
   background: #fff;
   &>table{
-    border-collapse: collapse; line-height: 1.5; width: calc(100% - 16px); margin:0 8px;
+    border-collapse: collapse; line-height: 1.5; width: 100%;
+    // width: calc(100% - 16px); margin:0 8px;
     border-top: 2px solid $borderColor;border-bottom: 2px solid $borderColor;
     tr{
       
@@ -226,6 +227,7 @@
             article, h3 {text-decoration: underline;}
           }
         }
+        h3 a:focus{box-shadow: $assistant 0 0 0 1px;}
 
       article{ display: block; margin: 0 auto 1em;
         img{ float: left;
@@ -291,10 +293,16 @@
         border-bottom: 1px solid $borderColor;
       }
       th, td{
-        padding: .4em 0; vertical-align: top;
+        padding: .5em 0; vertical-align: top;
       }
-      th{width: 5em;}
-      td{padding-left: .5em;}
+      th{
+        width: 5em; position: relative; padding-right: .8em;
+        &::after{
+          content: ''; position: absolute; top: 5px; bottom: 5px;right: 0;
+          width: 3px; background-color: $borderColorLight;
+        }
+      }
+      td{padding-left: .7em;}
     }
   }
 
@@ -316,11 +324,11 @@
     &.collection{
       li{
         img{
-          float: left; width: 320px; margin-right: 20px;
+          float: left; width: 250px; margin-right: 20px;
         }
       }
       table.info{
-        width: calc(100% - 340px);
+        width: calc(100% - 270px);
       }
     }
   

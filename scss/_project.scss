@@ -1,23 +1,26 @@
 .project{
   @extend %blockWidth; padding:0 0 1px;
-  box-shadow: $borderColor 0 0 0 1px inset;
+  // box-shadow: $borderColor 0 0 0 1px inset;
 
-  .list, .meta, .cpArticle { margin:20px 2vw; width: auto;}
+  .list, .meta, .cpArticle { 
+    // margin:20px 2vw; 
+    padding: 20px 2vw; margin: 0 auto;
+    width: auto;
+  }
   .imgSlick{ margin: 0; width: auto;}
 
   @media screen and (min-width: $wwMedium){
-    .list, .meta, .cpArticle { margin:32px 14px;}
+    .list, .meta, .cpArticle { 
+      // margin:32px 14px;
+      padding: 32px 14px;
+    }
   }
-
-  
-
 }
 
 .project .tabset {
-
   .tabContent {
     display: none; position: relative;
-
+    background: #fff;
     button.skip{
       position: absolute; width: 1px; height: 1px; padding: 0; right: 0;bottom: 0;
       background-color: transparent; border: none;
@@ -26,11 +29,14 @@
 
   .tabItems{
     overflow: hidden;
-    background: #fff;border-bottom: 2px solid $borderColor;
+    border-bottom: 2px solid $borderColor;
+    // background: #fff;
     button{
       float: left; height: 3em; line-height: 3.1; margin: 3px;padding:0 1em;
       color: $fontColor;background-color: $borderColorLight;
       border-radius: 4px; box-shadow: none; border: none;
+      &:first-child{margin-left: 0;}
+      &:last-child{margin-right: 0;}  
       &:hover, &:focus{
         box-shadow: $assistant2 0 0 0 2px;
       }

@@ -1,8 +1,8 @@
 // ---------- 「公路博物館」顏色變數 ---------- //
 $primaryColor: #2b2b4b;
-$secondaryColor: #080808;  
+$secondaryColor: #39207c;  
 
-$assistant: #155fc6;
+$assistant: #5e31da;
 $assistant1: $primaryColor;
 $assistant2: $primaryColor;
 $assistant3: $primaryColor;
@@ -19,19 +19,20 @@ $mainBg:#e1e1e1;
 
 // 寬版右上選項
 $topNavColor: #fff;
-$topNavHover: #ccc;
+$topNavHover: #fcbf0a;
 
 // 選單
 $menuColor: #fff; //第一層選單文字顏色
-$menuBgHover: #791779; //第一層選單項背景色 hover
+$menuBgHover: #39207c; //第一層選單項背景色 hover
 $menuColorHover:#fff;
 $menuColor2: #000; //第二層選單文字顏色
 $menuBg2: #fff; //第二層選單背景色
 $menuBg2Hover: $primaryColor; //第二層選單背景色
 $menuColor2Hover: #fff; //第二層選單文字顏色
-$menuDeco: #8b8890; // 第二層文字前方裝飾bar
+$menuDeco: #aca8b5; // 第二層文字前方裝飾bar
+$menuDecoHover: #fcbf0a; // 第二層文字前方裝飾bar
 $menuBorder: #e1e1e1; // 第二層選單 border
-$menuBorderHover: #a434bd; // 第二層選單 border:hover
+$menuBorderHover: #39207c; // 第二層選單 border:hover
 
 // 行動版選單
 $mobileMenuBg: $primaryColor;
@@ -46,7 +47,7 @@ $burgerHoverBg: #f3f3f3;
 $fontColor: #000;
 $fontInvert: #fff;
 $fontColorLight: #67625c;
-$linkColor: #2b2b4b;
+$linkColor: #063e8c;
 
 // 匡線、陰影
 $borderColor: #b9bdb2;
@@ -56,8 +57,8 @@ $shadow:#50504c33;
 $shadow2:#35343066;
 
 // 按鈕
-$btnBg1: #791779;
-$btnBg2: #155fc6;
+$btnBg1: $primaryColor;
+$btnBg2: $assistant;
 
 // 通用
 $gray: #ddd;

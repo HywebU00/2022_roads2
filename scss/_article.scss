@@ -68,7 +68,7 @@
   table{
     border-collapse: collapse; margin: 0; width: 100%;
     border: 2px solid $borderColor;
-    background-color: $mainBg;
+    background-color: $white;
     line-height: 1.5;
     th, td{ padding: .5em; border: 1px solid $borderColorLight;}
     th{ background-color: darken($mainBg, 8%); 
@@ -131,7 +131,8 @@
 // 兩圖並排、三圖並排 //
 .twoFigs, .threeFigs { 
   clear: both; margin: 2em auto; padding: 1em 0;
-  @extend %shadow1; 
+  // @extend %shadow1; 
+  box-shadow: $borderColorLight 0 0 0 1px;
   &>figure{ box-shadow: none; margin: 20px 0 0;}
   h3, h4{ text-align: center; margin: 1em auto 0;}
 
@@ -219,8 +220,8 @@
   &.txt a{background:#999;
     &:hover, &:focus{box-shadow: #999 0 0 0 2px;}
   }
-  &.other a{background:#ddd;color:#444;
-    &:hover, &:focus{box-shadow: #ddd 0 0 0 2px;}
+  &.other a{background:#c8c8c8;color:#444;
+    &:hover, &:focus{box-shadow: #c8c8c8 0 0 0 2px;}
   }
 }
 
@@ -249,9 +250,10 @@
     display: flex; justify-content: space-between;
     &>li{margin: 0; padding: 0;
       a{ display: block; position: relative;
-        background: $mainBg; color: $linkColor; text-decoration: none;
+        background: $white; color: $fontColor; text-decoration: none;
         height: 2.8em; line-height: 2.9; padding: 0 1em; border-radius: 2em;
-        box-shadow:$borderColor 0 0 0 1px, rgba(0, 0, 0, 0.3) 0 1px 3px; transition:.2s ;
+        box-shadow:$borderColor 0 0 0 1px, rgba(0, 0, 0, 0.3) 0 1px 3px;
+        transition:.2s ;
         &::before{
           content: ''; position: absolute; top: 1em;
           width: 11px;height: 11px;

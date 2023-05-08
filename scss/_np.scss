@@ -5,6 +5,7 @@
     a{
       position: relative; display: block; padding: .7em .5em .65em 26px;
       text-decoration: none; color: $fontColor;
+      &:focus{ box-shadow: $linkColor 0 0 0 1px inset;}
     }
   }
   &>ul>li>a{ padding-left: 30px;}
@@ -17,6 +18,7 @@
     margin: 15px 0;
     &>li{
       margin: 5px 0 10px; padding:0;
+      background-color: $white;
       &>a{
         box-shadow: $borderColor 0 0 0 1px;  padding: .9em .5em .8em 32px;
         height: 100%; transition: .2s;
@@ -49,7 +51,7 @@
   &>ul{
     &>li{
       margin: .6em 0; padding:2px;
-      box-shadow: $borderColor 0 0 0 1px;
+      box-shadow: $borderColor 0 0 0 1px;background-color: $white;
       ul{margin-left: 22px;}
       a{ transition: .2s;
         &::before{content: ''; position: absolute;transition: .2s;}

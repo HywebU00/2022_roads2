@@ -119,7 +119,7 @@
             &:hover, &:focus{ 
               background-color: $menuBg2Hover; color: $menuColor2Hover;
               border-bottom-color:$menuBorderHover; 
-              &::after{ background-color: $menuBorderHover;}
+              &::after{ background-color: $menuDecoHover;}
             }
           }
 
