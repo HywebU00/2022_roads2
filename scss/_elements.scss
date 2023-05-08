@@ -229,7 +229,7 @@ button.diskBtn{
 .more{ margin: 0 auto; padding: 5px; font-size: 1rem;
   a{ position: relative; float: right; 
     height: 2.5em; line-height: 2.5; padding: 0 1.6em;
-    background: $mainBg; color: $primaryColor;
+    background: $white; color: $primaryColor;
     text-decoration: none; transition: .2s;
     box-shadow: rgba(0, 0, 0, 0.2) 0 0 16px;
     &:hover, &:focus{ background-color: $primaryColor; color: #fff;}

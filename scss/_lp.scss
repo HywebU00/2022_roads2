@@ -9,8 +9,8 @@
       &:last-child{border-bottom: none;}
       &>a{ 
         padding: .9em 8px .9em 3.5rem; margin: 0 0 5px; transition: .3s;
-        &:hover, &:focus{ background-color: lighten($hilight2 , 40%); text-decoration: underline;
-        }
+        &:hover, &:focus{ background-color: $lpHover; text-decoration: underline;}
+        &:focus{box-shadow: $linkColor 0 0 0 1px inset;}
       }
       .numb{ display: inline-block; font-size: 1rem; 
         width: 2.5em; text-align: right; margin:0 .8rem 0 -3.3rem;
@@ -41,8 +41,7 @@
     // width: calc(100% - 16px); margin:0 8px;
     border-top: 2px solid $borderColor;border-bottom: 2px solid $borderColor;
     tr{
-      
-      &:hover{ background-color: lighten($hilight , 52%);}
+      &:hover{ background-color: $lpHover;}
     }
     th, td{
       padding: 14px 16px 12px; position: relative;
@@ -80,11 +79,11 @@
   //   thead{ position: sticky; top: 1px; z-index: 9; background: rgba(220,220,220, .9);}
   // }
 
-  @media screen and (max-width: $wwNormal - 1){
+  @media screen and (max-width: calc($wwNormal - 1px)){
     &>table{ margin: 0; width: 100%;}
   }
 
-  @media screen and (max-width: $wwMedium - 1px){
+  @media screen and (max-width: calc($wwMedium - 1px)){
     &>table{
       tbody:first-child>tr:first-child {display: none;}
       thead{display: none;}
@@ -280,9 +279,19 @@
   // 典藏
   &.collection{
     li{
-      img{
-        display: block;width: 100%;
-      }  
+      &>a.showLightbox { margin:0 auto 20px 0; padding: 0;
+        &::after{
+          content: ''; position: absolute; right: 0;bottom: 0;
+          width: 40px; height: 40px;
+          background: rgba(0,0,0,.5) url(../images/icon_enlarge_w.svg) no-repeat center center;
+          background-size: 65%;
+        }
+        &:hover{
+          &::after{background-color: rgba(0, 0, 0, 0.8);}
+        }
+        &:focus{box-shadow: $assistant 0 0 0 2px;}
+      }
+      img{display: block;width: 100%;}  
     }
     table.info{
       margin: 10px 0 0;
@@ -323,9 +332,11 @@
 
     &.collection{
       li{
-        img{
-          float: left; width: 250px; margin-right: 20px;
+        clear: both; overflow: hidden;
+        a.showLightbox{
+          float: left; margin:0 20px 0 0; padding: 0;
         }
+        img{ width: 250px; }
       }
       table.info{
         width: calc(100% - 270px);

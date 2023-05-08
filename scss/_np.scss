@@ -5,6 +5,7 @@
     a{
       position: relative; display: block; padding: .7em .5em .65em 26px;
       text-decoration: none; color: $fontColor;
+      &:hover, &:focus{ background-color: $lpHover; }
       &:focus{ box-shadow: $linkColor 0 0 0 1px inset;}
     }
   }
@@ -29,7 +30,7 @@
           border-color: transparent transparent transparent $borderColorDark;
         }
         &:hover, &:focus{
-          box-shadow: $primaryColor 0 0 0 1px, $borderColor 0 6px 20px -3px;
+          // box-shadow: $primaryColor 0 0 0 1px, $borderColor 0 6px 20px -3px;
           &::before{ border-left-color: $primaryColor; transform: scale(1.25);}
         }
       }
@@ -55,7 +56,7 @@
       ul{margin-left: 22px;}
       a{ transition: .2s;
         &::before{content: ''; position: absolute;transition: .2s;}
-        &:hover, &:focus{ background-color: lighten($hilight, 50%); }
+        // &:hover, &:focus{ background-color: $lpHover; }
       }
       &>a{
         &::before{
