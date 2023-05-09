@@ -57,12 +57,8 @@
       background-position: left 0 bottom -220px;
     }
   }
-  @media screen and (max-width: $wwMedium){
-    &.short {
-      &>ul>li {
-        margin-right: 0;
-      }
-    }
+  @media screen and (min-width: $wwMaximum){
+    &.short{padding-right: $wwMaximum*.05;}
   }
 }
 
