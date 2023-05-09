@@ -16,14 +16,14 @@
   }
 
   .flowNav{ font-size: 1.2rem; margin:20px 180px 0 5vw;
-    ul{ display: flex; flex-flow: row wrap; line-height: 1; color: lighten($fontColorLight, 20%); font-style: italic; }
+    ul{ display: flex; flex-flow: row wrap; line-height: 1; color: lighten($fontColorLight, 20%); }
     li{ position: relative; flex: 0 0 1em;
       min-width: 1.5em; margin:5px 4px 0; padding: 4px 5px 6px; 
       text-align: center; transform: scaleX(1.5);
-      &::after{content: ''; position: absolute;left:50%; bottom: 0; 
-        height: 0;  width: 0;margin-left: -2px;  border-radius: 50%; transition: .2s;}
+      &::after{content: ''; position: absolute;left:calc(50% - .3em); bottom: 0; 
+        height: 4px;  width: 0; transition: .2s;}
       &.active{ color: $primaryColor;
-        &::after{width: 4px;height: 6px;background-color: $primaryColor;}
+        &::after{width: .6em;background-color: $primaryColor;}
       }
     }
   }
