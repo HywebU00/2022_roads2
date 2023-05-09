@@ -57,6 +57,13 @@
       background-position: left 0 bottom -220px;
     }
   }
+  @media screen and (max-width: $wwMedium){
+    &.short {
+      &>ul>li {
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .project .tabset {
