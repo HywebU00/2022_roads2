@@ -13,7 +13,7 @@
   background-color: $fontInvert;
 
   &:hover{border-color: $borderColorDark;}
-  &:focus{border-color: $assistant;box-shadow: $assistant 0 0 0 1px;outline: none;}
+  &:focus{border-color: $inputFocusBd;box-shadow: $inputFocusBd 0 0 0 1px;outline: none;}
 }
 // 下拉選單樣式
 %selectStyle {
@@ -30,8 +30,8 @@
   background-size: 12px auto;
   // border-radius: 4px;
 
-  &:hover{border-color: $assistant;}
-  &:focus{border-color: $assistant;box-shadow: $assistant 0 0 0 1px;outline: none;}
+  &:hover{border-color: $borderColorDark;}
+  &:focus{border-color: $inputFocusBd;box-shadow: $inputFocusBd 0 0 0 1px;outline: none;}
 
 }
 // 顏色
@@ -126,21 +126,21 @@ input[type="radio"] {
   &:focus, &:checked{
     border-width: 2px;
     border-color: $fontInvert;
-    box-shadow:$assistant 0 0 0 3px;
-    background-color: $assistant;
+    box-shadow:$inputFocusBd 0 0 0 3px;
+    background-color: $inputFocusBd;
   }
   &:checked{
-    &:focus{box-shadow:$fontInvert 0 0 0 1px,$assistant 0 0 0 4px;}
+    &:focus{box-shadow:$fontInvert 0 0 0 1px,$inputFocusBd 0 0 0 4px;}
   }
 }
 input[type="checkbox"]{ 
   border-radius: 3px;
-  &:focus{box-shadow: $assistant 0 0 0 2px; border-color: $fontInvert;}
+  &:focus{box-shadow: $inputFocusBd 0 0 0 2px; border-color: $fontInvert;}
   &:checked{
-    background: $assistant url(../images/icon_check.svg) no-repeat center .05em;
+    background: $inputFocusBd url(../images/icon_check.svg) no-repeat center .05em;
     background-size: 96%;
-    box-shadow: $assistant 0 0 0 2px; border-color: $fontInvert;
-    &:focus{box-shadow: $fontInvert 0 0 0 1px, $assistant 0 0 0 4px;}
+    box-shadow: $inputFocusBd 0 0 0 2px; border-color: $fontInvert;
+    &:focus{box-shadow: $fontInvert 0 0 0 1px, $inputFocusBd 0 0 0 4px;}
   }
 }
 

@@ -49,6 +49,9 @@ $fontInvert: #fff;
 $fontColorLight: #67625c;
 $linkColor: #063e8c;
 
+// lp
+$lpHover:#e0e9fe;
+
 // 匡線、陰影
 $borderColor: #b9bdb2;
 $borderColorLight: #d6dddf;
@@ -56,12 +59,11 @@ $borderColorDark:#3a3f45;
 $shadow:#50504c33;
 $shadow2:#35343066;
 
-// lp
-$lpHover:#e0e9fe;
-
 // 按鈕
 $btnBg1: $primaryColor;
 $btnBg2: $assistant;
+// 文字數入框 focus
+$inputFocusBd: $assistant;
 
 // 通用
 $gray: #ddd;

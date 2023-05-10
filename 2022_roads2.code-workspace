@@ -14,7 +14,7 @@
 			}
 		],
 		"liveSassCompile.settings.includeItems": [
-			// "/scss/design_no9.scss",
+			"/scss/design_no9.scss",
 			"/scss/design_thm.scss"
 		],
 		"liveSassCompile.settings.generateMap": true,

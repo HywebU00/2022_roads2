@@ -1,6 +1,6 @@
-// ---------- 「公路博物館」顏色變數 ---------- //
+// ---------- 「台九線」顏色變數 ---------- //
 $primaryColor: #629B28;
-$secondaryColor: #080808;  
+$secondaryColor: #080808;
 
 $assistant: #C54938;
 $assistant1: $primaryColor;
@@ -20,6 +20,7 @@ $mainBg:#fff;
 // 寬版右上選項
 $topNavColor: #000;
 $topNavHover: $primaryColor;
+
 
 // 主選單：寬版
 $menuColor: #000; //第一層選單文字顏色
@@ -43,32 +44,25 @@ $burger: #000; //漢堡選單三條線顏色
 $burgerInvert: #fff;
 $burgerHoverBg: $primaryColor;
 
-// 文字
 $fontColor: #000;
 $fontInvert: #fff;
 $fontColorLight: #67625c;
 $linkColor: #035a6a;
 
 // lp
-$lpHover:#e0e9fe;
+$lpHover:#f1f873;
 
-// 匡線、陰影
 $borderColor: #b9bdb2;
 $borderColorLight: #dedfd6;
 $borderColorDark:#6c705f;
 $shadow:#50504c33;
 $shadow2:#35343066;
 
-// 按鈕
 $btnBg1: $primaryColor;
 $btnBg2: $hilight;
 
-// 通用
 $gray: #ddd;
-$grayDark: #999;
-$white: #fff;
 
-// 半透明
 $transDarken: rgba(0, 0, 0, 0.65);
 $transLighten: rgba(255, 255, 255, 0.7);
 
