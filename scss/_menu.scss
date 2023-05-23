@@ -84,14 +84,10 @@
       &>li{
         flex: 1 1 auto;
         margin: 0; position: relative; transition: .2s;
-        &:hover{ 
-          // background: $primaryColor;color: $menuColor;
-          // a{color: $menuColor;}
-        }
         &>a{
           padding:20px .5em 18px;color: $menuColor;
           text-align: center; white-space: nowrap; 
-          &:focus, &:hover { background: $menuBgHover; color: $menuColorHover; }
+          &:focus, &:hover { background: $menuBgHover; color: $menuColorHover;}
         }
         &.here{
           &>a{background: $menuBgHover; color: $menuColorHover; }
