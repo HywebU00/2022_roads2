@@ -893,31 +893,30 @@ $(function(){
   // 燈箱 --- 
   var _showLightbox =  $('.showLightbox');
   var _lightbox = $('.lightbox');
-  // _lightbox.filter('.courtsList').append('<div class="overlayForClose"></div>');
-  var _hideLightbox = _lightbox.find('.closeThis, .hideLightbox');
+  var _hideLightbox = _lightbox.find('.closeThis');
   var _lightboxNow;
+  var _whichTrigger;
   const speed = 400;
 
   _lightbox.before('<div class="coverAll"></div>');
   var _cover = $('.coverAll');
+
+  _lightbox.append('<button type="button" class="skip">回「關閉燈箱」</button>')
+  var _skipLbx = _lightbox.find('.skip');
+
+  _skipLbx.on('focus' , function(){ _hideLightbox.trigger('focus') });
   
   _showLightbox.click(function(){
-    let boxID = $(this).attr('data-id');
+    _whichTrigger = $(this);
+    let boxID = _whichTrigger.attr('data-id');
 
     _lightboxNow = _lightbox.filter( function(){ return $(this).attr('data-id') === boxID} );
     _lightboxNow.stop(true, false).fadeIn(speed).addClass('show');
     _lightboxNow.prev(_cover).fadeIn(speed);
+    _hideLightbox.focus();
+
     _body.addClass('noScroll');
-    // if( _lightboxNow.has('.bigImgShow')) {
-    //   $('.bigImgShow').slick({
-    //     dots: true,
-    //     infinite: true,
-    //     speed: 500,
-    //     fade: true,
-    //     mobileFirst: true,
-    //     cssEase: 'linear'
-    //   });
-    // }
+
   })
 
   _hideLightbox.click(function(){
@@ -928,6 +927,7 @@ $(function(){
       }
     );
     _targetLbx.prev(_cover).fadeOut(speed);
+    _whichTrigger.focus();
     _body.removeClass('noScroll');
   })
 

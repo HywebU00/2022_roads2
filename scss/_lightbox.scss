@@ -10,29 +10,49 @@
   box-shadow:rgba(0,0,0,.6) 0 0 28px;
   z-index:999;
 
-  .closeThis{position: fixed; right:3vw; top: 3vw;  
+  .closeThis{
+    position: fixed; right:3vw; top: 3vw;  
     margin: 0;z-index:99;padding: 0; border-radius: 0;
-    // transform: scale(1.5);
     background-color: rgba(0,0,0,.6);
     &:hover, &:focus{ background-color: #c00; }
-    &:focus{box-shadow: #c00 0 0 0 2px;}
+    &:focus{
+      box-shadow: #c00 0 0 0 2px;
+      animation: blink .5s 3;
+    }
   }
 
-  .head{border-bottom: 3px solid $borderColorLight;padding:30px 0 .2em; margin-bottom:15px; overflow: hidden;
-    h3{margin: 0;padding: 0; color: $fontColor;
-      .subhead{ display: inline-block;font-size: .8em; margin-left: 1em; 
-        .pre{color: $fontColor; font-size: .8em;}
+  // 回到「關閉燈箱」
+  button.skip{
+    position: absolute; right: 0; bottom: 0;
+    width: 5px; height: 5px; padding: 0;margin: 0;
+    outline: none; box-shadow: none; border: none;
+    text-indent: -15em; overflow: hidden;
+    background-color: transparent;
+  }
+
+  .head{
+    border-bottom: 3px solid $borderColorLight;padding:30px 0 .2em; margin-bottom:15px; overflow: hidden;
+    h3{
+      margin: 0;padding: 0; color: $fontColor;
+      .subhead{ 
+        display: inline-block;font-size: .8em; margin-left: 1em; 
+        .pre{ color: $fontColor; font-size: .8em;}
       }
     }
   }
  
-  @media screen and (min-width:$wwNormal){
-    top: $wwNormal*.03; height: calc(100vh - #{$wwNormal}*.06);
+  @media screen and (min-width:$wwNormal) {
+    top:$wwNormal*.03; height: calc(100vh - #{$wwNormal}*.06);
     .closeThis{top: $wwNormal*.03;}
   }
   
-  @media screen and (min-width: $wwMaximum){
+  @media screen and (min-width: $wwMaximum) {
     width: $wwMaximum*.94; left:calc(50vw - #{$wwMaximum}*.47);
-    .closeThis{right:calc(50vw - #{$wwMaximum}*.47) }
+    .closeThis { right:calc(50vw - #{$wwMaximum}*.47); }
   }
+}
+
+@keyframes blink {
+ 50%{background-color: transparent;}
+ 100%{background-color: #c00;}
 }
