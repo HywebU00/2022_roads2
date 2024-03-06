@@ -1,5 +1,6 @@
 .stacks{
-  margin: 0 auto 150px;
+  // margin: 0 auto 150px;
+  margin: 70px auto; padding: 0 0 20px;
   .blockHeader{ padding-bottom:20px; margin: 0 auto; width: $mmw;}
   .bulletin{ margin: 0 auto; }
   .board{ position: relative; width: 100%;  overflow: hidden;
@@ -59,6 +60,7 @@
     
   @media screen and (min-width: $wwNormal){
     width: $mmw2;
+    margin: 90px auto;
     .blockHeader{ width:100%;}
     .board{ 
       &>a{min-height: 20vw; padding-top: 90px;}

@@ -48,10 +48,12 @@
 
 
 // 寬版顯示兩筆完整，第三筆顯示局部
-.flow2{ margin-bottom: 150px;
+.flow2{ 
+  // margin-bottom: 150px;
+  margin: 70px 0;
   ul{list-style: none;margin: 0;padding: 0;}
 
-  .flowBox{ position: relative; overflow: hidden; padding:30px 0 76px;}
+  .flowBox{ position: relative; overflow: hidden; padding:30px 0 20px;}
 
   .flowList{display: flex; flex-flow: row nowrap; padding-bottom: 30px;
     &>li{ position: relative; flex: 0 0 76vw ;width: 76vw ; margin-left: 5vw; 
@@ -106,6 +108,7 @@
   }
   
   @media screen and (min-width: $wwNormal){
+    margin: 90px auto;
     .blockHeader{ width: $mmw2; }
     .flowBox{ margin-left: 4vw; width: 96vw;}
     .flowList{

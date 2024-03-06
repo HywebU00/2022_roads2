@@ -1,6 +1,7 @@
 .roadData{
-  position: relative;margin: 30px auto 60px;
-
+  position: relative;
+  // margin: 30px auto 60px;
+  margin: 70px auto;
   .blockHeader{
     margin: 0 auto 40px;
     .until{
@@ -109,7 +110,7 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    margin: 50px auto 100px; width: 100%;
+    width: 100%;margin: 90px auto;
 
     .flowBox{ width: $mmw2;}
     ul.flowList{
@@ -135,8 +136,3 @@
     }
   }
 }
-
-// .testCount{
-//   margin: 0 auto;
-//   font-size: 3em;
-// }
