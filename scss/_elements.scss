@@ -295,7 +295,8 @@ a:hover .videoThumb{
 }
 
 // 照片張數 .photoCount
-.photoCount{ line-height: 1.4; height: 1.5em; padding: 0 .5em; border-radius: 1em;
+.photoCount{ 
+  line-height: 1.4; height: 1.5em; padding: 0 .5em; border-radius: 1em;
   span{ display: inline-block; vertical-align: baseline;}
   .total{ font-size: .95em;
     &::before{content: '/'; margin-right: 2px;}

@@ -1,0 +1,33 @@
+@use "_widthVar.scss"; // 長度變數
+
+@use "_colorVar_suhua"; // 「蘇花公路」顏色變數
+@use "_default";
+@use "_elements";
+@use "_modules";
+@use "_webHeader";
+@use "_bigBanner";
+@use "_menu";
+@use "_visionTab";   // 首頁「願景」頁籤
+@use "_tiles"; // 首頁「公民參與」方塊矩陣
+@use "_stacks"; // 首頁「景觀區、聚落區、生態友善區」堆疊區塊
+@use "_data"; // 首頁「公路數據知多少」
+
+@use "_webFooter";
+@use "_form";
+@use "_formLayout";
+@use "_flow2"; // 最新公告（兩個半）
+@use "_flow3"; // 計劃路線進度
+@use "_category";
+@use "_np";
+@use "_lp";
+@use "_article"; // cp頁用
+@use "_project"; // sp頁用（計畫分類內容頁）
+@use "_thumbnail";
+@use "_paginations";
+@use "_imgSlicks"; // 使用 slick 套件的模組
+@use "_lightbox"; // 燈箱
+@use "_sitemap";
+
+.vision .blockHeader h2{
+  background-color: #088cb2;
+}
