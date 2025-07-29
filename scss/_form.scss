@@ -165,13 +165,16 @@ textarea[readonly]:focus,
 input[readonly],
 input[readonly]:hover,
 input[readonly]:focus {
-  background-color: lighten($gray, 8);
+
+  // background-color: lighten($gray, 8);
+  background-color: color.adjust($gray, $lightness: 800%);
   border-color: $borderColor;
   box-shadow: none;
 }
 select[disabled],
 input[disabled] {
-  color: lighten($fontColor, 40%);
+  // color: lighten($fontColor, 40%);
+  color: color.adjust($fontColor, $lightness: 40%);
 }
 
 /* 按鈕的 readonly and disabled*/

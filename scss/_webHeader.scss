@@ -46,6 +46,9 @@
   
     h1{ position: static; margin: 0 0 6px 5vw; padding: 0; height: 52px; max-width: 500px;
       width: calc(100% - 5vw - 18em);
+
+      outline: 1px solid #f005;
+      outline-offset: -1px;
       text-indent: -20em; overflow: hidden;
       
       img{
@@ -135,8 +138,15 @@
     background-color: #fff;
     &:focus{box-shadow: $primaryColor 0 0 0 1px, rgba(255, 255, 255, 0.8) 0 0 0 3px;}
   }
-  input[type="button"]{  background-color: darken($primaryColor, 10%); box-shadow: rgba(255, 255, 255, 0.3) 0 0 0 2px;
-    &:hover{box-shadow: rgba(255, 255, 255, 0.7) 0 0 0 2px; background-color: darken($primaryColor, 10%);}
+  input[type="button"]{  
+    // background-color: darken($primaryColor, 10%);
+    background-color: color.adjust($primaryColor, $lightness: -10%);
+    box-shadow: rgba(255, 255, 255, 0.3) 0 0 0 2px;
+    &:hover{
+      box-shadow: rgba(255, 255, 255, 0.7) 0 0 0 2px; 
+      background-color: color.adjust($primaryColor, $lightness: -10%);
+      // background-color: darken($primaryColor, 10%);
+    }
     &:focus{ background-color: $assistant; box-shadow: #fff 0 0 0 2px;}
 
   }

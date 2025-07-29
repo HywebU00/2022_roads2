@@ -45,7 +45,10 @@
       &.active{
         &>a:hover{
           figure{
-            figcaption{background: darken($assistant1, 8%);}
+            figcaption {
+              // background: darken($assistant1, 8%);
+              background-color: color.adjust($assistant1, $lightness: -8%);
+            }
           }
         }
       }

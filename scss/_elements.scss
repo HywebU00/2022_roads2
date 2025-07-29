@@ -150,7 +150,6 @@ a:focus{outline: none;}
 .goTop{ position: fixed; bottom: -64px; right: 12px;  z-index: 90; 
   padding: 0;margin: 0; width: 52px; height: 52px; line-height: 52px;
   border: none; border-radius: 50%; box-shadow: none;
-  // background: transparentize($mainBg, .3); 
   background-color: $white;
   color: $fontColorLight; font-size: 14px; line-height: 66px;
   box-shadow: rgba(0, 0, 0, 0.267) 0 0 12px;
@@ -290,7 +289,9 @@ a:hover .videoThumb{
 .viewCount{ display: block; height: 2em; line-height: 2; color: $fontInvert;
   &::before{
     content: attr(title) "："; display: inline; vertical-align: middle;
-    color: darken($fontInvert, 30%); font-size: .9em;
+    // color: darken($fontInvert, 30%);
+    color: color.adjust($fontInvert, $lightness: -30%);
+    font-size: .9em;
   }
 }
 

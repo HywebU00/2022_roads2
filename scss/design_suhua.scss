@@ -1,32 +1,34 @@
-@use "_widthVar.scss"; // 長度變數
+@use 'sass:color';
 
-@use "_colorVar_suhua"; // 「蘇花公路」顏色變數
-@use "_default";
-@use "_elements";
-@use "_modules";
-@use "_webHeader";
-@use "_bigBanner";
-@use "_menu";
-@use "_visionTab";   // 首頁「願景」頁籤
-@use "_tiles"; // 首頁「公民參與」方塊矩陣
-@use "_stacks"; // 首頁「景觀區、聚落區、生態友善區」堆疊區塊
-@use "_data"; // 首頁「公路數據知多少」
+@import "_widthVar"; // 長度變數
+@import "_colorVar_suhua"; // 「蘇花公路」顏色變數
 
-@use "_webFooter";
-@use "_form";
-@use "_formLayout";
-@use "_flow2"; // 最新公告（兩個半）
-@use "_flow3"; // 計劃路線進度
-@use "_category";
-@use "_np";
-@use "_lp";
-@use "_article"; // cp頁用
-@use "_project"; // sp頁用（計畫分類內容頁）
-@use "_thumbnail";
-@use "_paginations";
-@use "_imgSlicks"; // 使用 slick 套件的模組
-@use "_lightbox"; // 燈箱
-@use "_sitemap";
+@import "_default";
+@import "_elements";
+@import "_modules";
+@import "_webHeader";
+@import "_bigBanner";
+@import "_menu";
+@import "_visionTab";   // 首頁「願景」頁籤
+@import "_tiles"; // 首頁「公民參與」方塊矩陣
+@import "_stacks"; // 首頁「景觀區、聚落區、生態友善區」堆疊區塊
+@import "_data"; // 首頁「公路數據知多少」
+
+@import "_webFooter";
+@import "_form";
+@import "_formLayout";
+@import "_flow2"; // 最新公告（兩個半）
+@import "_flow3"; // 計劃路線進度
+@import "_category";
+@import "_np";
+@import "_lp";
+@import "_article"; // cp頁用
+@import "_project"; // sp頁用（計畫分類內容頁）
+@import "_thumbnail";
+@import "_paginations";
+@import "_imgSlicks"; // 使用 slick 套件的模組
+@import "_lightbox"; // 燈箱
+@import "_sitemap";
 
 .vision .blockHeader h2{
   background-color: #088cb2;

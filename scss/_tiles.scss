@@ -24,7 +24,12 @@
         a{ display: block; padding: .5em .5em .4em; height: 100%;
           border-radius: 3px; color: #fff; background: $assistant2; text-decoration: none;
           transition: .2s;
-          &:hover, &:focus{background: darken($assistant2, 10%); box-shadow:darken($assistant2, 10%) 0 0 0 1px;}
+          &:hover, &:focus{
+            // background: darken($assistant2, 10%);
+            // box-shadow: darken($assistant2, 10%) 0 0 0 1px;
+             background-color: color.adjust($assistant2, $lightness: -10%);
+             box-shadow: color.adjust($assistant2, $lightness: -10%) 0 0 0 1px;
+          }
         }
       }
     }

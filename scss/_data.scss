@@ -60,7 +60,8 @@
     li{
       text-indent: -10em; overflow: hidden; border-radius: 50%;
       width: 8px;height: 8px;line-height: 1; margin: 4px 10px;
-      background-color: lighten($fontColorLight, 20%);
+      // background-color: lighten($fontColorLight, 20%);
+      background-color: color.adjust($fontColorLight, $lightness: 20%);
       transition: .2s;
       &.active{
         background-color: $primaryColor;

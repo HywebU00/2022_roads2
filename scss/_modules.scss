@@ -2,7 +2,8 @@
 .breadcrumb { 
   @extend %blockWidth; 
   margin-top: 0; padding: 17px 0 2px; overflow: hidden;
-  color:lighten($fontColor, 10) ;
+  // color:lighten($fontColor, 10) ;
+  color: color.adjust($fontColor, $lightness: 1000%);
 
   ul, li{ list-style: none; margin: 0;padding: 0;}
   ul{ float: left; line-height: 1.2; overflow: hidden; }

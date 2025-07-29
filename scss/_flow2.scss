@@ -16,7 +16,11 @@
   }
 
   .flowNav{ font-size: 1.2rem; margin:20px 180px 0 5vw;
-    ul{ display: flex; flex-flow: row wrap; line-height: 1; color: lighten($fontColorLight, 20%); }
+    ul{ 
+      display: flex; flex-flow: row wrap; line-height: 1; 
+      // color: lighten($fontColorLight, 20%); 
+      color: color.adjust($fontColorLight, $lightness: 20%);
+    }
     li{ position: relative; flex: 0 0 1em;
       min-width: 1.5em; margin:5px 4px 0; padding: 4px 5px 6px; 
       text-align: center; transform: scaleX(1.5);

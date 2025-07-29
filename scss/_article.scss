@@ -71,7 +71,9 @@
     background-color: $white;
     line-height: 1.5;
     th, td{ padding: .5em; border: 1px solid $borderColorLight;}
-    th{ background-color: darken($mainBg, 8%); 
+    th{ 
+      // background-color: darken($mainBg, 8%);
+      background-color: color.adjust($mainBg, $lightness: -8%);
       &:first-child{ border-right-color: $borderColor;}
     }
     tr:first-child th{border-bottom-color: $borderColor;}

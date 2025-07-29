@@ -24,7 +24,8 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    background-color: transparentize($fontInvert, .6);
+    // background-color: transparentize($fontInvert, .6);
+    background-color: color.adjust($fontInvert, $alpha: .6);
     &>ul>li{
       time{ display: block; margin-top: .5em;}
     }
@@ -38,7 +39,6 @@
   background: #fff;
   &>table{
     border-collapse: collapse; line-height: 1.5; width: 100%;
-    // width: calc(100% - 16px); margin:0 8px;
     border-top: 2px solid $borderColor;border-bottom: 2px solid $borderColor;
     tr{
       &:hover{ background-color: $lpHover;}
@@ -54,8 +54,10 @@
       }
     }
     th{
-      white-space: nowrap; background-color: lighten($gray, 8%);
+      white-space: nowrap; 
       border-bottom: 1px solid $borderColorDark;
+      // background-color: lighten($gray, 8%);
+      background-color: color.adjust($gray, $lightness: 8%);
     }
 
     td{

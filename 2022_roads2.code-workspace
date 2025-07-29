@@ -39,7 +39,7 @@
 			"*"
 		],
 		"liveServer.settings.port": 5503,
-		"liveSassCompile.settings.forceBaseDirectory": "/scss",
+		// "liveSassCompile.settings.forceBaseDirectory": "/scss",
 		"workbench.colorCustomizations": {
 			"activityBar.activeBackground": "#93e6fc",
 			"activityBar.background": "#93e6fc",
