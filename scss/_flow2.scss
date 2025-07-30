@@ -74,7 +74,12 @@
         header{position: absolute; left: 0; right: 0; bottom: 0;
           padding:30px 20px 18px 40px; margin: 0;
           background: $transDarken; color: $fontInvert;
-          &::before{content: ''; position: absolute; left: 25px; top: -10px; width: 2px; height: 72px; background: $primaryColor;}
+          &::before {
+            content: '';
+            position: absolute;left: 25px;top: -10px;
+            width: 2px;height: 72px;
+            background: $primaryColor;
+          }
         }
         h3{ margin: 0; padding: 0; height: 4em;
           font-size: 1rem; font-weight: normal; line-height: 2; text-align: justify;

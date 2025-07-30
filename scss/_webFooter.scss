@@ -83,12 +83,17 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    .base{padding-left: 4vw;}
+    .base{padding-left: 4vw; }
     .logo{position: static; left: 0;
       flex: 0 0 100%; width: auto; margin: 0 0 20px;
       img{margin: 0;}
     }
-    .contact{ flex: 1 1 calc(33% - 20px); }
+    .contact{ 
+      flex: 1 1 calc(33% - 20px);
+      &:nth-child(2):nth-last-child(4){
+        flex-basis: calc(67% - 20px);
+      }
+    }
     .copyright{ margin-left: 0; flex:1 0 50%;
       ul, p{float: none;}
       p{margin-top: .5em;}
@@ -109,7 +114,10 @@
 
 
 // 頁腳的選單
-.siteTree{ position: relative; z-index: 2; margin: 0 auto;  padding: 40px 5vw 25px;
+.siteTree{ 
+  position: relative; z-index: 2; margin: 0 auto;  
+  // padding: 40px 5vw 25px;
+  padding: 40px 5% 25px;
   transition: .6s;
   ul{list-style: none; margin: 0; padding: 0; line-height: 1.2;}
   &>ul{ display: flex; flex-flow: row wrap; font-size: 1.2rem;
@@ -140,7 +148,7 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    padding-left: 5vw; padding-right: 5vw;
+    // padding-left: 5vw; padding-right: 5vw;
     &>ul{
       &>li{flex:0 1 auto; margin-left: 25px; margin-right: 25px;}
     }
@@ -148,7 +156,7 @@
   }
 
   @media screen and (min-width: $wwMaximum){
-    padding-left: $wwMaximum*.05; padding-right: $wwMaximum*.05;
+    // padding-left: $wwMaximum*.05; padding-right: $wwMaximum*.05;
   }
 }
 

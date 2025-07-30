@@ -16,7 +16,8 @@
           box-shadow: $assistant 0 0 0 2px inset;}
       }
     }
-    h3{ flex: 0 0 35%;position: relative; z-index: 3; 
+    h3{ 
+      flex: 0 0 35%;position: relative; z-index: 3; 
       margin: 0 -22px 0 0;padding: 1em 15px 0; line-height: 1.2;
       color: $fontInvert; font-size: 1.6em; text-shadow: #0007 0 2px 5px;
       span{ display: block; padding: .5em 15px .6em; margin: .3em -15px 0;
@@ -33,8 +34,11 @@
       li{ margin: 0; padding: 0;
         &+li{margin-top: .7em;}
       }
-      &::after{ content: ''; position: absolute; right: 4.5vw; top: -8px;
-        width: 2px; height: 70px; background-color: $primaryColor;}
+      &::after{ 
+        content: ''; position: absolute; right: 4.5vw; top: -8px;
+        width: 2px; height: 70px; 
+        background-color: $primaryColor;
+      }
     }
 
     img{
@@ -64,14 +68,17 @@
     .blockHeader{ width:100%;}
     .board{ 
       &>a{min-height: 20vw; padding-top: 90px;}
-      h3{ flex-basis: 37%;
+      h3{ 
+        flex-basis: 37%;
         font-size: 2em; letter-spacing: .1em; font-weight: normal;
         padding: 0 0 0 5vw; margin-right: -30px;
-        span{letter-spacing: 0; font-size: 1.08em;
+        span{
+          letter-spacing: 0; font-size: 1.08em;
           margin: .3em 0 0 -5vw; padding: .5em 16px .4em 5vw;
         }
       }
-      ul{ flex-basis: 60%;
+      ul{ 
+        flex-basis: 60%;
         padding: 2em 70px 60px 80px; letter-spacing: .1em;
         &::after{ right: 58px;}
       }
@@ -82,6 +89,7 @@
     width: $wwMaximum*.86; 
     .board{ 
       &>a{ min-height: 234px;}
+      h3{ padding-left: calc($wwMaximum*.05);}
     }
   }
 

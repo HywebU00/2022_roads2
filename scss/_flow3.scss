@@ -1,4 +1,5 @@
 // 寬版顯示三筆，每筆等寬，第四筆顯示局部 //
+// 計劃路線進度 //
 .flow3 { padding: 60px 0 10px;
   background-position: center top;
   background-repeat: no-repeat;
@@ -10,14 +11,23 @@
 
   .flowList{display: flex; flex-flow: row nowrap; padding-bottom: 30px;
     &>li{ position: relative; flex: 0 0 76vw ;width: 76vw;height:114vw; margin-left: 5vw; 
-      &>a{ display: block; width: 100%; height: 100%; text-decoration: none;
-        box-shadow: rgba(0, 0, 0, 0.2) 0 0 20px;color: $fontColor;
-        &::before{content: ''; position: absolute; left: 0;right: 0;top: 0;bottom: 0; 
-          box-shadow: $assistant 0 0 0 2px inset; display: none;}
-          &:hover{ box-shadow: rgba(0, 0, 0, 0.3) 0 8px 35px;}
-          &:focus::before{ display: block; z-index: 9; }
+      &>a{ 
+        display: block; width: 100%; height: 100%; text-decoration: none;
+        box-shadow: rgb(0 0 0 / .4) 0 0 20px;color: $fontColor;
+        transition: .25s;
+        &::before{
+          display: none;
+          content: ''; position: absolute; left: 0;right: 0;top: 0;bottom: 0; 
+          // box-shadow: $assistant 0 0 0 2px inset; 
         }
-      header{padding: 55px 30px 100px; line-height: 1.6; position: relative; z-index: 8;
+          &:hover{ box-shadow: rgb(0 0 0 / .6) 0 8px 35px; translate: 0 -6px;}
+          &:focus::before{ 
+            display: block; z-index: 9; 
+            box-shadow:#fff 0 0 0 1px, $assistant 0 0 0 4px;
+          }
+        }
+      header{
+        padding: 55px 30px 100px; line-height: 1.6; position: relative; z-index: 8;
         background-image: linear-gradient(rgba(255, 255, 255, 255) 70%, rgba(255, 255, 255, 0) 100% );
         h3{ font-size: 1.5rem; margin: 0 0 .5em;}
         p{margin: 0; font-size: 1.2rem;
