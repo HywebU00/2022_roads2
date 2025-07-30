@@ -17,20 +17,25 @@
   box-shadow: rgba(0, 0, 0, 0.2) 0 2px 12px -3px;
 
   h1{
-    margin: 0 ; padding:5px 5px 5px 8px; overflow: hidden;
+    margin: 0 ; padding:5px 5px 5px 8px;
     width: calc( 100vw - 130px);
+    text-indent: -20em; overflow: hidden;
     img{
       &.normal { display: none;}
-      &.mobile { display: block; margin: 0; height: 56px; max-width: 100%; object-fit: contain;}
+      &.mobile {
+        display: block;margin: 0;
+        height: 56px;width: 100%;
+        object-fit: contain; object-position: left center;
+      }
     }
     &>a{
+      display: block; width: 100%; height: 100%;
       &:nth-child(1){display: none;}
       &:nth-child(2){display: block;}
       &:hover, &:focus{
         img{box-shadow: $linkColor 0 0 0 2px;}
       }
     }
-
   }
 
   .searchCtrl{position: absolute; top: 5px; right: 5px; margin: 0; border-radius: 0; }
@@ -44,25 +49,26 @@
     .sidebarCtrl {display: none;}
     .searchCtrl{display: block; position: absolute; left: auto; top: auto;top: 15px; right: 5vw; z-index: 99; }
   
-    h1{ position: static; margin: 0 0 6px 5vw; padding: 0; height: 52px; max-width: 500px;
-      width: calc(100% - 5vw - 18em);
-
-      outline: 1px solid #f005;
-      outline-offset: -1px;
-      text-indent: -20em; overflow: hidden;
-      
+    h1{ 
+      position: static; 
+      // height: 52px; max-width: 500px;
+      width: calc(100% - 5vw - 18em); height: 64px;
+      margin: 0 0 6px 5vw; padding: 0;
       img{
         &.mobile{ display: none;}
-        &.normal{ display: block; height: 100%; width: 100%; object-fit: contain; margin: 0;}
+        &.normal{ 
+          display: block; 
+          height: 100%; width: 100%;
+          object-fit: contain; object-position: left top;
+        }
       }
       &>a{
         &:nth-child(2){display: none;}
         &:nth-child(1){display: block;}
         &:hover, &:focus{
-          img.normal{box-shadow: $linkColor 0 0 0 2px inset;}
+          img.normal{box-shadow: $linkColor 0 0 0 2px;}
         }  
       }
-
     }
 
     h1, .searchCtrl{ z-index: 9;}
@@ -78,8 +84,10 @@
   @media screen and (min-width: $wwMaximum) {
     width:$wwMaximum;
     .searchCtrl{ right: 60px; }
-    h1{margin-left: 60px; }
-
+    h1 {
+      margin-left: 60px;
+      width: calc($wwMaximum*.95 - 18em);
+    }
     &.fixed{ width: $wwMaximum; left: auto; /* left: calc(50vw - #{$wwMaximum}*.5) */;}
   }
 
