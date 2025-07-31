@@ -6,7 +6,7 @@
       position: relative; display: block; padding: .7em .5em .65em 26px;
       text-decoration: none; color: $fontColor;
       &:hover, &:focus{ background-color: $lpHover; }
-      &:focus{ box-shadow: $linkColor 0 0 0 1px inset;}
+      &:focus-visible{ box-shadow: $linkColor 0 0 0 2px inset;}
     }
   }
   &>ul>li>a{ padding-left: 30px;}
@@ -56,7 +56,6 @@
       ul{margin-left: 22px;}
       a{ transition: .2s;
         &::before{content: ''; position: absolute;transition: .2s;}
-        // &:hover, &:focus{ background-color: $lpHover; }
       }
       &>a{
         &::before{

@@ -202,6 +202,9 @@
 
   td{
     strong{ display: inline-block; font-size: 1.2em;}
+    a{
+      &:focus{ outline: 2px solid $linkColor;}
+    }
   }
   
   // .anotherLabel{
@@ -259,9 +262,20 @@
   box-shadow: rgb(0 0 0 / 0.2) 0 0 12px;
 
   input[type="button"],
-  input[type="submit"] {
-    height: 2.6em;
-    width: auto;
+  input[type="submit"],
+  button[type="submit"] {
+    height: 2.6em; line-height: 2.5;width: auto;
+    background-color: $primaryColor;
+    border: none;
+    &:focus, &:hover{
+      background-color: $primaryColor;
+    }
+     &:hover{
+      box-shadow: $primaryColor 0 0 0 2px;
+     }
+     &:focus{
+      box-shadow:$white 0 0 0 1px inset, $primaryColor 0 0 0 2px;
+     }
   }
 
   form {

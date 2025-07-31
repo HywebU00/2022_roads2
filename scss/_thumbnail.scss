@@ -10,7 +10,7 @@
         &:hover{@extend %shadow2;
           p, h3{text-decoration: underline;}
         }
-        &:focus{box-shadow: $assistant 0 0 0 2px inset, #0006 0 4px 16px;}
+        &:focus{box-shadow: $borderColorDark 0 0 0 2px inset, #0006 0 4px 16px;}
       }
       .label{ position: absolute; right: 4px; top: -3px; 
         height: 2.1em; line-height: 2.3em; padding: 0 1em;
@@ -88,7 +88,7 @@
         background: #fff; text-decoration: none;
         @extend %shadow1; transition: .3s;
         &:hover{@extend %shadow2;}
-        &:focus{box-shadow: $assistant 0 0 0 2px inset;}
+        &:focus{box-shadow: $borderColorDark 0 0 0 2px inset;}
         &:hover, &:focus{
           h3, p{text-decoration: underline;}
         }

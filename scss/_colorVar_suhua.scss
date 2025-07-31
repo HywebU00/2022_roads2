@@ -8,7 +8,7 @@ $assistant1: #097c9d;
 $assistant2: #4f8119;
 $assistant3: #10576b;
 $notice: #d44000;
-$hilight: #629b28;
+$hilight: #20d6f6;
 $hilight2: #fcbf0a;
 
 $sidebarBg : $primaryColor;
@@ -51,14 +51,14 @@ $fontColorLight: #67625c;
 $linkColor: #037ea3;
 
 // lp
-$lpHover:#e0e9fe;
+$lpHover:#e7f5f8;
 
 // 匡線、陰影
-$borderColor: #b9bdb2;
-$borderColorLight: #dedfd6;
-$borderColorDark:#6c705f;
-$shadow:#50504c33;
-$shadow2:#35343066;
+$borderColor: #b7bdbd;
+$borderColorLight: #dce2e1;
+$borderColorDark:#5f6f70;
+$shadow:#4c4f5033;
+$shadow2:#30343566;
 
 // 按鈕
 $btnBg1: $primaryColor;
@@ -79,9 +79,10 @@ $transLighten: rgba(255, 255, 255, 0.7);
 %shadow2{ box-shadow: rgba(0, 0, 0, 0.5) 0 4px 18px -2px;}
 
 // -------------------------
-%linkText{ color: $linkColor; text-decoration: none; box-shadow:$linkColor 0 2px 0 -1px;
+%linkText{ 
+  color: $linkColor; text-decoration: none; box-shadow:$linkColor 0 2px 0 -1px;
   &:hover, &:focus{color: $linkColor;}
   &:hover{text-decoration: none; box-shadow:$linkColor 0 3px 0 -1px;}
-  &:focus{text-decoration: none; box-shadow:$linkColor 0 0 0 1px;}
+  &:focus{text-decoration: none; box-shadow:$linkColor 0 0 0 2px;}
 }
 

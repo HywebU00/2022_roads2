@@ -30,7 +30,7 @@
   .tabItems{
     overflow: hidden;
     border-bottom: 2px solid $borderColor;
-    // background: #fff;
+    padding: 4px;
     button{
       float: left; height: 3em; line-height: 3.1; margin: 3px;padding:0 1em;
       color: $fontColor;background-color: $borderColorLight;
@@ -48,7 +48,8 @@
 
   @media screen and (min-width: $wwMedium){
     .tabItems{
-      margin: 0; display: flex; flex-flow: row wrap;
+      margin: 0; padding: 4px 0 0;
+      display: flex; flex-flow: row wrap;
       justify-content: space-between; align-items: flex-end; 
       button{
         position: relative;
@@ -62,7 +63,8 @@
           transition: .2s;
         }
         &:hover, &:focus{
-          margin-top: 0; padding-bottom: 14px;
+          margin-top: 0; 
+          padding-bottom: 14px;
           box-shadow: none;
           &::after{ bottom: 0;}
         }

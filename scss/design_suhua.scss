@@ -122,3 +122,42 @@
   }
 }
 
+.project .tabset {
+  .tabItems{
+    button{
+      &:hover {
+        box-shadow: $primaryColor 0 0 0 2px;
+      }
+      &:focus{
+        box-shadow:#fff 0 0 0 1px inset, $primaryColor 0 0 0 2px;
+      }
+      &.active{
+        background-color: $primaryColor;
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .tabItems{
+      button{
+        &:hover, &:focus {
+          box-shadow: none;
+        }
+        &::after{
+          background: $menuDecoHover;
+        }
+      }
+    }
+
+  }
+  
+}
+
+
+
+@media screen and (min-width: $wwNormal){
+  .webFooter .accesskey{ 
+    &:focus{  outline: 2px solid $hilight;}
+  }
+}
+
