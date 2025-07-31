@@ -147,23 +147,29 @@ a:focus{outline: none;}
 
 
 // 回頁面最上方
-.goTop{ position: fixed; bottom: -64px; right: 12px;  z-index: 90; 
+.goTop{ 
+  position: fixed; bottom: -64px; right: 12px;  z-index: 90; 
   padding: 0;margin: 0; width: 52px; height: 52px; line-height: 52px;
   border: none; border-radius: 50%; box-shadow: none;
   background-color: $white;
   color: $fontColorLight; font-size: 14px; line-height: 66px;
-  box-shadow: rgba(0, 0, 0, 0.267) 0 0 12px;
-  transition: bottom .5s;
-  &::before{  content: ''; position: absolute;
+  box-shadow: rgb(0 0 0/ 0.267) 0 0 12px;
+  transition: all .2s, bottom .6s;
+  &::before{ 
+    content: ''; position: absolute;
     width: 12px; height: 12px; top: 15px; left: 19px;
     border: 2px solid $fontColor;  border-bottom: none; border-right: none;
     transform: rotate(45deg) ;
   }
 
-  &:hover, &:focus{ background: $fontColor; border: none;
+  &:hover, &:focus{ 
+    background: $fontColor; border: none;
     &::before{border-color: $fontInvert;}
   }
-  &:focus{ box-shadow: $hilight 0 0 0 2px; color: $fontInvert; }
+  &:focus{ 
+    box-shadow:#fff 0 0 0 1px, $fontColor 0 0 0 4px; 
+    color: $fontInvert; 
+  }
   &.show{bottom: 24px; }
 
   @media screen and (min-width: calc($wwMaximum + 74px)){
