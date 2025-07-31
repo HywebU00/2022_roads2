@@ -17,7 +17,7 @@
     td,
     th {position: relative;padding: .5em .9em;border-bottom: 1px solid #d6d6d6;}
 
-    th {border-bottom: 3px solid #bbb;white-space: nowrap;}
+    thead{border-bottom: 3px solid #bbb;white-space: nowrap;}
 
     tr.new{background: #f1fad0;}
 
@@ -82,179 +82,187 @@
 <body>
   <h1>公路總局 《台九線、幸福公路》 gui 清單  2022~2023</h1>
   <table>
-    <tr>
-      <th style="width: 2em;">序號</th>
-      <th>功能、頁面名稱</th>
-      <th>檔名／連結（台九線）</th>
-      <th>檔名／連結（2023 幸福公路）</th>
-      <th>檔名／連結（2025 蘇花安）</th>
-    </tr>
-    <tr>
-      <td></td>
-      <td>首頁</td>
-      <td><a href="pages_No9/mp.html" target="_Blank">mp.html</a></td>
-      <td><a href="pages_THM/mp.html" target="_Blank">mp.html</a></td>
-      <td><a href="pages_suhua/mp.html" target="_Blank">mp.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>NP-兩層</td>
-      <td><a href="pages_No9/np.html" target="_Blank">np.html</a></td>
-      <td><a href="pages_THM/np.html" target="_Blank">np.html</a></td>
-      <td><a href="pages_suhua/np.html" target="_Blank">np.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>LP-標準版</td>
-      <td><a href="pages_No9/lp.html" target="_Blank">lp.html</a></td>
-      <td><a href="pages_THM/lp.html" target="_Blank">lp.html</a></td>
-      <td><a href="pages_suhua/lp.html" target="_Blank">lp.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>LP-表格列表</td>
-      <td><a href="pages_No9/lp_table.html" target="_Blank">lp_table.html</a></td>
-      <td><a href="pages_THM/lp_table.html" target="_Blank">lp_table.html</a></td>
-      <td><a href="pages_suhua/lp_table.html" target="_Blank">lp_table.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>LP-檔案下載條列頁(單檔)</td>
-      <td><a href="pages_No9/lp_table2.html" target="_Blank">lp_table2.html</a></td>
-      <td><a href="pages_THM/lp_table2.html" target="_Blank">lp_table2.html</a></td>
-      <td><a href="pages_suhua/lp_table2.html" target="_Blank">lp_table2.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>LP-圖文橫式條列頁</td>
-      <td><a href="pages_No9/lp_row.html" target="_Blank">lp_row.html</a></td>
-      <td><a href="pages_THM/lp_row.html" target="_Blank">lp_row.html</a></td>
-      <td><a href="pages_suhua/lp_row.html" target="_Blank">lp_row.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>LP-相簿條列頁</td>
-      <td><a href="pages_No9/lp_album.html" target="_Blank">lp_album.html</a></td>
-      <td><a href="pages_THM/lp_album.html" target="_Blank">lp_album.html</a></td>
-      <td><a href="pages_suhua/lp_album.html" target="_Blank">lp_album.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>LP-影音條列頁</td>
-      <td><a href="pages_No9/lp_video.html" target="_Blank">lp_video.html</a></td>
-      <td><a href="pages_THM/lp_video.html" target="_Blank">lp_video.html</a></td>
-      <td><a href="pages_suhua/lp_video.html" target="_Blank">lp_video.html</a></td>
-    </tr>
+    <thead>      
+      <tr>
+        <th rowspan="2" style="width: 2em;">序號</th>
+        <th rowspan="2">功能、頁面名稱</th>
+        <th colspan="3">檔名／連結</th>
+      </tr>
+      <tr>
+        <th>2022 台９線</th>
+        <th>2023 幸福公路</th>
+        <th>2025 蘇花安</th>
+      </tr>
+    </thead>
+    <tbody>
 
-    <tr>
-      <td></td>
-      <td>LP-廣告小 banner 條列頁</td>
-      <td><a href="pages_No9/lp_banner.html" target="_Blank">lp_banner.html</a></td>
-      <td><a href="pages_THM/lp_banner.html" target="_Blank">lp_banner.html</a></td>
-      <td><a href="pages_suhua/lp_banner.html" target="_Blank">lp_banner.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>LP-相簿條列</td>
-      <td>-</td>
-      <td><a href="pages_THM/lp_album2.html" target="_Blank">lp_album2.html</a>（2023新增）</td>
-      <td><a href="pages_suhua/lp_album2.html" target="_Blank">lp_album2.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>LP-典藏資源</td>
-      <td>-</td>
-      <td><a href="pages_THM/lp_collection.html" target="_Blank">lp_collection.html</a>（2023新增）</td>
-      <td><a href="pages_suhua/lp_collection.html" target="_Blank">lp_collection.html</a></td>
-    </tr>
+      <tr>
+        <td></td>
+        <td>首頁</td>
+        <td><a href="pages_No9/mp.html" target="_Blank">mp.html</a></td>
+        <td><a href="pages_THM/mp.html" target="_Blank">mp.html</a></td>
+        <td><a href="pages_suhua/mp.html" target="_Blank">mp.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>NP-兩層</td>
+        <td><a href="pages_No9/np.html" target="_Blank">np.html</a></td>
+        <td><a href="pages_THM/np.html" target="_Blank">np.html</a></td>
+        <td><a href="pages_suhua/np.html" target="_Blank">np.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP-標準版</td>
+        <td><a href="pages_No9/lp.html" target="_Blank">lp.html</a></td>
+        <td><a href="pages_THM/lp.html" target="_Blank">lp.html</a></td>
+        <td><a href="pages_suhua/lp.html" target="_Blank">lp.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP-表格列表</td>
+        <td><a href="pages_No9/lp_table.html" target="_Blank">lp_table.html</a></td>
+        <td><a href="pages_THM/lp_table.html" target="_Blank">lp_table.html</a></td>
+        <td><a href="pages_suhua/lp_table.html" target="_Blank">lp_table.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP-檔案下載條列頁(單檔)</td>
+        <td><a href="pages_No9/lp_table2.html" target="_Blank">lp_table2.html</a></td>
+        <td><a href="pages_THM/lp_table2.html" target="_Blank">lp_table2.html</a></td>
+        <td><a href="pages_suhua/lp_table2.html" target="_Blank">lp_table2.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP-圖文橫式條列頁</td>
+        <td><a href="pages_No9/lp_row.html" target="_Blank">lp_row.html</a></td>
+        <td><a href="pages_THM/lp_row.html" target="_Blank">lp_row.html</a></td>
+        <td><a href="pages_suhua/lp_row.html" target="_Blank">lp_row.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP-相簿條列頁</td>
+        <td><a href="pages_No9/lp_album.html" target="_Blank">lp_album.html</a></td>
+        <td><a href="pages_THM/lp_album.html" target="_Blank">lp_album.html</a></td>
+        <td><a href="pages_suhua/lp_album.html" target="_Blank">lp_album.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP-影音條列頁</td>
+        <td><a href="pages_No9/lp_video.html" target="_Blank">lp_video.html</a></td>
+        <td><a href="pages_THM/lp_video.html" target="_Blank">lp_video.html</a></td>
+        <td><a href="pages_suhua/lp_video.html" target="_Blank">lp_video.html</a></td>
+      </tr>
 
-    <tr>
-      <td></td>
-      <td>FP-轉寄友人</td>
-      <td><a href="pages_No9/fp.html" target="_Blank">fp.html</a></td>
-      <td><a href="pages_THM/fp.html" target="_Blank">fp.html</a></td>
-      <td><a href="pages_suhua/fp.html" target="_Blank">fp.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>QP-意見信箱</td>
-      <td><a href="pages_No9/qp.html" target="_Blank">qp.html</a></td>
-      <td><a href="pages_THM/qp.html" target="_Blank">qp.html</a></td>
-      <td><a href="pages_suhua/qp.html" target="_Blank">qp.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>Sitemap-網站導覽</td>
-      <td><a href="pages_No9/sitemap.html" target="_Blank">sitemap.html</a></td>
-      <td><a href="pages_THM/sitemap.html" target="_Blank">sitemap.html</a></td>
-      <td><a href="pages_suhua/sitemap.html" target="_Blank">sitemap.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>CP-一般內容頁</td>
-      <td><a href="pages_No9/cp.html" target="_Blank">cp.html</a></td>
-      <td><a href="pages_THM/cp.html" target="_Blank">cp.html</a></td>
-      <td><a href="pages_suhua/cp.html" target="_Blank">cp.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>CP-圖文橫式</td>
-      <td><a href="pages_No9/cp_row.html" target="_Blank">cp_row.html</a></td>
-      <td><a href="pages_THM/cp_row.html" target="_Blank">cp_row.html</a></td>
-      <td><a href="pages_suhua/cp_row.html" target="_Blank">cp_row.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>CP-相簿內容頁</td>
-      <td><a href="pages_No9/cp_image_slide.html" target="_Blank">cp_image_slide.html</a></td>
-      <td><a href="pages_THM/cp_image_slide.html" target="_Blank">cp_image_slide.html</a></td>
-      <td><a href="pages_suhua/cp_image_slide.html" target="_Blank">cp_image_slide.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>CP-影音內容頁(YT)</td>
-      <td><a href="pages_No9/cp_video.html" target="_Blank">cp_video.html</a></td>
-      <td><a href="pages_THM/cp_video.html" target="_Blank">cp_video.html</a></td>
-      <td><a href="pages_suhua/cp_video.html" target="_Blank">cp_video.html</a></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>SP-計畫分類內容頁</td>
-      <td><a href="pages_No9/sp.html" target="_Blank">sp.html</a></td>
-      <td><a href="pages_THM/sp.html" target="_Blank">sp.html</a></td>
-      <td><a href="pages_suhua/sp.html" target="_Blank">sp.html</a></td>
-    </tr>
+      <tr>
+        <td></td>
+        <td>LP-廣告小 banner 條列頁</td>
+        <td><a href="pages_No9/lp_banner.html" target="_Blank">lp_banner.html</a></td>
+        <td><a href="pages_THM/lp_banner.html" target="_Blank">lp_banner.html</a></td>
+        <td><a href="pages_suhua/lp_banner.html" target="_Blank">lp_banner.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP-相簿條列</td>
+        <td>-</td>
+        <td><a href="pages_THM/lp_album2.html" target="_Blank">lp_album2.html</a>（2023新增）</td>
+        <td><a href="pages_suhua/lp_album2.html" target="_Blank">lp_album2.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>LP-典藏資源</td>
+        <td>-</td>
+        <td><a href="pages_THM/lp_collection.html" target="_Blank">lp_collection.html</a>（2023新增）</td>
+        <td><a href="pages_suhua/lp_collection.html" target="_Blank">lp_collection.html</a></td>
+      </tr>
 
-    <!-- 以下 2023 新增內頁 -->
-    <tr>
-      <td></td>
-      <td>SP-線上預約-1</td>
-      <td>-</td>
-      <td><a href="pages_THM/sp_booking_step1.html" target="_Blank">sp_booking_step1.html</a>（2023新增）</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>SP-線上預約-2</td>
-      <td>-</td>
-      <td><a href="pages_THM/sp_booking_step2.html" target="_Blank">sp_booking_step2.html</a>（2023新增）</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>SP-線上預約-3</td>
-      <td>-</td>
-      <td><a href="pages_THM/sp_booking_step3.html" target="_Blank">sp_booking_step3.html</a>（2023新增）</td>
-      <td></td>
-    </tr>
+      <tr>
+        <td></td>
+        <td>FP-轉寄友人</td>
+        <td><a href="pages_No9/fp.html" target="_Blank">fp.html</a></td>
+        <td><a href="pages_THM/fp.html" target="_Blank">fp.html</a></td>
+        <td><a href="pages_suhua/fp.html" target="_Blank">fp.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>QP-意見信箱</td>
+        <td><a href="pages_No9/qp.html" target="_Blank">qp.html</a></td>
+        <td><a href="pages_THM/qp.html" target="_Blank">qp.html</a></td>
+        <td><a href="pages_suhua/qp.html" target="_Blank">qp.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Sitemap-網站導覽</td>
+        <td><a href="pages_No9/sitemap.html" target="_Blank">sitemap.html</a></td>
+        <td><a href="pages_THM/sitemap.html" target="_Blank">sitemap.html</a></td>
+        <td><a href="pages_suhua/sitemap.html" target="_Blank">sitemap.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>CP-一般內容頁</td>
+        <td><a href="pages_No9/cp.html" target="_Blank">cp.html</a></td>
+        <td><a href="pages_THM/cp.html" target="_Blank">cp.html</a></td>
+        <td><a href="pages_suhua/cp.html" target="_Blank">cp.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>CP-圖文橫式</td>
+        <td><a href="pages_No9/cp_row.html" target="_Blank">cp_row.html</a></td>
+        <td><a href="pages_THM/cp_row.html" target="_Blank">cp_row.html</a></td>
+        <td><a href="pages_suhua/cp_row.html" target="_Blank">cp_row.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>CP-相簿內容頁</td>
+        <td><a href="pages_No9/cp_image_slide.html" target="_Blank">cp_image_slide.html</a></td>
+        <td><a href="pages_THM/cp_image_slide.html" target="_Blank">cp_image_slide.html</a></td>
+        <td><a href="pages_suhua/cp_image_slide.html" target="_Blank">cp_image_slide.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>CP-影音內容頁(YT)</td>
+        <td><a href="pages_No9/cp_video.html" target="_Blank">cp_video.html</a></td>
+        <td><a href="pages_THM/cp_video.html" target="_Blank">cp_video.html</a></td>
+        <td><a href="pages_suhua/cp_video.html" target="_Blank">cp_video.html</a></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>SP-計畫分類內容頁</td>
+        <td><a href="pages_No9/sp.html" target="_Blank">sp.html</a></td>
+        <td><a href="pages_THM/sp.html" target="_Blank">sp.html</a></td>
+        <td><a href="pages_suhua/sp.html" target="_Blank">sp.html</a></td>
+      </tr>
 
-    <tr>
-      <td></td>
-      <td>Google Search 查詢結果頁</td>
-      <td><a href="pages_No9/gs.html" target="_Blank">gs.html</a></td>
-      <td><a href="pages_THM/gs.html" target="_Blank">gs.html</a></td>
-      <td><a href="pages_suhua/gs.html" target="_Blank">gs.html</a></td>
-    </tr>
+      <!-- 以下 2023 新增內頁 -->
+      <tr>
+        <td></td>
+        <td>SP-線上預約-1</td>
+        <td>-</td>
+        <td><a href="pages_THM/sp_booking_step1.html" target="_Blank">sp_booking_step1.html</a>（2023新增）</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>SP-線上預約-2</td>
+        <td>-</td>
+        <td><a href="pages_THM/sp_booking_step2.html" target="_Blank">sp_booking_step2.html</a>（2023新增）</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>SP-線上預約-3</td>
+        <td>-</td>
+        <td><a href="pages_THM/sp_booking_step3.html" target="_Blank">sp_booking_step3.html</a>（2023新增）</td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td>Google Search 查詢結果頁</td>
+        <td><a href="pages_No9/gs.html" target="_Blank">gs.html</a></td>
+        <td><a href="pages_THM/gs.html" target="_Blank">gs.html</a></td>
+        <td><a href="pages_suhua/gs.html" target="_Blank">gs.html</a></td>
+      </tr>
+    </tbody>
 
   </table>
 
