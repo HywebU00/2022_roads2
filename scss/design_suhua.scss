@@ -104,3 +104,21 @@
     &.short{ padding-top: 0;}
   }
 }
+
+.tiles{ position: relative;  margin: 0 auto 150px;
+  .blockHeader{
+    h2{ 
+      background-color: $primaryColor;
+    }
+    .places{
+      li a{
+        background-color: $primaryColor;
+        &:hover, &:focus{
+            background-color: $assistant3;
+            box-shadow: $assistant3 0 0 0 1px;
+        }
+      }
+    }
+  }
+}
+
