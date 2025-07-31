@@ -253,11 +253,10 @@
 
 // 條列上方的查詢
 .searchHere {
-  // width: $mmw; margin: 0 auto 2em; 
   @extend %blockWidth;
   padding:1.2em 1em;
   background-color: $transLighten;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0 16px;
+  box-shadow: rgb(0 0 0 / 0.2) 0 0 12px;
 
   input[type="button"],
   input[type="submit"] {
@@ -266,8 +265,7 @@
   }
 
   form {
-    display: flex;
-    flex-flow: row wrap;
+    display: flex;flex-flow: row wrap;
 
     select {
       flex: 1 1 45%;
