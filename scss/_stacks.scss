@@ -4,7 +4,9 @@
   .blockHeader{ padding-bottom:20px; margin: 0 auto; width: $mmw;}
   .bulletin{ margin: 0 auto; }
   .board{ position: relative; width: 100%;  overflow: hidden;
-    &>a{position: relative; display: flex; flex-flow: row nowrap; align-items: flex-end;
+    &>a{
+      position: relative; 
+      display: flex; flex-flow: row nowrap; align-items: flex-end;
       text-decoration: none; min-height: 28vw; padding: 3em 0 0;
       &::before{content: ''; position: absolute; left: 0;top: 0;right: 0;bottom: 0;}
       &:hover, &:focus{
@@ -20,19 +22,28 @@
       flex: 0 0 35%;position: relative; z-index: 3; 
       margin: 0 -22px 0 0;padding: 1em 15px 0; line-height: 1.2;
       color: $fontInvert; font-size: 1.6em; text-shadow: #0007 0 2px 5px;
-      span{ display: block; padding: .5em 15px .6em; margin: .3em -15px 0;
+      span{ 
+        display: block; padding: .5em 15px .6em; margin: .3em -15px 0;
         background: $assistant1; color: $fontInvert;
         font-family: 'Times New Roman', Times, serif; font-size: .9em;
         text-shadow:none;
       }
     }
-    ul{ position: relative; flex: 1 0 65%;
-       margin: 0; padding: 1.8em 6vw 60px 3.5em; 
-        list-style: disc;line-height: 1.5;  font-size: 1.15rem;
-        color: $fontInvert; background-color: $transDarken;
-        transform: translateY(35px);transition: .3s;
-      li{ margin: 0; padding: 0;
+    ul{ 
+      position: relative; flex: 1 0 65%;
+      margin: 0; padding: 1.8em 6vw 60px 3.2em; 
+      list-style: disc;line-height: 1.5;  font-size: 1.15rem;
+      color: $fontInvert; background-color: $transDarken;
+      transform: translateY(35px);transition: .3s;
+      &:has(>.asHead) {padding-top: 0.8em;}
+      li{ 
+        margin: 0; padding: 0;
         &+li{margin-top: .7em;}
+        &.asHead{
+          list-style: none;
+          font-size: 1.5em; font-weight: bold;
+          font-family: 'Times New Roman', Times, serif;
+        }
       }
       &::after{ 
         content: ''; position: absolute; right: 4.5vw; top: -8px;
@@ -79,7 +90,7 @@
       }
       ul{ 
         flex-basis: 60%;
-        padding: 2em 70px 60px 80px; letter-spacing: .1em;
+        padding: 2em 60px 60px 72px; letter-spacing: .1em;
         &::after{ right: 58px;}
       }
     }
